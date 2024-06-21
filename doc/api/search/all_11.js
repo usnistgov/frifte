@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['sample_0',['Sample',['../namespace_f_r_i_f.html#a33b1b1ea1846fc34744abb99060aaa94',1,'FRIF']]],
+  ['sanitycheck_1',['sanityCheck',['../struct_f_r_i_f_1_1_image.html#a801e0390b02af3ec3284074e5daf460b',1,'FRIF::Image']]],
+  ['scannedinkonpaper_2',['ScannedInkOnPaper',['../namespace_f_r_i_f_1_1_e_f_s.html#a7b289ba18facb59150321902de0a79e4afe5042e12f27ab485b9c66972fe33d0f',1,'FRIF::EFS']]],
+  ['scar_3',['Scar',['../namespace_f_r_i_f_1_1_e_f_s.html#a26bdf9928794647be7b7b61aef936736a6030995011cc1cbaf9bb50d0c78da0d9',1,'FRIF::EFS']]],
+  ['search_4',['search',['../class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_search_interface.html#a13baa55181ad897ce141236c8e5622ac',1,'FRIF::Evaluations::Exemplar1N::SearchInterface']]],
+  ['searchinterface_5',['SearchInterface',['../class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_search_interface.html',1,'FRIF::Evaluations::Exemplar1N::SearchInterface'],['../class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_search_interface.html#a84ec8427255957eb8ab1b8968ad294b5',1,'FRIF::Evaluations::Exemplar1N::SearchInterface::SearchInterface()']]],
+  ['searchresult_6',['SearchResult',['../struct_f_r_i_f_1_1_search_result.html',1,'FRIF']]],
+  ['segment_7',['Segment',['../namespace_f_r_i_f.html#a67980e68214396f0ee7ac65671f6eb9f',1,'FRIF']]],
+  ['semiporousother_8',['SemiporousOther',['../namespace_f_r_i_f_1_1_e_f_s.html#af53ec4ae5791b0efd1706850bf650d50a795fede350bdb1d522b3eaaadb333967',1,'FRIF::EFS']]],
+  ['setcreaseclassification_9',['setCreaseClassification',['../class_f_r_i_f_1_1_e_f_s_1_1_crease.html#abd224537fc94118fca3a2255b9021c92',1,'FRIF::EFS::Crease']]],
+  ['setfrictionridgegeneralizedposition_10',['setFrictionRidgeGeneralizedPosition',['../class_f_r_i_f_1_1_e_f_s_1_1_crease.html#a28e7927382cd350ce46ef107c0e23abf',1,'FRIF::EFS::Crease']]],
+  ['setpatterngeneralclassification_11',['setPatternGeneralClassification',['../class_f_r_i_f_1_1_e_f_s_1_1_pattern_classification.html#a23aefad4d5eb70d9e665dcdcc3dc4c1f',1,'FRIF::EFS::PatternClassification']]],
+  ['setpatternsubclassification_12',['setPatternSubclassification',['../class_f_r_i_f_1_1_e_f_s_1_1_pattern_classification.html#abab5986653d1901a5b1a4ccf902bb74c',1,'FRIF::EFS::PatternClassification']]],
+  ['setsegments_13',['setSegments',['../class_f_r_i_f_1_1_e_f_s_1_1_crease.html#ac9394c2150842acfb02dfce102a94e85',1,'FRIF::EFS::Crease']]],
+  ['setwhorldeltarelationship_14',['setWhorlDeltaRelationship',['../class_f_r_i_f_1_1_e_f_s_1_1_pattern_classification.html#a2d2bb6cea35afb4c5f3d3fb8da33fd68',1,'FRIF::EFS::PatternClassification']]],
+  ['similarity_15',['similarity',['../struct_f_r_i_f_1_1_comparison_result.html#a435b96201909441796384d2c531719d6',1,'FRIF::ComparisonResult']]],
+  ['sixteen_16',['Sixteen',['../struct_f_r_i_f_1_1_image.html#a60d91a71a921998f87d83bb52cae7f23a8ba5c1c5015c955a5b142debe35c30ff',1,'FRIF::Image::Sixteen'],['../struct_f_r_i_f_1_1_image.html#a9133d061817a32841826918d6881d6cda8ba5c1c5015c955a5b142debe35c30ff',1,'FRIF::Image::Sixteen']]],
+  ['stickysidepowder_17',['StickysidePowder',['../namespace_f_r_i_f_1_1_e_f_s.html#a84d409195776b926d7a72a5de326a89ba4c71099257359a0e01909c263f38610b',1,'FRIF::EFS']]],
+  ['sub_18',['SUB',['../namespace_f_r_i_f_1_1_e_f_s.html#a501dedd92404bd555416005f2fe1cc85',1,'FRIF::EFS']]],
+  ['substrate_19',['Substrate',['../namespace_f_r_i_f_1_1_e_f_s.html#af53ec4ae5791b0efd1706850bf650d50',1,'FRIF::EFS']]],
+  ['success_20',['Success',['../struct_f_r_i_f_1_1_return_status.html#afbc41e9fd908a3e2ae6085f6a49f1615a505a83f220c02df2f85c3810cd9ceb38',1,'FRIF::ReturnStatus']]],
+  ['supportscorrespondence_21',['supportsCorrespondence',['../struct_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_search_interface_1_1_compatibility.html#aa49089f4ffbd07812f173f9df5f70453',1,'FRIF::Evaluations::Exemplar1N::SearchInterface::Compatibility']]],
+  ['supportstemplateintrospection_22',['supportsTemplateIntrospection',['../struct_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface_1_1_compatibility.html#a860088c7c8fa4234fac706a52817f9ba',1,'FRIF::Evaluations::Exemplar1N::ExtractionInterface::Compatibility']]]
+];
