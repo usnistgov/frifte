@@ -1,0 +1,17 @@
+# Compilation
+*.o
+*.so
+*.dylib
+build*
+
+# validation drivers
+e1n/validation/bin
+e1n/validation/config/*
+!e1n/validation/config/README
+e1n/validation/lib/*
+!e1n/validation/lib/README
+
+# Temp files
+.DS_Store
+._*
+*.swp
