@@ -209,7 +209,7 @@ namespace FRIF
 	};
 
 	/** The results of a searching a database. */
-	struct SearchResult
+	struct SearchSubjectPositionResult
 	{
 		/**
 		 * Best guess on if #candidateList contains an identification.

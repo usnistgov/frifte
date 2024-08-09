@@ -506,11 +506,11 @@ namespace FRIF::Evaluations::Exemplar1N
 		 *
 		 * @return
 		 * A tuple containing a ReturnStatus containing information on
-		 * the result of completing the search task, and a SearchResult
+		 * the result of completing the search task, and a SearchSubjectPositionResult
 		 * object containing a list of one to less than or equal to
 		 * `maxCandidates` Candidate. If no Candidate were found, the
 		 * implementation shall return std::nullopt instead of
-		 * a SearchResult, but would still set Result::Success. If an
+		 * a SearchSubjectPositionResult, but would still set Result::Success. If an
 		 * error prevented the search from completing (e.g., invalid
 		 * template, database error), the ReturnStatus should contain
 		 * Result::Failure.
@@ -526,7 +526,7 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * behavior for the many running search processes.
 		 *
 		 * @note
-		 * SearchResult.candidateList will be sorted by descending
+		 * SearchSubjectPositionResult.candidateList will be sorted by descending
 		 * Candidate.similarity upon return from this method using
 		 * `std::stable_sort()`.
 		 *
@@ -549,7 +549,7 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * This method shall not spawn threads.
 		 */
 		virtual
-		std::tuple<ReturnStatus, std::optional<SearchResult>>
+		std::tuple<ReturnStatus, std::optional<SearchSubjectPositionResult>>
 		search(
 		    const std::vector<std::byte> &probeTemplate,
 		    const uint16_t maxCandidates)
@@ -588,7 +588,7 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * @note
 		 * `searchResult` is **not guaranteed** to be the identical
 		 * object returned from search(). Specifically, ordering of
-		 * SearchResult.candidateList may have changed.
+		 * SearchSubjectPositionResult.candidateList may have changed.
 		 *
 		 * @note
 		 * The reference database will be stored on a read-only file
@@ -605,7 +605,7 @@ namespace FRIF::Evaluations::Exemplar1N
 		std::optional<CandidateListCorrespondence>
 		extractCorrespondence(
 		    const std::vector<std::byte> &probeTemplate,
-		    const SearchResult &searchResult)
+		    const SearchSubjectPositionResult &searchResult)
 		    const = 0;
 
 		/**************************************************************/

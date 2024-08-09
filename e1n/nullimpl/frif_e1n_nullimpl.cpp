@@ -166,13 +166,13 @@ FRIF::Evaluations::Exemplar1N::NullSearchImplementation::load(
 	return {};
 }
 
-std::tuple<FRIF::ReturnStatus, std::optional<FRIF::SearchResult>>
+std::tuple<FRIF::ReturnStatus, std::optional<FRIF::SearchSubjectPositionResult>>
 FRIF::Evaluations::Exemplar1N::NullSearchImplementation::search(
     const std::vector<std::byte> &probeTemplate,
     const uint16_t maxCandidates)
     const
 {
-	FRIF::SearchResult result{};
+	FRIF::SearchSubjectPositionResult result{};
 	result.decision = false;
 
 	return {{}, result};
@@ -181,7 +181,7 @@ FRIF::Evaluations::Exemplar1N::NullSearchImplementation::search(
 std::optional<FRIF::CandidateListCorrespondence>
 FRIF::Evaluations::Exemplar1N::NullSearchImplementation::extractCorrespondence(
     const std::vector<std::byte> &probeTemplate,
-    const SearchResult &searchResult)
+    const SearchSubjectPositionResult &searchResult)
     const
 {
 	/* Clarify support within getCompatibility() */
