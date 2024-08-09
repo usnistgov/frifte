@@ -73,17 +73,32 @@ namespace FRIF::Evaluations::Exemplar1N
 		    const uint64_t maxSize)
 		    override;
 
-		std::tuple<ReturnStatus, std::optional<SearchSubjectPositionResult>>
-		search(
+		std::tuple<ReturnStatus,
+		    std::optional<SearchSubjectPositionResult>>
+		searchSubjectPosition(
+		    const std::vector<std::byte> &probeTemplate,
+		    const uint16_t maxCandidates)
+		    const
+		    override;
+
+		std::tuple<ReturnStatus, std::optional<SearchSubjectResult>>
+		searchSubject(
 		    const std::vector<std::byte> &probeTemplate,
 		    const uint16_t maxCandidates)
 		    const
 		    override;
 
 		std::optional<SubjectPositionCandidateListCorrespondence>
-		extractCorrespondence(
+		extractCorrespondenceSubjectPosition(
 		    const std::vector<std::byte> &probeTemplate,
 		    const SearchSubjectPositionResult &searchResult)
+		    const
+		    override;
+
+		std::optional<SubjectCandidateListCorrespondence>
+		extractCorrespondenceSubject(
+		    const std::vector<std::byte> &probeTemplate,
+		    const SearchSubjectResult &searchResult)
 		    const
 		    override;
 

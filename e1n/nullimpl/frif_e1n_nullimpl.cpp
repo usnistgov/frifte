@@ -31,7 +31,8 @@ FRIF::Evaluations::Exemplar1N::NullExtractionImplementation::createTemplate(
 
 std::optional<std::tuple<FRIF::ReturnStatus,
     std::vector<FRIF::TemplateData>>>
-FRIF::Evaluations::Exemplar1N::NullExtractionImplementation::extractTemplateData(
+FRIF::Evaluations::Exemplar1N::NullExtractionImplementation::
+    extractTemplateData(
     const TemplateType templateType,
     const CreateTemplateResult &templateResult)
     const
@@ -167,7 +168,7 @@ FRIF::Evaluations::Exemplar1N::NullSearchImplementation::load(
 }
 
 std::tuple<FRIF::ReturnStatus, std::optional<FRIF::SearchSubjectPositionResult>>
-FRIF::Evaluations::Exemplar1N::NullSearchImplementation::search(
+FRIF::Evaluations::Exemplar1N::NullSearchImplementation::searchSubjectPosition(
     const std::vector<std::byte> &probeTemplate,
     const uint16_t maxCandidates)
     const
@@ -178,10 +179,65 @@ FRIF::Evaluations::Exemplar1N::NullSearchImplementation::search(
 	return {{}, result};
 }
 
+std::tuple<FRIF::ReturnStatus, std::optional<FRIF::SearchSubjectResult>>
+FRIF::Evaluations::Exemplar1N::NullSearchImplementation::searchSubject(
+    const std::vector<std::byte> &probeTemplate,
+    const uint16_t maxCandidates)
+    const
+{
+	/*
+	 * You might implement this in terms of searchSubjectPosition(), but
+	 * suggest you ensure that it works as expected.
+	 */
+
+	const auto spResult = this->searchSubjectPosition(probeTemplate,
+	    maxCandidates);
+
+	if (!std::get<ReturnStatus>(spResult) ||
+	    !std::get<std::optional<FRIF::SearchSubjectPositionResult>>(
+	    spResult).has_value())
+		return {std::get<ReturnStatus>(spResult), std::nullopt};
+
+	FRIF::SearchSubjectResult result{};
+	for (const auto &[candidate, score] : std::get<std::optional<
+	    FRIF::SearchSubjectPositionResult>>(spResult)->candidateList) {
+		/* XXX: If searchSubjectPosition would return duplicate finger
+		 *      positions for the same subject, you want some logic here
+		 *      to:
+		 *        - adjust the similarity score to encompass all the
+		 *          instances of similarity (this example loop would
+		 *          assign the least similar finger position's
+		 *          similarity score to the candidate)
+		 *        - add additional candidates (up to maxCandidates)
+		 */
+		result.candidateList[candidate.identifier] = score;
+	}
+
+	/* XXX: It's possible you can reuse these as-is, but confirm. */
+	result.correspondence = std::get<std::optional<
+	    FRIF::SearchSubjectPositionResult>>(spResult)->correspondence;
+	result.decision = std::get<std::optional<
+	    FRIF::SearchSubjectPositionResult>>(spResult)->decision;
+
+	return {{}, result};
+}
+
 std::optional<FRIF::SubjectPositionCandidateListCorrespondence>
-FRIF::Evaluations::Exemplar1N::NullSearchImplementation::extractCorrespondence(
+FRIF::Evaluations::Exemplar1N::NullSearchImplementation::
+    extractCorrespondenceSubjectPosition(
     const std::vector<std::byte> &probeTemplate,
     const SearchSubjectPositionResult &searchResult)
+    const
+{
+	/* Clarify support within getCompatibility() */
+	return {};
+}
+
+std::optional<FRIF::SubjectCandidateListCorrespondence>
+FRIF::Evaluations::Exemplar1N::NullSearchImplementation::
+    extractCorrespondenceSubject(
+    const std::vector<std::byte> &probeTemplate,
+    const SearchSubjectResult &searchResult)
     const
 {
 	/* Clarify support within getCompatibility() */
