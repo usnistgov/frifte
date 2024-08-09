@@ -137,7 +137,7 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * Where this template will be used in the future.
 		 * @param identifier
 		 * Unique identifier used to identify the returned template
-		 * in future *search* operations (e.g., Candidate#identifier).
+		 * in future *search* operations (e.g., SubjectPositionCandidate#identifier).
 		 * @param samples
 		 * One or more biometric samples to be considered and encoded
 		 * into a template.
@@ -501,14 +501,14 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * @param probeTemplate
 		 * Object returned from createTemplate() with `templateType` of
 		 * TemplateType::Probe.
-		 * @param maxCandidates
-		 * The maximum number of Candidate to return.
+		 * @param maxSubjectPositionCandidates
+		 * The maximum number of SubjectPositionCandidate to return.
 		 *
 		 * @return
 		 * A tuple containing a ReturnStatus containing information on
 		 * the result of completing the search task, and a SearchSubjectPositionResult
 		 * object containing a list of one to less than or equal to
-		 * `maxCandidates` Candidate. If no Candidate were found, the
+		 * `maxSubjectPositionCandidates` SubjectPositionCandidate. If no SubjectPositionCandidate were found, the
 		 * implementation shall return std::nullopt instead of
 		 * a SearchSubjectPositionResult, but would still set Result::Success. If an
 		 * error prevented the search from completing (e.g., invalid
@@ -527,16 +527,16 @@ namespace FRIF::Evaluations::Exemplar1N
 		 *
 		 * @note
 		 * SearchSubjectPositionResult.candidateList will be sorted by descending
-		 * Candidate.similarity upon return from this method using
+		 * SubjectPositionCandidate.similarity upon return from this method using
 		 * `std::stable_sort()`.
 		 *
 		 * @note
 		 * If provided a probe template that contains images from
-		 * multiple regions of the same candidate, Candidate.frgp will
+		 * multiple regions of the same candidate, SubjectPositionCandidate.frgp will
 		 * be ignored in analysis.
 		 *
 		 * @note
-		 * Candidate.frgp shall be the most localized region where the
+		 * SubjectPositionCandidate.frgp shall be the most localized region where the
 		 * correspondence was noted to be considered as correct as
 		 * possible. See the test plan for more information.
 		 *
@@ -602,7 +602,7 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * This method shall not spawn threads.
 		 */
 		virtual
-		std::optional<CandidateListCorrespondence>
+		std::optional<SubjectPositionCandidateListCorrespondence>
 		extractCorrespondence(
 		    const std::vector<std::byte> &probeTemplate,
 		    const SearchSubjectPositionResult &searchResult)

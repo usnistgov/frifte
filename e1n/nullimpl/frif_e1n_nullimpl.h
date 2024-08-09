@@ -80,7 +80,7 @@ namespace FRIF::Evaluations::Exemplar1N
 		    const
 		    override;
 
-		std::optional<CandidateListCorrespondence>
+		std::optional<SubjectPositionCandidateListCorrespondence>
 		extractCorrespondence(
 		    const std::vector<std::byte> &probeTemplate,
 		    const SearchSubjectPositionResult &searchResult)

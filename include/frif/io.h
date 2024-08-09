@@ -35,7 +35,7 @@ namespace FRIF
 	struct TemplateData
 	{
 		/**
-		 * Candidate identifier provided in
+		 * SubjectPositionCandidate identifier provided in
 		 * ExtractionInterface::createTemplate().
 		 */
 		std::string candidateIdentifier{};
@@ -109,7 +109,7 @@ namespace FRIF
 	};
 
 	/** Unique entry */
-	struct Candidate
+	struct SubjectPositionCandidate
 	{
 		/** Identifier of the sample in the reference database. */
 		std::string identifier{};
@@ -118,27 +118,27 @@ namespace FRIF
 
 		/**
 		 * @brief
-		 * Candidate constructor.
+		 * SubjectPositionCandidate constructor.
 		 *
 		 * @param identifier
 		 * Identifier of the sample in the reference database.
 		 * @param fgp
 		 * Most localized position in the identifier.
 		 */
-		Candidate(
+		SubjectPositionCandidate(
 		    const std::string &identifier = {},
 		    const EFS::FrictionRidgeGeneralizedPosition fgp = {});
 
-		auto operator<=>(const Candidate&) const;
-		bool operator==(const Candidate&) const;
+		auto operator<=>(const SubjectPositionCandidate&) const;
+		bool operator==(const SubjectPositionCandidate&) const;
 	};
 
-	/** Hash function for Candidate. */
-	struct CandidateListKeyHash
+	/** Hash function for SubjectPositionCandidate. */
+	struct SubjectPositionCandidateListKeyHash
 	{
 		std::size_t
 		operator()(
-		    const FRIF::Candidate &c)
+		    const FRIF::SubjectPositionCandidate &c)
 		    const
 		    noexcept;
 	};
@@ -156,21 +156,21 @@ namespace FRIF
 	 * This structure is used to disallow duplicate finger positions from
 	 * the same subject identifier.
 	 */
-	using CandidateList = std::unordered_map<Candidate, double,
-	    CandidateListKeyHash>;
+	using SubjectPositionCandidateList = std::unordered_map<SubjectPositionCandidate, double,
+	    SubjectPositionCandidateListKeyHash>;
 
 	/**
 	 * @brief
-	 * Representation to output Correspondence for each Candidate from
-	 * a CandidateList.
+	 * Representation to output Correspondence for each SubjectPositionCandidate from
+	 * a SubjectPositionCandidateList.
 	 * @details
 	 * Key is a unique subject identifier and finger position from that
 	 * subject, representing a reference identity. Value is a set of
 	 * Correspondence that align features from the probe to features from
 	 * the reference (the key).
 	 */
-	using CandidateListCorrespondence = std::unordered_map<Candidate,
-	    std::vector<Correspondence>, CandidateListKeyHash>;
+	using SubjectPositionCandidateListCorrespondence = std::unordered_map<SubjectPositionCandidate,
+	    std::vector<Correspondence>, SubjectPositionCandidateListKeyHash>;
 
 	/** The results of comparing two templates. */
 	struct ComparisonResult
@@ -218,9 +218,9 @@ namespace FRIF
 
 		/**
 		 * @brief
-		 * List of Candidate most similar to the probe.
+		 * List of SubjectPositionCandidate most similar to the probe.
 		 */
-		CandidateList candidateList{};
+		SubjectPositionCandidateList candidateList{};
 
 		/**
 		 * @brief

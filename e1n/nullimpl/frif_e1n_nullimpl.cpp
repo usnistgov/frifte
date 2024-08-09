@@ -178,7 +178,7 @@ FRIF::Evaluations::Exemplar1N::NullSearchImplementation::search(
 	return {{}, result};
 }
 
-std::optional<FRIF::CandidateListCorrespondence>
+std::optional<FRIF::SubjectPositionCandidateListCorrespondence>
 FRIF::Evaluations::Exemplar1N::NullSearchImplementation::extractCorrespondence(
     const std::vector<std::byte> &probeTemplate,
     const SearchSubjectPositionResult &searchResult)
