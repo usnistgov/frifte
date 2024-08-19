@@ -13,7 +13,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Friction Ridge Image and Features: FRIF::TemplateArchive Struct Reference</title>
+<title>Friction Ridge Image and Features: FRIF::SubjectPositionCandidateListKeyHash Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -98,77 +98,63 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespace_f_r_i_f.html">FRIF</a></li><li class="navelem"><a class="el" href="struct_f_r_i_f_1_1_template_archive.html">TemplateArchive</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespace_f_r_i_f.html">FRIF</a></li><li class="navelem"><a class="el" href="struct_f_r_i_f_1_1_subject_position_candidate_list_key_hash.html">SubjectPositionCandidateListKeyHash</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct_f_r_i_f_1_1_template_archive-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">FRIF::TemplateArchive Struct Reference</div></div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="struct_f_r_i_f_1_1_subject_position_candidate_list_key_hash-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">FRIF::SubjectPositionCandidateListKeyHash Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Collection of templates on disk.  
+<p>Hash function for <a class="el" href="struct_f_r_i_f_1_1_subject_position_candidate.html" title="Candidate list entry identifying a specific region of a subject.">SubjectPositionCandidate</a>.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="io_8h_source.html">io.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:aa15c4d6bda907edd88a39f5ff70f3f39" id="r_aa15c4d6bda907edd88a39f5ff70f3f39"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa15c4d6bda907edd88a39f5ff70f3f39">archive</a> {}</td></tr>
-<tr class="memdesc:aa15c4d6bda907edd88a39f5ff70f3f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">File containing concatenated <a class="el" href="struct_f_r_i_f_1_1_create_template_result.html#a742f733bd99b109bf6740d06f922b568" title="Contents of the template.">CreateTemplateResult::data</a>.  <br /></td></tr>
-<tr class="separator:aa15c4d6bda907edd88a39f5ff70f3f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd21c7beb1bc1f153d3435c3fe0c8b09" id="r_afd21c7beb1bc1f153d3435c3fe0c8b09"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd21c7beb1bc1f153d3435c3fe0c8b09">manifest</a> {}</td></tr>
-<tr class="memdesc:afd21c7beb1bc1f153d3435c3fe0c8b09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manifest for parsing <a class="el" href="#aa15c4d6bda907edd88a39f5ff70f3f39" title="File containing concatenated CreateTemplateResult::data.">archive</a>.  <br /></td></tr>
-<tr class="separator:afd21c7beb1bc1f153d3435c3fe0c8b09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a098de03ea7b6c129b84f457f17ced24f" id="r_a098de03ea7b6c129b84f457f17ced24f"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a098de03ea7b6c129b84f457f17ced24f">operator()</a> (const <a class="el" href="struct_f_r_i_f_1_1_subject_position_candidate.html">FRIF::SubjectPositionCandidate</a> &amp;c) const noexcept</td></tr>
+<tr class="separator:a098de03ea7b6c129b84f457f17ced24f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Collection of templates on disk. </p>
+<div class="textblock"><p>Hash function for <a class="el" href="struct_f_r_i_f_1_1_subject_position_candidate.html" title="Candidate list entry identifying a specific region of a subject.">SubjectPositionCandidate</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00333">333</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa15c4d6bda907edd88a39f5ff70f3f39" name="aa15c4d6bda907edd88a39f5ff70f3f39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa15c4d6bda907edd88a39f5ff70f3f39">&#9670;&#160;</a></span>archive</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::filesystem::path FRIF::TemplateArchive::archive {}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>File containing concatenated <a class="el" href="struct_f_r_i_f_1_1_create_template_result.html#a742f733bd99b109bf6740d06f922b568" title="Contents of the template.">CreateTemplateResult::data</a>. </p>
-
-<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00336">336</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
-
-</div>
-</div>
-<a id="afd21c7beb1bc1f153d3435c3fe0c8b09" name="afd21c7beb1bc1f153d3435c3fe0c8b09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd21c7beb1bc1f153d3435c3fe0c8b09">&#9670;&#160;</a></span>manifest</h2>
+<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00149">149</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a098de03ea7b6c129b84f457f17ced24f" name="a098de03ea7b6c129b84f457f17ced24f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a098de03ea7b6c129b84f457f17ced24f">&#9670;&#160;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::filesystem::path FRIF::TemplateArchive::manifest {}</td>
+          <td class="memname">std::size_t FRIF::SubjectPositionCandidateListKeyHash::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_f_r_i_f_1_1_subject_position_candidate.html">FRIF::SubjectPositionCandidate</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Manifest for parsing <a class="el" href="#aa15c4d6bda907edd88a39f5ff70f3f39" title="File containing concatenated CreateTemplateResult::data.">archive</a>. </p>
-<p>Each line of <a class="el" href="#afd21c7beb1bc1f153d3435c3fe0c8b09" title="Manifest for parsing archive.">manifest</a> is in the form <code>identifier length offset</code>, where <code>identifier</code> matches <code>identifier</code> provided when creating a template, <code>length</code> is the result of calling <code>size()</code> on <a class="el" href="struct_f_r_i_f_1_1_create_template_result.html#a742f733bd99b109bf6740d06f922b568" title="Contents of the template.">CreateTemplateResult::data</a>, and <code>offset</code> is the number of bytes from the beginning of <a class="el" href="#aa15c4d6bda907edd88a39f5ff70f3f39" title="File containing concatenated CreateTemplateResult::data.">archive</a> to the first byte of <a class="el" href="struct_f_r_i_f_1_1_create_template_result.html#a742f733bd99b109bf6740d06f922b568" title="Contents of the template.">CreateTemplateResult::data</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>Identifiers are guaranteed to never contain spaces. That is, each line of the manifest is guaranteed to have exactly two spaces, used to delimit the three fields in each line. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00355">355</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libfrif__io_8cpp_source.html#l00031">31</a> of file <a class="el" href="libfrif__io_8cpp_source.html">libfrif_io.cpp</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li><a class="el" href="io_8h_source.html">io.h</a></li>
+<li><a class="el" href="libfrif__io_8cpp_source.html">libfrif_io.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.11.0-->

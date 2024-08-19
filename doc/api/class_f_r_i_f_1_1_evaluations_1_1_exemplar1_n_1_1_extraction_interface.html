@@ -243,7 +243,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">templateType</td><td>Where this template will be used in the future. </td></tr>
-    <tr><td class="paramname">identifier</td><td>Unique identifier used to identify the returned template in future <em>search</em> operations (e.g., <a class="el" href="struct_f_r_i_f_1_1_candidate.html#a50d026f97177de449d22ad37db965573" title="Identifier of the sample in the reference database.">Candidate::identifier</a>). </td></tr>
+    <tr><td class="paramname">identifier</td><td>Unique identifier used to identify the returned template in future <em>search</em> operations (e.g., SubjectCandidate::identifier and <a class="el" href="struct_f_r_i_f_1_1_subject_position_candidate.html#ad26507bfa0fe09126c0054b91755af44" title="Identifier of the sample in the reference database.">SubjectPositionCandidate::identifier</a>). </td></tr>
     <tr><td class="paramname">samples</td><td>One or more biometric samples to be considered and encoded into a template.</td></tr>
   </table>
   </dd>
@@ -313,9 +313,9 @@ This method shall not spawn threads. </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A optional with no value if not implemented (as noted in <a class="el" href="struct_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface_1_1_compatibility.html#a860088c7c8fa4234fac706a52817f9ba" title="Is useful information returned from extractTemplateData()?">Compatibility::supportsTemplateIntrospection</a>), or a <a class="el" href="struct_f_r_i_f_1_1_return_status.html" title="Information about the result of calling a FRIF API function.">ReturnStatus</a> and one or more <a class="el" href="struct_f_r_i_f_1_1_template_data.html" title="Information possibly stored in a template.">TemplateData</a> describing the contents of <a class="el" href="struct_f_r_i_f_1_1_create_template_result.html#a742f733bd99b109bf6740d06f922b568" title="Contents of the template.">CreateTemplateResult::data</a> from <code>templateResult</code> otherwise. If <a class="el" href="struct_f_r_i_f_1_1_create_template_result.html#a742f733bd99b109bf6740d06f922b568" title="Contents of the template.">CreateTemplateResult::data</a> contains information separated by position (e.g., when provided a multi-position image) or multiple views of the same image (e.g., a compact and verbose template), there may be multiple <a class="el" href="struct_f_r_i_f_1_1_template_data.html" title="Information possibly stored in a template.">TemplateData</a> returned.</dd></dl>
 <dl class="section attention"><dt>Attention</dt><dd>Be sure to note if this method is supported (i.e., if this method returns something other than <code>std::nullopt</code>) by setting <a class="el" href="struct_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface_1_1_compatibility.html#a860088c7c8fa4234fac706a52817f9ba" title="Is useful information returned from extractTemplateData()?">Compatibility::supportsTemplateIntrospection</a> to <code>true</code>.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>You must implement this method to compile, but providing the requested information is optional. If provided, information may help in debugging as well as inform future NIST analysis.</dd>
+<dl class="section note"><dt>Note</dt><dd>You must implement this method to compile, but providing the requested information is optional. If provided, information may help in debugging as well as inform future NIST research.</dd>
 <dd>
-You should not return information that was provided in <a class="el" href="#a142adcb5e8cb38f03a5238c98350bb66" title="Extract features from one or more images and encode them into a template.">createTemplate()</a>. For instance, if Minutia was provided, EFS::minutiae should be left <code>std::nullopt</code>. However, if you discovered <em>different</em> Minutia, they should be returned.</dd>
+NIST will attempt to filter out information provided in <a class="el" href="#a142adcb5e8cb38f03a5238c98350bb66" title="Extract features from one or more images and encode them into a template.">createTemplate()</a>. If possible, do not return information that was provided in <a class="el" href="#a142adcb5e8cb38f03a5238c98350bb66" title="Extract features from one or more images and encode them into a template.">createTemplate()</a>. For instance, if Minutia was provided, EFS::minutiae should be left <code>std::nullopt</code>. However, if you discovered <em>different</em> Minutia, they should be returned.</dd>
 <dd>
 This method shall return in &lt;= 500 milliseconds.</dd>
 <dd>
@@ -404,7 +404,7 @@ This method must return in &lt;= 5 milliseconds * the number of lines in <a clas
 <p>Obtain a managed pointer to an object implementing <a class="el" href="class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface.html" title="Interface for feature extraction implemented by participant.">ExtractionInterface</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">configurationDirectory</td><td>Read-only directory populated with configuration files provided in validation.</td></tr>
+    <tr><td class="paramname">configurationDirectory</td><td>Read-only directory populated with configuration files provided by participant.</td></tr>
   </table>
   </dd>
 </dl>

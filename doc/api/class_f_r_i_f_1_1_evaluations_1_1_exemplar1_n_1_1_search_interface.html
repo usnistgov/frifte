@@ -128,12 +128,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa0c6928843dac83b6ed9e7fe632c2bf2" id="r_aa0c6928843dac83b6ed9e7fe632c2bf2"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_f_r_i_f_1_1_return_status.html">ReturnStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0c6928843dac83b6ed9e7fe632c2bf2">load</a> (const uint64_t maxSize)=0</td></tr>
 <tr class="memdesc:aa0c6928843dac83b6ed9e7fe632c2bf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load reference database into memory.  <br /></td></tr>
 <tr class="separator:aa0c6928843dac83b6ed9e7fe632c2bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13baa55181ad897ce141236c8e5622ac" id="r_a13baa55181ad897ce141236c8e5622ac"><td class="memItemLeft" align="right" valign="top">virtual std::tuple&lt; <a class="el" href="struct_f_r_i_f_1_1_return_status.html">ReturnStatus</a>, std::optional&lt; <a class="el" href="struct_f_r_i_f_1_1_search_result.html">SearchResult</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13baa55181ad897ce141236c8e5622ac">search</a> (const std::vector&lt; std::byte &gt; &amp;probeTemplate, const uint16_t maxCandidates) const =0</td></tr>
-<tr class="memdesc:a13baa55181ad897ce141236c8e5622ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search the reference database for the samples represented in <code>probeTemplate</code>.  <br /></td></tr>
-<tr class="separator:a13baa55181ad897ce141236c8e5622ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaafde9ad1c1c462b740d6e88afee0019" id="r_aaafde9ad1c1c462b740d6e88afee0019"><td class="memItemLeft" align="right" valign="top">virtual std::optional&lt; <a class="el" href="namespace_f_r_i_f.html#a7910520b8dc339bc1e0b40c59a86aea0">CandidateListCorrespondence</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaafde9ad1c1c462b740d6e88afee0019">extractCorrespondence</a> (const std::vector&lt; std::byte &gt; &amp;probeTemplate, const <a class="el" href="struct_f_r_i_f_1_1_search_result.html">SearchResult</a> &amp;searchResult) const =0</td></tr>
-<tr class="memdesc:aaafde9ad1c1c462b740d6e88afee0019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract pairs of corresponding Minutia between <a class="el" href="namespace_f_r_i_f.html#acd004e47e3150ea8a4ec2bfac476f170a76d16796b5fada9968ee2530ea43ddc3" title="Item being compared to a reference or searched against a reference database.">TemplateType::Probe</a> and <a class="el" href="namespace_f_r_i_f.html#acd004e47e3150ea8a4ec2bfac476f170a63d5049791d9d79d86e9a108b0a999ca" title="Use within a database for search, or the initial capture during a comparison.">TemplateType::Reference</a> templates.  <br /></td></tr>
-<tr class="separator:aaafde9ad1c1c462b740d6e88afee0019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0180f8eef5c52e67a6a26e670fe98ab2" id="r_a0180f8eef5c52e67a6a26e670fe98ab2"><td class="memItemLeft" align="right" valign="top">virtual std::tuple&lt; <a class="el" href="struct_f_r_i_f_1_1_return_status.html">ReturnStatus</a>, std::optional&lt; <a class="el" href="struct_f_r_i_f_1_1_search_subject_position_result.html">SearchSubjectPositionResult</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0180f8eef5c52e67a6a26e670fe98ab2">searchSubjectPosition</a> (const std::vector&lt; std::byte &gt; &amp;probeTemplate, const uint16_t maxCandidates) const =0</td></tr>
+<tr class="memdesc:a0180f8eef5c52e67a6a26e670fe98ab2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search the reference database for the samples represented in <code>probeTemplate</code> including the most localized friction ridge region.  <br /></td></tr>
+<tr class="separator:a0180f8eef5c52e67a6a26e670fe98ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a544b24173c0b1aaad5c0d7e2e341d4a1" id="r_a544b24173c0b1aaad5c0d7e2e341d4a1"><td class="memItemLeft" align="right" valign="top">virtual std::tuple&lt; <a class="el" href="struct_f_r_i_f_1_1_return_status.html">ReturnStatus</a>, std::optional&lt; <a class="el" href="struct_f_r_i_f_1_1_search_subject_result.html">SearchSubjectResult</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a544b24173c0b1aaad5c0d7e2e341d4a1">searchSubject</a> (const std::vector&lt; std::byte &gt; &amp;probeTemplate, const uint16_t maxCandidates) const =0</td></tr>
+<tr class="memdesc:a544b24173c0b1aaad5c0d7e2e341d4a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search the reference database for the samples represented in <code>probeTemplate</code> including the most localized friction ridge region.  <br /></td></tr>
+<tr class="separator:a544b24173c0b1aaad5c0d7e2e341d4a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4722fac9c8c317fb99250b6d289558ca" id="r_a4722fac9c8c317fb99250b6d289558ca"><td class="memItemLeft" align="right" valign="top">virtual std::optional&lt; <a class="el" href="namespace_f_r_i_f.html#a0a603d413bb3429081ea6eb773cfded5">SubjectPositionCandidateListCorrespondence</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4722fac9c8c317fb99250b6d289558ca">extractCorrespondenceSubjectPosition</a> (const std::vector&lt; std::byte &gt; &amp;probeTemplate, const <a class="el" href="struct_f_r_i_f_1_1_search_subject_position_result.html">SearchSubjectPositionResult</a> &amp;searchResult) const =0</td></tr>
+<tr class="memdesc:a4722fac9c8c317fb99250b6d289558ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract pairs of corresponding Minutia between <a class="el" href="namespace_f_r_i_f.html#acd004e47e3150ea8a4ec2bfac476f170a76d16796b5fada9968ee2530ea43ddc3" title="Item being compared to a reference or searched against a reference database.">TemplateType::Probe</a> and <a class="el" href="namespace_f_r_i_f.html#acd004e47e3150ea8a4ec2bfac476f170a63d5049791d9d79d86e9a108b0a999ca" title="Use within a database for search, or the initial capture during a comparison.">TemplateType::Reference</a> templates.  <br /></td></tr>
+<tr class="separator:a4722fac9c8c317fb99250b6d289558ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c2c6cac3fb71c271b7652a28d54b31c" id="r_a4c2c6cac3fb71c271b7652a28d54b31c"><td class="memItemLeft" align="right" valign="top">virtual std::optional&lt; <a class="el" href="namespace_f_r_i_f.html#a8f47f150c6123b006cc8f3526d4a74bc">SubjectCandidateListCorrespondence</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c2c6cac3fb71c271b7652a28d54b31c">extractCorrespondenceSubject</a> (const std::vector&lt; std::byte &gt; &amp;probeTemplate, const <a class="el" href="struct_f_r_i_f_1_1_search_subject_result.html">SearchSubjectResult</a> &amp;searchResult) const =0</td></tr>
+<tr class="memdesc:a4c2c6cac3fb71c271b7652a28d54b31c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract pairs of corresponding Minutia between <a class="el" href="namespace_f_r_i_f.html#acd004e47e3150ea8a4ec2bfac476f170a76d16796b5fada9968ee2530ea43ddc3" title="Item being compared to a reference or searched against a reference database.">TemplateType::Probe</a> and <a class="el" href="namespace_f_r_i_f.html#acd004e47e3150ea8a4ec2bfac476f170a63d5049791d9d79d86e9a108b0a999ca" title="Use within a database for search, or the initial capture during a comparison.">TemplateType::Reference</a> templates.  <br /></td></tr>
+<tr class="separator:a4c2c6cac3fb71c271b7652a28d54b31c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84ec8427255957eb8ab1b8968ad294b5" id="r_a84ec8427255957eb8ab1b8968ad294b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84ec8427255957eb8ab1b8968ad294b5">SearchInterface</a> ()</td></tr>
 <tr class="separator:a84ec8427255957eb8ab1b8968ad294b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f1e5dd658d16c6df002a958ccf89be1" id="r_a0f1e5dd658d16c6df002a958ccf89be1"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f1e5dd658d16c6df002a958ccf89be1">~SearchInterface</a> ()</td></tr>
@@ -154,7 +160,7 @@ Static Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface for database search implemented by participant. </p>
 
-<p class="definition">Definition at line <a class="el" href="e1n_8h_source.html#l00386">386</a> of file <a class="el" href="e1n_8h_source.html">e1n.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="e1n_8h_source.html#l00390">390</a> of file <a class="el" href="e1n_8h_source.html">e1n.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a84ec8427255957eb8ab1b8968ad294b5" name="a84ec8427255957eb8ab1b8968ad294b5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a84ec8427255957eb8ab1b8968ad294b5">&#9670;&#160;</a></span>SearchInterface()</h2>
@@ -241,9 +247,9 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section attention"><dt>Attention</dt><dd>You should confirm that your database is fully loaded and all files expected are present before returning.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>This method will be called after construction and should <b>not</b> be called from an implementation's constructor. This allows calling getIdentification() without wasting resources.</dd>
 <dd>
-<b>DO NOT MODIFY</b> the contents of your database in memory <em>after</em> this method returns! After calling this method, the test application may <code>fork()</code>, allowing calls to <a class="el" href="#a13baa55181ad897ce141236c8e5622ac" title="Search the reference database for the samples represented in probeTemplate.">search()</a> to share the contents of memory using copy-on-write semantics.</dd>
+<b>DO NOT MODIFY</b> the contents of your database in memory <em>after</em> this method returns! After calling this method, the test application may <code>fork()</code>, allowing calls to <a class="el" href="#a0180f8eef5c52e67a6a26e670fe98ab2" title="Search the reference database for the samples represented in probeTemplate including the most localiz...">searchSubjectPosition()</a> and <a class="el" href="#a544b24173c0b1aaad5c0d7e2e341d4a1" title="Search the reference database for the samples represented in probeTemplate including the most localiz...">searchSubject()</a> to share the contents of memory using copy-on-write semantics.</dd>
 <dd>
-<b>DO NOT MODIFY</b> the contents of the database on disk at any time! The <code>databaseDirectory</code> provided to <a class="el" href="#a80b0ecb7faa79d56fc943c509489d118" title="Obtain a managed pointer to an object implementing SearchInterface.">getImplementation()</a> may be stored on a read-only file system and may be destroyed and restored before calls to <a class="el" href="#a13baa55181ad897ce141236c8e5622ac" title="Search the reference database for the samples represented in probeTemplate.">search()</a>.</dd></dl>
+<b>DO NOT MODIFY</b> the contents of the database on disk at any time! The <code>databaseDirectory</code> provided to <a class="el" href="#a80b0ecb7faa79d56fc943c509489d118" title="Obtain a managed pointer to an object implementing SearchInterface.">getImplementation()</a> may be stored on a read-only file system and may be destroyed and restored before calls to <a class="el" href="#a0180f8eef5c52e67a6a26e670fe98ab2" title="Search the reference database for the samples represented in probeTemplate including the most localiz...">searchSubjectPosition()</a> and <a class="el" href="#a544b24173c0b1aaad5c0d7e2e341d4a1" title="Search the reference database for the samples represented in probeTemplate including the most localiz...">searchSubject()</a>.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd><code>maxSize</code> will not be the full amount of memory available on the system, but it is the maximum amount of memory the reference database <em>should</em> consume. The test application may <code>fork()</code> after calls to this method, during which, this implementation and the test application are free to perform dynamic memory allocations. While there is no penalty for exceeding this memory limit with the reference database, it is a near certainty that implementations will run out of memory if they do.</dd>
 <dd>
 This method is guaranteed to be called at least once before calls to any <a class="el" href="class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_search_interface.html" title="Interface for database search implemented by participant.">SearchInterface</a> method, except for calls to getIdentification().</dd>
@@ -256,8 +262,8 @@ This method shall return in &lt;= 1 millisecond * the number of identifiers in t
 
 </div>
 </div>
-<a id="a13baa55181ad897ce141236c8e5622ac" name="a13baa55181ad897ce141236c8e5622ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13baa55181ad897ce141236c8e5622ac">&#9670;&#160;</a></span>search()</h2>
+<a id="a0180f8eef5c52e67a6a26e670fe98ab2" name="a0180f8eef5c52e67a6a26e670fe98ab2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0180f8eef5c52e67a6a26e670fe98ab2">&#9670;&#160;</a></span>searchSubjectPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -266,7 +272,7 @@ This method shall return in &lt;= 1 millisecond * the number of identifiers in t
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::tuple&lt; <a class="el" href="struct_f_r_i_f_1_1_return_status.html">ReturnStatus</a>, std::optional&lt; <a class="el" href="struct_f_r_i_f_1_1_search_result.html">SearchResult</a> &gt; &gt; FRIF::Evaluations::Exemplar1N::SearchInterface::search </td>
+          <td class="memname">virtual std::tuple&lt; <a class="el" href="struct_f_r_i_f_1_1_return_status.html">ReturnStatus</a>, std::optional&lt; <a class="el" href="struct_f_r_i_f_1_1_search_subject_position_result.html">SearchSubjectPositionResult</a> &gt; &gt; FRIF::Evaluations::Exemplar1N::SearchInterface::searchSubjectPosition </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; std::byte &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>probeTemplate</em></span>, </td>
         </tr>
@@ -283,30 +289,31 @@ This method shall return in &lt;= 1 millisecond * the number of identifiers in t
 </table>
 </div><div class="memdoc">
 
-<p>Search the reference database for the samples represented in <code>probeTemplate</code>. </p>
+<p>Search the reference database for the samples represented in <code>probeTemplate</code> including the most localized friction ridge region. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">probeTemplate</td><td>Object returned from createTemplate() with <code>templateType</code> of <a class="el" href="namespace_f_r_i_f.html#acd004e47e3150ea8a4ec2bfac476f170a76d16796b5fada9968ee2530ea43ddc3" title="Item being compared to a reference or searched against a reference database.">TemplateType::Probe</a>. </td></tr>
-    <tr><td class="paramname">maxCandidates</td><td>The maximum number of <a class="el" href="struct_f_r_i_f_1_1_candidate.html" title="Unique entry.">Candidate</a> to return.</td></tr>
+    <tr><td class="paramname">maxCandidates</td><td>The maximum number of <a class="el" href="struct_f_r_i_f_1_1_subject_position_candidate.html" title="Candidate list entry identifying a specific region of a subject.">SubjectPositionCandidate</a> to return.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A tuple containing a <a class="el" href="struct_f_r_i_f_1_1_return_status.html" title="Information about the result of calling a FRIF API function.">ReturnStatus</a> containing information on the result of completing the search task, and a <a class="el" href="struct_f_r_i_f_1_1_search_result.html" title="The results of a searching a database.">SearchResult</a> object containing a list of one to less than or equal to <code>maxCandidates</code> <a class="el" href="struct_f_r_i_f_1_1_candidate.html" title="Unique entry.">Candidate</a>. If no <a class="el" href="struct_f_r_i_f_1_1_candidate.html" title="Unique entry.">Candidate</a> were found, the implementation shall return std::nullopt instead of a <a class="el" href="struct_f_r_i_f_1_1_search_result.html" title="The results of a searching a database.">SearchResult</a>, but would still set Result::Success. If an error prevented the search from completing (e.g., invalid template, database error), the <a class="el" href="struct_f_r_i_f_1_1_return_status.html" title="Information about the result of calling a FRIF API function.">ReturnStatus</a> should contain Result::Failure.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A tuple containing a <a class="el" href="struct_f_r_i_f_1_1_return_status.html" title="Information about the result of calling a FRIF API function.">ReturnStatus</a> containing information on the result of completing the search task, and a <a class="el" href="struct_f_r_i_f_1_1_search_subject_position_result.html" title="The results of a searching a database for subject finger positions.">SearchSubjectPositionResult</a> object containing a list of one to less than or equal to <code>maxCandidates</code> <a class="el" href="struct_f_r_i_f_1_1_subject_position_candidate.html" title="Candidate list entry identifying a specific region of a subject.">SubjectPositionCandidate</a>. If no <a class="el" href="struct_f_r_i_f_1_1_subject_position_candidate.html" title="Candidate list entry identifying a specific region of a subject.">SubjectPositionCandidate</a> were found, the implementation shall return std::nullopt instead of a <a class="el" href="struct_f_r_i_f_1_1_search_subject_position_result.html" title="The results of a searching a database for subject finger positions.">SearchSubjectPositionResult</a>, but would still set Result::Success. If an error prevented the search from completing (e.g., invalid template, database error), the <a class="el" href="struct_f_r_i_f_1_1_return_status.html" title="Information about the result of calling a FRIF API function.">ReturnStatus</a> should contain Result::Failure.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd><b>DO NOT MODIFY</b> the database loaded with <a class="el" href="#aa0c6928843dac83b6ed9e7fe632c2bf2" title="Load reference database into memory.">load()</a> either in memory or on disk. This method will be called after calling <a class="el" href="#aa0c6928843dac83b6ed9e7fe632c2bf2" title="Load reference database into memory.">load()</a> and most likely from a <code>fork()</code>ed process, allowing the read-only database in memory to be shared using <code>fork()</code>'s copy-on-write semantics while not requiring this method to be threadsafe. Modifying the database will at best cause an out of memory error and at worst cause undefined behavior for the many running search processes.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="struct_f_r_i_f_1_1_search_result.html#a458b82b08645406b4e0d842ce3f92435" title="List of Candidate most similar to the probe.">SearchResult.candidateList</a> will be sorted by descending Candidate.similarity upon return from this method using <code>std::stable_sort()</code>.</dd>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="struct_f_r_i_f_1_1_search_subject_position_result.html#a8e92a99ba884f8b30073f57f344852ee" title="List of SubjectPositionCandidate most similar to the probe.">SearchSubjectPositionResult.candidateList</a> will be sorted by descending SubjectPositionCandidate.similarity upon return from this method using <code>std::stable_sort()</code>.</dd>
 <dd>
-If provided a probe template that contains images from multiple regions of the same candidate, Candidate.frgp will be ignored in analysis.</dd>
+If provided a probe template that contains images from multiple regions of the same candidate, SubjectPositionCandidate.frgp will be ignored in analysis.</dd>
 <dd>
-Candidate.frgp shall be the most localized region where the correspondence was noted to be considered as correct as possible. See the test plan for more information.</dd>
+SubjectPositionCandidate.frgp shall be the most localized region where the correspondence was noted to be considered as correct as possible. See the test plan for more information.</dd>
 <dd>
 This method must return in &lt;= 40 * <code>number of database identifiers</code> microseconds, on average, as measured on a fixed subset of data.</dd>
 <dd>
-This method shall not spawn threads. </dd></dl>
+This method shall not spawn threads.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a544b24173c0b1aaad5c0d7e2e341d4a1" title="Search the reference database for the samples represented in probeTemplate including the most localiz...">searchSubject</a> </dd></dl>
 
 </div>
 </div>
-<a id="aaafde9ad1c1c462b740d6e88afee0019" name="aaafde9ad1c1c462b740d6e88afee0019"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaafde9ad1c1c462b740d6e88afee0019">&#9670;&#160;</a></span>extractCorrespondence()</h2>
+<a id="a544b24173c0b1aaad5c0d7e2e341d4a1" name="a544b24173c0b1aaad5c0d7e2e341d4a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a544b24173c0b1aaad5c0d7e2e341d4a1">&#9670;&#160;</a></span>searchSubject()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -315,14 +322,60 @@ This method shall not spawn threads. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::optional&lt; <a class="el" href="namespace_f_r_i_f.html#a7910520b8dc339bc1e0b40c59a86aea0">CandidateListCorrespondence</a> &gt; FRIF::Evaluations::Exemplar1N::SearchInterface::extractCorrespondence </td>
+          <td class="memname">virtual std::tuple&lt; <a class="el" href="struct_f_r_i_f_1_1_return_status.html">ReturnStatus</a>, std::optional&lt; <a class="el" href="struct_f_r_i_f_1_1_search_subject_result.html">SearchSubjectResult</a> &gt; &gt; FRIF::Evaluations::Exemplar1N::SearchInterface::searchSubject </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; std::byte &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>probeTemplate</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="struct_f_r_i_f_1_1_search_result.html">SearchResult</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>searchResult</em></span>&#160;) const</td>
+          <td class="paramtype">const uint16_t</td>          <td class="paramname"><span class="paramname"><em>maxCandidates</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Search the reference database for the samples represented in <code>probeTemplate</code> including the most localized friction ridge region. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">probeTemplate</td><td>Object returned from createTemplate() with <code>templateType</code> of <a class="el" href="namespace_f_r_i_f.html#acd004e47e3150ea8a4ec2bfac476f170a76d16796b5fada9968ee2530ea43ddc3" title="Item being compared to a reference or searched against a reference database.">TemplateType::Probe</a>.</td></tr>
+    <tr><td class="paramname">maxCandidates</td><td>The maximum number of SubjectCandidate to return.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A tuple containing a <a class="el" href="struct_f_r_i_f_1_1_return_status.html" title="Information about the result of calling a FRIF API function.">ReturnStatus</a> containing information on the result of completing the search task, and a <a class="el" href="struct_f_r_i_f_1_1_search_subject_result.html" title="The results of a searching a database for a subject, without respect to finger positions.">SearchSubjectResult</a> object containing a list of one to less than or equal to <code>maxCandidates</code> <a class="el" href="struct_f_r_i_f_1_1_subject_position_candidate.html" title="Candidate list entry identifying a specific region of a subject.">SubjectPositionCandidate</a>. If no SubjectCandidate were found, the implementation shall return std::nullopt instead of a <a class="el" href="struct_f_r_i_f_1_1_search_subject_result.html" title="The results of a searching a database for a subject, without respect to finger positions.">SearchSubjectResult</a>, but would still set Result::Success. If an error prevented the search from completing (e.g., invalid template, database error), the <a class="el" href="struct_f_r_i_f_1_1_return_status.html" title="Information about the result of calling a FRIF API function.">ReturnStatus</a> should contain Result::Failure.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd><b>DO NOT MODIFY</b> the database loaded with <a class="el" href="#aa0c6928843dac83b6ed9e7fe632c2bf2" title="Load reference database into memory.">load()</a> either in memory or on disk. This method will be called after calling <a class="el" href="#aa0c6928843dac83b6ed9e7fe632c2bf2" title="Load reference database into memory.">load()</a> and most likely from a <code>fork()</code>ed process, allowing the read-only database in memory to be shared using <code>fork()</code>'s copy-on-write semantics while not requiring this method to be threadsafe. Modifying the database will at best cause an out of memory error and at worst cause undefined behavior for the many running search processes.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="struct_f_r_i_f_1_1_search_subject_result.html#ae926c25c7aa5fbf3d8c778c73e2afc60" title="List of SubjectCandidate most similar to the probe.">SearchSubjectResult.candidateList</a> will be sorted by descending SubjectCandidate.similarity upon return from this method using <code>std::stable_sort()</code>.</dd>
+<dd>
+This method must return in &lt;= 40 * <code>number of database identifiers</code> microseconds, on average, as measured on a fixed subset of data.</dd>
+<dd>
+This method shall not spawn threads.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd>SearchSubjectPosition </dd></dl>
+
+</div>
+</div>
+<a id="a4722fac9c8c317fb99250b6d289558ca" name="a4722fac9c8c317fb99250b6d289558ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4722fac9c8c317fb99250b6d289558ca">&#9670;&#160;</a></span>extractCorrespondenceSubjectPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::optional&lt; <a class="el" href="namespace_f_r_i_f.html#a0a603d413bb3429081ea6eb773cfded5">SubjectPositionCandidateListCorrespondence</a> &gt; FRIF::Evaluations::Exemplar1N::SearchInterface::extractCorrespondenceSubjectPosition </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::byte &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>probeTemplate</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_f_r_i_f_1_1_search_subject_position_result.html">SearchSubjectPositionResult</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>searchResult</em></span>&#160;) const</td>
         </tr>
       </table>
   </td>
@@ -344,9 +397,60 @@ This method shall not spawn threads. </dd></dl>
 <dl class="section attention"><dt>Attention</dt><dd>Be sure to note if this method is supported (i.e., if this method returns something other than <code>std::nullopt</code>) by setting <a class="el" href="struct_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_search_interface_1_1_compatibility.html#aa49089f4ffbd07812f173f9df5f70453" title="Is useful information returned from extractCorrespondence()?">Compatibility::supportsCorrespondence</a> to <code>true</code>.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Feature::Minutia must align with minutiae returned from <a class="el" href="class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface.html#a4299e2f91f5f090c0610b3a5dd472ad6" title="Extract information contained within a template.">ExtractionInterface::extractTemplateData()</a> for the given identifier + position pair.</dd>
 <dd>
-You must implement this method to compile, but providing the requested information is optional. If provided, information may help in debugging, as well as informing future NIST analysis.</dd>
+You must implement this method to compile, but providing the requested information is optional. If provided, information may help in debugging, as well as informing future NIST research.</dd>
 <dd>
-<code>searchResult</code> is <b>not guaranteed</b> to be the identical object returned from <a class="el" href="#a13baa55181ad897ce141236c8e5622ac" title="Search the reference database for the samples represented in probeTemplate.">search()</a>. Specifically, ordering of <a class="el" href="struct_f_r_i_f_1_1_search_result.html#a458b82b08645406b4e0d842ce3f92435" title="List of Candidate most similar to the probe.">SearchResult.candidateList</a> may have changed.</dd>
+<code>searchResult</code> is <b>not guaranteed</b> to be the identical object returned from <a class="el" href="#a0180f8eef5c52e67a6a26e670fe98ab2" title="Search the reference database for the samples represented in probeTemplate including the most localiz...">searchSubjectPosition()</a>. Specifically, ordering of <a class="el" href="struct_f_r_i_f_1_1_search_subject_position_result.html#a8e92a99ba884f8b30073f57f344852ee" title="List of SubjectPositionCandidate most similar to the probe.">SearchSubjectPositionResult.candidateList</a> may have changed.</dd>
+<dd>
+The reference database will be stored on a read-only file system when this method is called. Do not attempt to modify the reference database here.</dd>
+<dd>
+This method shall return in &lt;= 500 milliseconds.</dd>
+<dd>
+This method shall not spawn threads. </dd></dl>
+
+</div>
+</div>
+<a id="a4c2c6cac3fb71c271b7652a28d54b31c" name="a4c2c6cac3fb71c271b7652a28d54b31c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c2c6cac3fb71c271b7652a28d54b31c">&#9670;&#160;</a></span>extractCorrespondenceSubject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::optional&lt; <a class="el" href="namespace_f_r_i_f.html#a8f47f150c6123b006cc8f3526d4a74bc">SubjectCandidateListCorrespondence</a> &gt; FRIF::Evaluations::Exemplar1N::SearchInterface::extractCorrespondenceSubject </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::byte &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>probeTemplate</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_f_r_i_f_1_1_search_subject_result.html">SearchSubjectResult</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>searchResult</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Extract pairs of corresponding Minutia between <a class="el" href="namespace_f_r_i_f.html#acd004e47e3150ea8a4ec2bfac476f170a76d16796b5fada9968ee2530ea43ddc3" title="Item being compared to a reference or searched against a reference database.">TemplateType::Probe</a> and <a class="el" href="namespace_f_r_i_f.html#acd004e47e3150ea8a4ec2bfac476f170a63d5049791d9d79d86e9a108b0a999ca" title="Use within a database for search, or the initial capture during a comparison.">TemplateType::Reference</a> templates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">probeTemplate</td><td>Probe template sent to searchReferences(). </td></tr>
+    <tr><td class="paramname">searchResult</td><td>Object returned from searchReferences().</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An optional with no value if not implemented, or a collection of information containing corresponding features otherwise.</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>Be sure to note if this method is supported (i.e., if this method returns something other than <code>std::nullopt</code>) by setting <a class="el" href="struct_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_search_interface_1_1_compatibility.html#aa49089f4ffbd07812f173f9df5f70453" title="Is useful information returned from extractCorrespondence()?">Compatibility::supportsCorrespondence</a> to <code>true</code>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Feature::Minutia must align with minutiae returned from <a class="el" href="class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface.html#a4299e2f91f5f090c0610b3a5dd472ad6" title="Extract information contained within a template.">ExtractionInterface::extractTemplateData()</a> for the given identifier + position pair.</dd>
+<dd>
+You must implement this method to compile, but providing the requested information is optional. If provided, information may help in debugging, as well as informing future NIST research.</dd>
+<dd>
+<code>searchResult</code> is <b>not guaranteed</b> to be the identical object returned from <a class="el" href="#a544b24173c0b1aaad5c0d7e2e341d4a1" title="Search the reference database for the samples represented in probeTemplate including the most localiz...">searchSubject()</a>. Specifically, ordering of <a class="el" href="struct_f_r_i_f_1_1_search_subject_result.html#ae926c25c7aa5fbf3d8c778c73e2afc60" title="List of SubjectCandidate most similar to the probe.">SearchSubjectResult.candidateList</a> may have changed.</dd>
 <dd>
 The reference database will be stored on a read-only file system when this method is called. Do not attempt to modify the reference database here.</dd>
 <dd>
@@ -386,7 +490,7 @@ This method shall not spawn threads. </dd></dl>
 <p>Obtain a managed pointer to an object implementing <a class="el" href="class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_search_interface.html" title="Interface for database search implemented by participant.">SearchInterface</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">configurationDirectory</td><td>Read-only directory populated with configuration files provided in validation. </td></tr>
+    <tr><td class="paramname">configurationDirectory</td><td>Read-only directory populated with configuration files provided by participant. </td></tr>
     <tr><td class="paramname">databaseDirectory</td><td>Read-only directory populated with files written in <a class="el" href="class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface.html#aaf4fb5e99a621b5d0db6b86a1bedef5e" title="Create a reference database on the file system.">ExtractionInterface::createReferenceDatabase()</a>.</td></tr>
   </table>
   </dd>

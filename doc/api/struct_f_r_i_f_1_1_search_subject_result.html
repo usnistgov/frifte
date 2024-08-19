@@ -13,7 +13,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Friction Ridge Image and Features: FRIF::SearchResult Struct Reference</title>
+<title>Friction Ridge Image and Features: FRIF::SearchSubjectResult Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -98,94 +98,94 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespace_f_r_i_f.html">FRIF</a></li><li class="navelem"><a class="el" href="struct_f_r_i_f_1_1_search_result.html">SearchResult</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespace_f_r_i_f.html">FRIF</a></li><li class="navelem"><a class="el" href="struct_f_r_i_f_1_1_search_subject_result.html">SearchSubjectResult</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct_f_r_i_f_1_1_search_result-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">FRIF::SearchResult Struct Reference</div></div>
+<a href="struct_f_r_i_f_1_1_search_subject_result-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">FRIF::SearchSubjectResult Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>The results of a searching a database.  
+<p>The results of a searching a database for a subject, without respect to finger positions.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="io_8h_source.html">io.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a157dc94683496f5a3b7988041add9451" id="r_a157dc94683496f5a3b7988041add9451"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a157dc94683496f5a3b7988041add9451">decision</a> {}</td></tr>
-<tr class="memdesc:a157dc94683496f5a3b7988041add9451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Best guess on if <a class="el" href="#a458b82b08645406b4e0d842ce3f92435" title="List of Candidate most similar to the probe.">candidateList</a> contains an identification.  <br /></td></tr>
-<tr class="separator:a157dc94683496f5a3b7988041add9451"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a458b82b08645406b4e0d842ce3f92435" id="r_a458b82b08645406b4e0d842ce3f92435"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_f_r_i_f.html#af70f34a6ec68baffdabe6df00ba17db8">CandidateList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a458b82b08645406b4e0d842ce3f92435">candidateList</a> {}</td></tr>
-<tr class="memdesc:a458b82b08645406b4e0d842ce3f92435"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of <a class="el" href="struct_f_r_i_f_1_1_candidate.html" title="Unique entry.">Candidate</a> most similar to the probe.  <br /></td></tr>
-<tr class="separator:a458b82b08645406b4e0d842ce3f92435"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeae1bf4c93a33cd34af82748d5bddd1d" id="r_aeae1bf4c93a33cd34af82748d5bddd1d"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="struct_f_r_i_f_1_1_correspondence.html">Correspondence</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeae1bf4c93a33cd34af82748d5bddd1d">correspondence</a> {}</td></tr>
-<tr class="memdesc:aeae1bf4c93a33cd34af82748d5bddd1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pairs of corresponding Minutia between <a class="el" href="namespace_f_r_i_f.html#acd004e47e3150ea8a4ec2bfac476f170a76d16796b5fada9968ee2530ea43ddc3" title="Item being compared to a reference or searched against a reference database.">TemplateType::Probe</a> and <a class="el" href="namespace_f_r_i_f.html#acd004e47e3150ea8a4ec2bfac476f170a63d5049791d9d79d86e9a108b0a999ca" title="Use within a database for search, or the initial capture during a comparison.">TemplateType::Reference</a> templates.  <br /></td></tr>
-<tr class="separator:aeae1bf4c93a33cd34af82748d5bddd1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bbb24a5f0250a9f8cd51fa95cb4ca4b" id="r_a3bbb24a5f0250a9f8cd51fa95cb4ca4b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bbb24a5f0250a9f8cd51fa95cb4ca4b">decision</a> {}</td></tr>
+<tr class="memdesc:a3bbb24a5f0250a9f8cd51fa95cb4ca4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Best guess on if <a class="el" href="#ae926c25c7aa5fbf3d8c778c73e2afc60" title="List of SubjectCandidate most similar to the probe.">candidateList</a> contains an identification.  <br /></td></tr>
+<tr class="separator:a3bbb24a5f0250a9f8cd51fa95cb4ca4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae926c25c7aa5fbf3d8c778c73e2afc60" id="r_ae926c25c7aa5fbf3d8c778c73e2afc60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_f_r_i_f.html#af51e01c0b04a205107f7882edb8a4d44">SubjectCandidateList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae926c25c7aa5fbf3d8c778c73e2afc60">candidateList</a> {}</td></tr>
+<tr class="memdesc:ae926c25c7aa5fbf3d8c778c73e2afc60"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of SubjectCandidate most similar to the probe.  <br /></td></tr>
+<tr class="separator:ae926c25c7aa5fbf3d8c778c73e2afc60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad4f73dec646f836d3d1209a97998350" id="r_aad4f73dec646f836d3d1209a97998350"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="struct_f_r_i_f_1_1_correspondence.html">Correspondence</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad4f73dec646f836d3d1209a97998350">correspondence</a> {}</td></tr>
+<tr class="memdesc:aad4f73dec646f836d3d1209a97998350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pairs of corresponding Minutia between <a class="el" href="namespace_f_r_i_f.html#acd004e47e3150ea8a4ec2bfac476f170a76d16796b5fada9968ee2530ea43ddc3" title="Item being compared to a reference or searched against a reference database.">TemplateType::Probe</a> and <a class="el" href="namespace_f_r_i_f.html#acd004e47e3150ea8a4ec2bfac476f170a63d5049791d9d79d86e9a108b0a999ca" title="Use within a database for search, or the initial capture during a comparison.">TemplateType::Reference</a> templates.  <br /></td></tr>
+<tr class="separator:aad4f73dec646f836d3d1209a97998350"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The results of a searching a database. </p>
+<div class="textblock"><p>The results of a searching a database for a subject, without respect to finger positions. </p>
 
-<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00212">212</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00294">294</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a157dc94683496f5a3b7988041add9451" name="a157dc94683496f5a3b7988041add9451"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a157dc94683496f5a3b7988041add9451">&#9670;&#160;</a></span>decision</h2>
+<a id="a3bbb24a5f0250a9f8cd51fa95cb4ca4b" name="a3bbb24a5f0250a9f8cd51fa95cb4ca4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bbb24a5f0250a9f8cd51fa95cb4ca4b">&#9670;&#160;</a></span>decision</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool FRIF::SearchResult::decision {}</td>
+          <td class="memname">bool FRIF::SearchSubjectResult::decision {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Best guess on if <a class="el" href="#a458b82b08645406b4e0d842ce3f92435" title="List of Candidate most similar to the probe.">candidateList</a> contains an identification. </p>
+<p>Best guess on if <a class="el" href="#ae926c25c7aa5fbf3d8c778c73e2afc60" title="List of SubjectCandidate most similar to the probe.">candidateList</a> contains an identification. </p>
 
-<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00217">217</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00299">299</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
 
 </div>
 </div>
-<a id="a458b82b08645406b4e0d842ce3f92435" name="a458b82b08645406b4e0d842ce3f92435"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a458b82b08645406b4e0d842ce3f92435">&#9670;&#160;</a></span>candidateList</h2>
+<a id="ae926c25c7aa5fbf3d8c778c73e2afc60" name="ae926c25c7aa5fbf3d8c778c73e2afc60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae926c25c7aa5fbf3d8c778c73e2afc60">&#9670;&#160;</a></span>candidateList</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_f_r_i_f.html#af70f34a6ec68baffdabe6df00ba17db8">CandidateList</a> FRIF::SearchResult::candidateList {}</td>
+          <td class="memname"><a class="el" href="namespace_f_r_i_f.html#af51e01c0b04a205107f7882edb8a4d44">SubjectCandidateList</a> FRIF::SearchSubjectResult::candidateList {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>List of <a class="el" href="struct_f_r_i_f_1_1_candidate.html" title="Unique entry.">Candidate</a> most similar to the probe. </p>
+<p>List of SubjectCandidate most similar to the probe. </p>
 
-<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00223">223</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00305">305</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
 
 </div>
 </div>
-<a id="aeae1bf4c93a33cd34af82748d5bddd1d" name="aeae1bf4c93a33cd34af82748d5bddd1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeae1bf4c93a33cd34af82748d5bddd1d">&#9670;&#160;</a></span>correspondence</h2>
+<a id="aad4f73dec646f836d3d1209a97998350" name="aad4f73dec646f836d3d1209a97998350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad4f73dec646f836d3d1209a97998350">&#9670;&#160;</a></span>correspondence</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt;<a class="el" href="struct_f_r_i_f_1_1_correspondence.html">Correspondence</a>&gt; FRIF::SearchResult::correspondence {}</td>
+          <td class="memname">std::optional&lt;<a class="el" href="struct_f_r_i_f_1_1_correspondence.html">Correspondence</a>&gt; FRIF::SearchSubjectResult::correspondence {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Pairs of corresponding Minutia between <a class="el" href="namespace_f_r_i_f.html#acd004e47e3150ea8a4ec2bfac476f170a76d16796b5fada9968ee2530ea43ddc3" title="Item being compared to a reference or searched against a reference database.">TemplateType::Probe</a> and <a class="el" href="namespace_f_r_i_f.html#acd004e47e3150ea8a4ec2bfac476f170a63d5049791d9d79d86e9a108b0a999ca" title="Use within a database for search, or the initial capture during a comparison.">TemplateType::Reference</a> templates. </p>
-<p>Some participants may find they have already performed the calculations needed for SearchInterface::extractCorrespondence within SearchInterface::search. If that is the case, <a class="el" href="struct_f_r_i_f_1_1_correspondence.html" title="Information about a probe/reference relationship.">Correspondence</a> may be returned here instead.</p>
+<p>Some participants may find they have already performed the calculations needed for SearchInterface::extractCorrespondence within SearchInterface::searchSubjectPosition and SearchInterface::searchSubject. If that is the case, <a class="el" href="struct_f_r_i_f_1_1_correspondence.html" title="Information about a probe/reference relationship.">Correspondence</a> may be returned here instead.</p>
 <dl class="section attention"><dt>Attention</dt><dd>If this value is populated, SearchInterface::extractCorrespondence will not be called, as the information returned is expected to be redundant.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Reported and enforced search times will include the time it takes to populate this variable. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00246">246</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00329">329</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
 
 </div>
 </div>

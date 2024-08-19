@@ -3,7 +3,7 @@ var searchData=
   ['data_0',['data',['../struct_f_r_i_f_1_1_create_template_result.html#a742f733bd99b109bf6740d06f922b568',1,'FRIF::CreateTemplateResult']]],
   ['debatableminutiae_1',['DebatableMinutiae',['../namespace_f_r_i_f_1_1_e_f_s.html#af2c0b8f1daa94d733bd833575d926619a25d32a6911e68ff2f70a12ac7b0c669d',1,'FRIF::EFS']]],
   ['debatableridgeflow_2',['DebatableRidgeFlow',['../namespace_f_r_i_f_1_1_e_f_s.html#af2c0b8f1daa94d733bd833575d926619a2cff6da9bb8fbca5e8cc3ca02b08ff51',1,'FRIF::EFS']]],
-  ['decision_3',['decision',['../struct_f_r_i_f_1_1_comparison_result.html#a5e3761b6e68dd0c6ebaa7847b9b6ee30',1,'FRIF::ComparisonResult::decision'],['../struct_f_r_i_f_1_1_search_result.html#a157dc94683496f5a3b7988041add9451',1,'FRIF::SearchResult::decision']]],
+  ['decision_3',['decision',['../struct_f_r_i_f_1_1_comparison_result.html#a5e3761b6e68dd0c6ebaa7847b9b6ee30',1,'FRIF::ComparisonResult::decision'],['../struct_f_r_i_f_1_1_search_subject_position_result.html#ad8da209bbbde7dfade92c2147930d7eb',1,'FRIF::SearchSubjectPositionResult::decision'],['../struct_f_r_i_f_1_1_search_subject_result.html#a3bbb24a5f0250a9f8cd51fa95cb4ca4b',1,'FRIF::SearchSubjectResult::decision']]],
   ['definite_4',['Definite',['../namespace_f_r_i_f_1_1_e_f_s.html#acc975acb790010847a4de6dfd6ef3c3fa1ab1ffcf432afafe792a5ec758e164db',1,'FRIF::EFS']]],
   ['definitiveminutiae_5',['DefinitiveMinutiae',['../namespace_f_r_i_f_1_1_e_f_s.html#af2c0b8f1daa94d733bd833575d926619ae854d0b9ed17455ddbce45e7ba21573b',1,'FRIF::EFS']]],
   ['definitivepores_6',['DefinitivePores',['../namespace_f_r_i_f_1_1_e_f_s.html#af2c0b8f1daa94d733bd833575d926619a85b3c7451c9b7373bcedc8cabc3843b1',1,'FRIF::EFS']]],
