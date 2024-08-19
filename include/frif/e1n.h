@@ -309,7 +309,7 @@ namespace FRIF::Evaluations::Exemplar1N
 		 *
 		 * @param configurationDirectory
 		 * Read-only directory populated with configuration files
-		 * provided in validation.
+		 * provided by participant.
 		 *
 		 * @return
 		 * Shared pointer to an instance of ExtractionInterface
@@ -731,7 +731,7 @@ namespace FRIF::Evaluations::Exemplar1N
 		 *
 		 * @param configurationDirectory
 		 * Read-only directory populated with configuration files
-		 * provided in validation.
+		 * provided by participant.
 		 * @param databaseDirectory
 		 * Read-only directory populated with files written in
 		 * ExtractionInterface::createReferenceDatabase().
