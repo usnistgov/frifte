@@ -137,7 +137,9 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * Where this template will be used in the future.
 		 * @param identifier
 		 * Unique identifier used to identify the returned template
-		 * in future *search* operations (e.g., Candidate#identifier).
+		 * in future *search* operations (e.g.,
+		 * SubjectCandidate#identifier and
+		 * SubjectPositionCandidate#identifier).
 		 * @param samples
 		 * One or more biometric samples to be considered and encoded
 		 * into a template.
@@ -450,14 +452,16 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * @warning
 		 * **DO NOT MODIFY** the contents of your database in memory
 		 * *after* this method returns! After calling this method, the
-		 * test application may `fork()`, allowing calls to search() to
+		 * test application may `fork()`, allowing calls to
+		 * searchSubjectPosition() and searchSubject() to
 		 * share the contents of memory using copy-on-write semantics.
 		 *
 		 * @warning
 		 * **DO NOT MODIFY** the contents of the database on disk at any
 		 * time! The `databaseDirectory` provided to
 		 * getImplementation() may be stored on a read-only file system
-		 * and may be destroyed and restored before calls to search().
+		 * and may be destroyed and restored before calls to
+		 * searchSubjectPosition() and searchSubject().
 		 *
 		 * @note
 		 * `maxSize` will not be the full amount of memory available on
@@ -496,24 +500,26 @@ namespace FRIF::Evaluations::Exemplar1N
 		/**
 		 * @brief
 		 * Search the reference database for the samples represented in
-		 * `probeTemplate`.
+		 * `probeTemplate` including the most localized friction ridge
+		 * region.
 		 *
 		 * @param probeTemplate
 		 * Object returned from createTemplate() with `templateType` of
 		 * TemplateType::Probe.
 		 * @param maxCandidates
-		 * The maximum number of Candidate to return.
+		 * The maximum number of SubjectPositionCandidate to return.
 		 *
 		 * @return
 		 * A tuple containing a ReturnStatus containing information on
-		 * the result of completing the search task, and a SearchResult
-		 * object containing a list of one to less than or equal to
-		 * `maxCandidates` Candidate. If no Candidate were found, the
-		 * implementation shall return std::nullopt instead of
-		 * a SearchResult, but would still set Result::Success. If an
-		 * error prevented the search from completing (e.g., invalid
-		 * template, database error), the ReturnStatus should contain
-		 * Result::Failure.
+		 * the result of completing the search task, and a
+		 * SearchSubjectPositionResult object containing a list of one
+		 * to less than or equal to `maxCandidates`
+		 * SubjectPositionCandidate. If no SubjectPositionCandidate
+		 * were found, the implementation shall return std::nullopt
+		 * instead of a SearchSubjectPositionResult, but would still
+		 * set Result::Success. If an error prevented the search from
+		 * completing (e.g., invalid template, database error), the
+		 * ReturnStatus should contain Result::Failure.
 		 *
 		 * @warning
 		 * **DO NOT MODIFY** the database loaded with load() either in
@@ -526,19 +532,20 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * behavior for the many running search processes.
 		 *
 		 * @note
-		 * SearchResult.candidateList will be sorted by descending
-		 * Candidate.similarity upon return from this method using
-		 * `std::stable_sort()`.
+		 * SearchSubjectPositionResult.candidateList will be sorted by
+		 * descending SubjectPositionCandidate.similarity upon return
+		 * from this method using `std::stable_sort()`.
 		 *
 		 * @note
 		 * If provided a probe template that contains images from
-		 * multiple regions of the same candidate, Candidate.frgp will
-		 * be ignored in analysis.
+		 * multiple regions of the same candidate,
+		 * SubjectPositionCandidate.frgp will be ignored in analysis.
 		 *
 		 * @note
-		 * Candidate.frgp shall be the most localized region where the
-		 * correspondence was noted to be considered as correct as
-		 * possible. See the test plan for more information.
+		 * SubjectPositionCandidate.frgp shall be the most localized
+		 * region where the correspondence was noted to be considered
+		 * as correct as possible. See the test plan for more
+		 * information.
 		 *
 		 * @note
 		 * This method must return in <= 40 * `number of database
@@ -547,10 +554,63 @@ namespace FRIF::Evaluations::Exemplar1N
 		 *
 		 * @note
 		 * This method shall not spawn threads.
+		 *
+		 * @seealso searchSubject
 		 */
 		virtual
-		std::tuple<ReturnStatus, std::optional<SearchResult>>
-		search(
+		std::tuple<ReturnStatus,
+		    std::optional<SearchSubjectPositionResult>>
+		searchSubjectPosition(
+		    const std::vector<std::byte> &probeTemplate,
+		    const uint16_t maxCandidates)
+		    const = 0;
+
+		/**
+		 * @brief Search the reference database for the samples
+		 * represented in `probeTemplate` including the most localized
+		 * friction ridge region.
+		 *
+		 * @param probeTemplate Object returned from createTemplate()
+		 * with `templateType` of TemplateType::Probe.  @param
+		 * maxCandidates The maximum number of
+		 * SubjectCandidate to return.
+		 *
+		 * @return A tuple containing a ReturnStatus containing
+		 * information on the result of completing the search task, and
+		 * a SearchSubjectResult object containing a list of one to
+		 * less than or equal to `maxCandidates`
+		 * SubjectPositionCandidate. If no SubjectCandidate were found,
+		 * the implementation shall return std::nullopt instead of a
+		 * SearchSubjectResult, but would still set Result::Success. If
+		 * an error prevented the search from completing (e.g., invalid
+		 * template, database error), the ReturnStatus should contain
+		 * Result::Failure.
+		 *
+		 * @warning **DO NOT MODIFY** the database loaded with load()
+		 * either in memory or on disk. This method will be called
+		 * after calling load() and most likely from a `fork()`ed
+		 * process, allowing the read-only database in memory to be
+		 * shared using `fork()`'s copy-on-write semantics while not
+		 * requiring this method to be threadsafe. Modifying the
+		 * database will at best cause an out of memory error and at
+		 * worst cause undefined behavior for the many running search
+		 * processes.
+		 *
+		 * @note SearchSubjectResult.candidateList will be sorted by
+		 * descending SubjectCandidate.similarity upon return from this
+		 * method using `std::stable_sort()`.
+		 *
+		 * @note This method must return in <= 40 * `number of database
+		 * identifiers` microseconds, on average, as measured on a
+		 * fixed subset of data.
+		 *
+		 * @note This method shall not spawn threads.
+		 *
+		 * @seealso SearchSubjectPosition
+		 */
+		virtual
+		std::tuple<ReturnStatus, std::optional<SearchSubjectResult>>
+		searchSubject(
 		    const std::vector<std::byte> &probeTemplate,
 		    const uint16_t maxCandidates)
 		    const = 0;
@@ -587,8 +647,9 @@ namespace FRIF::Evaluations::Exemplar1N
 		 *
 		 * @note
 		 * `searchResult` is **not guaranteed** to be the identical
-		 * object returned from search(). Specifically, ordering of
-		 * SearchResult.candidateList may have changed.
+		 * object returned from searchSubjectPosition(). Specifically,
+		 * ordering of SearchSubjectPositionResult.candidateList may
+		 * have changed.
 		 *
 		 * @note
 		 * The reference database will be stored on a read-only file
@@ -602,10 +663,63 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * This method shall not spawn threads.
 		 */
 		virtual
-		std::optional<CandidateListCorrespondence>
-		extractCorrespondence(
+		std::optional<SubjectPositionCandidateListCorrespondence>
+		extractCorrespondenceSubjectPosition(
 		    const std::vector<std::byte> &probeTemplate,
-		    const SearchResult &searchResult)
+		    const SearchSubjectPositionResult &searchResult)
+		    const = 0;
+
+		/**
+		 * @brief
+		 * Extract pairs of corresponding Minutia between
+		 * TemplateType::Probe and TemplateType::Reference templates.
+		 *
+		 * @param probeTemplate
+		 * Probe template sent to searchReferences().
+		 * @param searchResult
+		 * Object returned from searchReferences().
+		 *
+		 * @return
+		 * An optional with no value if not implemented, or a collection
+		 * of information containing corresponding features otherwise.
+		 *
+		 * @attention
+		 * Be sure to note if this method is supported (i.e., if this
+		 * method returns something other than `std::nullopt`) by
+		 * setting Compatibility::supportsCorrespondence to `true`.
+		 *
+		 * @note
+		 * Feature::Minutia must align with minutiae returned from
+		 * ExtractionInterface::extractTemplateData() for the given
+		 * identifier + position pair.
+		 *
+		 * @note
+		 * You must implement this method to compile, but providing
+		 * the requested information is optional. If provided,
+		 * information may help in debugging, as well as informing
+		 * future NIST analysis.
+		 *
+		 * @note
+		 * `searchResult` is **not guaranteed** to be the identical
+		 * object returned from searchSubject(). Specifically, ordering
+		 * of SearchSubjectResult.candidateList may have changed.
+		 *
+		 * @note
+		 * The reference database will be stored on a read-only file
+		 * system when this method is called. Do not attempt to modify
+		 * the reference database here.
+		 *
+		 * @note
+		 * This method shall return in <= 500 milliseconds.
+		 *
+		 * @note
+		 * This method shall not spawn threads.
+		 */
+		virtual
+		std::optional<SubjectCandidateListCorrespondence>
+		extractCorrespondenceSubject(
+		    const std::vector<std::byte> &probeTemplate,
+		    const SearchSubjectResult &searchResult)
 		    const = 0;
 
 		/**************************************************************/

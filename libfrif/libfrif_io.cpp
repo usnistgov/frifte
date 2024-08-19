@@ -10,7 +10,7 @@
 
 #include <frif/io.h>
 
-FRIF::Candidate::Candidate(
+FRIF::SubjectPositionCandidate::SubjectPositionCandidate(
     const std::string &identifier_,
     const EFS::FrictionRidgeGeneralizedPosition fgp_) :
     identifier{identifier_},
@@ -20,16 +20,16 @@ FRIF::Candidate::Candidate(
 }
 
 auto
-FRIF::Candidate::operator<=>(const FRIF::Candidate&)
+FRIF::SubjectPositionCandidate::operator<=>(const FRIF::SubjectPositionCandidate&)
     const = default;
 
 bool
-FRIF::Candidate::operator==(const FRIF::Candidate&)
+FRIF::SubjectPositionCandidate::operator==(const FRIF::SubjectPositionCandidate&)
     const = default;
 
 std::size_t
-FRIF::CandidateListKeyHash::operator()(
-    const FRIF::Candidate &c)
+FRIF::SubjectPositionCandidateListKeyHash::operator()(
+    const FRIF::SubjectPositionCandidate &c)
     const
     noexcept
 {

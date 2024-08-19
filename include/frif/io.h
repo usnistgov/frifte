@@ -35,7 +35,7 @@ namespace FRIF
 	struct TemplateData
 	{
 		/**
-		 * Candidate identifier provided in
+		 * SubjectPositionCandidate identifier provided in
 		 * ExtractionInterface::createTemplate().
 		 */
 		std::string candidateIdentifier{};
@@ -108,8 +108,12 @@ namespace FRIF
 		std::optional<bool> complex{};
 	};
 
-	/** Unique entry */
-	struct Candidate
+	/**
+	 * Candidate list entry identifying a specific region of a subject.
+	 *
+	 * @seealso SubjectCandidate
+	 */
+	struct SubjectPositionCandidate
 	{
 		/** Identifier of the sample in the reference database. */
 		std::string identifier{};
@@ -118,27 +122,35 @@ namespace FRIF
 
 		/**
 		 * @brief
-		 * Candidate constructor.
+		 * SubjectPositionCandidate constructor.
 		 *
 		 * @param identifier
 		 * Identifier of the sample in the reference database.
 		 * @param fgp
 		 * Most localized position in the identifier.
 		 */
-		Candidate(
+		SubjectPositionCandidate(
 		    const std::string &identifier = {},
 		    const EFS::FrictionRidgeGeneralizedPosition fgp = {});
 
-		auto operator<=>(const Candidate&) const;
-		bool operator==(const Candidate&) const;
+		auto operator<=>(const SubjectPositionCandidate&) const;
+		bool operator==(const SubjectPositionCandidate&) const;
 	};
 
-	/** Hash function for Candidate. */
-	struct CandidateListKeyHash
+	/**
+	 * Candidate list entry identifying a subject without respect for
+	 * region.
+	 *
+	 * @seealso SubjectPositionCandidate
+	 */
+	using SubjectCandidate = std::string;
+
+	/** Hash function for SubjectPositionCandidate. */
+	struct SubjectPositionCandidateListKeyHash
 	{
 		std::size_t
 		operator()(
-		    const FRIF::Candidate &c)
+		    const FRIF::SubjectPositionCandidate &c)
 		    const
 		    noexcept;
 	};
@@ -156,21 +168,46 @@ namespace FRIF
 	 * This structure is used to disallow duplicate finger positions from
 	 * the same subject identifier.
 	 */
-	using CandidateList = std::unordered_map<Candidate, double,
-	    CandidateListKeyHash>;
+	using SubjectPositionCandidateList = std::unordered_map<SubjectPositionCandidate, double,
+	    SubjectPositionCandidateListKeyHash>;
 
 	/**
 	 * @brief
-	 * Representation to output Correspondence for each Candidate from
-	 * a CandidateList.
+	 * Representation of a list of likely candidates returned from a search.
+	 * @details
+	 * Key is a unique subject identifier, representing a reference
+	 * identity. Value is a quantification of a probe's similarity to the
+	 * friction ridge data represented by the key.
+	 *
+	 * @note
+	 * This structure is used to disallow duplicate subject identifiers.
+	 */
+	using SubjectCandidateList = std::unordered_map<std::string, double>;
+
+	/**
+	 * @brief
+	 * Representation to output Correspondence for each SubjectPositionCandidate from
+	 * a SubjectPositionCandidateList.
 	 * @details
 	 * Key is a unique subject identifier and finger position from that
 	 * subject, representing a reference identity. Value is a set of
 	 * Correspondence that align features from the probe to features from
 	 * the reference (the key).
 	 */
-	using CandidateListCorrespondence = std::unordered_map<Candidate,
-	    std::vector<Correspondence>, CandidateListKeyHash>;
+	using SubjectPositionCandidateListCorrespondence = std::unordered_map<SubjectPositionCandidate,
+	    std::vector<Correspondence>, SubjectPositionCandidateListKeyHash>;
+
+	/**
+	 * @brief
+	 * Representation to output Correspondence for each SubjectCandidate from
+	 * a SubjectCandidateList.
+	 * @details
+	 * Key is a unique subject identifier, representing a reference
+	 * identity. Value is a set of Correspondence that align features from
+	 * the probe to features from the reference (the key).
+	 */
+	using SubjectCandidateListCorrespondence =
+	    std::unordered_map<std::string, std::vector<Correspondence>>;
 
 	/** The results of comparing two templates. */
 	struct ComparisonResult
@@ -193,8 +230,9 @@ namespace FRIF
 		 * Some participants may find they have already performed the
 		 * calculations needed for
 		 * SearchInterface::extractCorrespondence within
-		 * SearchInterface::search. If that is the case, Correspondence
-		 * may be returned here instead.
+		 * SearchInterface::searchSubjectPosition and
+		 * SearchInterface::searchSubject. If that is the case,
+		 * Correspondence may be returned here instead.
 		 *
 		 * @attention
 		 * If this value is populated,
@@ -208,8 +246,10 @@ namespace FRIF
 		std::optional<Correspondence> correspondence{};
 	};
 
-	/** The results of a searching a database. */
-	struct SearchResult
+	/**
+	 * The results of a searching a database for subject finger positions.
+	 */
+	struct SearchSubjectPositionResult
 	{
 		/**
 		 * Best guess on if #candidateList contains an identification.
@@ -218,9 +258,9 @@ namespace FRIF
 
 		/**
 		 * @brief
-		 * List of Candidate most similar to the probe.
+		 * List of SubjectPositionCandidate most similar to the probe.
 		 */
-		CandidateList candidateList{};
+		SubjectPositionCandidateList candidateList{};
 
 		/**
 		 * @brief
@@ -231,8 +271,51 @@ namespace FRIF
 		 * Some participants may find they have already performed the
 		 * calculations needed for
 		 * SearchInterface::extractCorrespondence within
-		 * SearchInterface::search. If that is the case, Correspondence
-		 * may be returned here instead.
+		 * SearchInterface::searchSubjectPosition and
+		 * SearchInterface::searchSubject. If that is the case,
+		 * Correspondence may be returned here instead.
+		 *
+		 * @attention
+		 * If this value is populated,
+		 * SearchInterface::extractCorrespondence will not be called, as
+		 * the information returned is expected to be redundant.
+		 *
+		 * @note
+		 * Reported and enforced search times will include the time it
+		 * takes to populate this variable.
+		 */
+		std::optional<Correspondence> correspondence{};
+	};
+
+	/**
+	 * The results of a searching a database for a subject, without respect
+	 * to finger positions.
+	 */
+	struct SearchSubjectResult
+	{
+		/**
+		 * Best guess on if #candidateList contains an identification.
+		 */
+		bool decision{};
+
+		/**
+		 * @brief
+		 * List of SubjectCandidate most similar to the probe.
+		 */
+		SubjectCandidateList candidateList{};
+
+		/**
+		 * @brief
+		 * Pairs of corresponding Minutia between TemplateType::Probe
+		 * and TemplateType::Reference templates.
+		 *
+		 * @details
+		 * Some participants may find they have already performed the
+		 * calculations needed for
+		 * SearchInterface::extractCorrespondence within
+		 * SearchInterface::searchSubjectPosition and
+		 * SearchInterface::searchSubject. If that is the case,
+		 * Correspondence may be returned here instead.
 		 *
 		 * @attention
 		 * If this value is populated,
