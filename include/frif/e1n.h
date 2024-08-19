@@ -224,13 +224,15 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * @note
 		 * You must implement this method to compile, but providing the
 		 * requested information is optional. If provided, information
-		 * may help in debugging as well as inform future NIST analysis.
+		 * may help in debugging as well as inform future NIST research.
 		 *
 		 * @note
-		 * You should not return information that was provided in
-		 * createTemplate(). For instance, if Minutia was provided,
-		 * EFS#minutiae should be left `std::nullopt`. However, if you
-		 * discovered _different_ Minutia, they should be returned.
+		 * NIST will attempt to filter out information provided in
+		 * createTemplate(). If possible, do not return information that
+		 * was provided in createTemplate(). For instance, if Minutia
+		 * was provided, EFS#minutiae should be left `std::nullopt`.
+		 * However, if you discovered _different_ Minutia, they should
+		 * be returned.
 		 *
 		 * @note
 		 * This method shall return in <= 500 milliseconds.
@@ -643,7 +645,7 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * You must implement this method to compile, but providing
 		 * the requested information is optional. If provided,
 		 * information may help in debugging, as well as informing
-		 * future NIST analysis.
+		 * future NIST research.
 		 *
 		 * @note
 		 * `searchResult` is **not guaranteed** to be the identical
@@ -697,7 +699,7 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * You must implement this method to compile, but providing
 		 * the requested information is optional. If provided,
 		 * information may help in debugging, as well as informing
-		 * future NIST analysis.
+		 * future NIST research.
 		 *
 		 * @note
 		 * `searchResult` is **not guaranteed** to be the identical
