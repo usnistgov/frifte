@@ -557,7 +557,7 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * @note
 		 * This method shall not spawn threads.
 		 *
-		 * @seealso searchSubject
+		 * @see searchSubject
 		 */
 		virtual
 		std::tuple<ReturnStatus,
@@ -608,7 +608,7 @@ namespace FRIF::Evaluations::Exemplar1N
 		 *
 		 * @note This method shall not spawn threads.
 		 *
-		 * @seealso SearchSubjectPosition
+		 * @see SearchSubjectPosition
 		 */
 		virtual
 		std::tuple<ReturnStatus, std::optional<SearchSubjectResult>>

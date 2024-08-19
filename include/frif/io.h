@@ -111,7 +111,7 @@ namespace FRIF
 	/**
 	 * Candidate list entry identifying a specific region of a subject.
 	 *
-	 * @seealso SubjectCandidate
+	 * @see SubjectCandidate
 	 */
 	struct SubjectPositionCandidate
 	{
@@ -141,7 +141,7 @@ namespace FRIF
 	 * Candidate list entry identifying a subject without respect for
 	 * region.
 	 *
-	 * @seealso SubjectPositionCandidate
+	 * @see SubjectPositionCandidate
 	 */
 	using SubjectCandidate = std::string;
 
