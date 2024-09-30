@@ -26,7 +26,7 @@ Contents
    - **[../libfrif_e1n/]:** Code for the shared library implementing methods
      declared in [../../include/frif/e1n.h].
    - **[../../libfrif/]:** Code for the shared library implementing methods
-     shared by all FRIF evaluations, declared in [../../include/frif]
+     shared by all FRIF evaluations, declared in [../../include/frif].
    - **[../../include/e1n.h]:** The FRIF E1N [API].
    - **[validate]:** Script that automates running the validation and performing
      checks on the output.
@@ -375,9 +375,9 @@ The items in this repository are released in the public domain. See the
 [../../include/e1n.h]: https://github.com/usnistgov/frif/blob/main/include/frif/e1n.h
 [bin/]: https://github.com/usnistgov/frif/tree/main/e1n/validation/bin
 [config/]: https://github.com/usnistgov/frif/tree/main/e1n/validation/config
-[README.md]: https://github.com/usnistgov/frif/tree/main/e1n/validation/lib/README.md
+[README.md]: https://github.com/usnistgov/frif/blob/main/e1n/validation/README.md
 [src/]: https://github.com/usnistgov/frif/tree/main/e1n/validation/src
-[CHECKSUMS]: https://github.com/usnistgov/frif/tree/main/e1n/validation/CHECKSUMS
+[CHECKSUMS]: https://github.com/usnistgov/frif/blob/main/e1n/validation/CHECKSUMS
 [VERSION]: https://github.com/usnistgov/frif/tree/main/e1n/validation/VERSION
 [validate]: https://github.com/usnistgov/frif/tree/main/e1n/validation/validate
 [NIST FRIF team]: mailto:frif@nist.gov
@@ -387,3 +387,5 @@ The items in this repository are released in the public domain. See the
 [test plan]: https://pages.nist.gov/frif/doc/testplan/e1n_testplan.pdf
 [requests website]: https://nigos.nist.gov/datasets/frif_e1n_validation/request
 [the FRIF upload form]: https://pages.nist.gov/frif/e1n/upload
+[../../include/frif]: https://github.com/usnistgov/frif/tree/main/include/frif
+[../../include/frif/e1n.h]: https://github.com/usnistgov/frif/blob/main/include/frif/e1n.h
