@@ -23,13 +23,14 @@ var searchData=
   ['sub_20',['SUB',['../namespace_f_r_i_f_1_1_e_f_s.html#a501dedd92404bd555416005f2fe1cc85',1,'FRIF::EFS']]],
   ['subjectcandidate_21',['SubjectCandidate',['../namespace_f_r_i_f.html#ac773cbccb4a62fc94983f4188fff4fa0',1,'FRIF']]],
   ['subjectcandidatelist_22',['SubjectCandidateList',['../namespace_f_r_i_f.html#af51e01c0b04a205107f7882edb8a4d44',1,'FRIF']]],
-  ['subjectcandidatelistcorrespondence_23',['SubjectCandidateListCorrespondence',['../namespace_f_r_i_f.html#a8f47f150c6123b006cc8f3526d4a74bc',1,'FRIF']]],
+  ['subjectcandidatelistcorrespondence_23',['SubjectCandidateListCorrespondence',['../namespace_f_r_i_f.html#af0db5e4ca5ee2f7fe0b3b6336951bb85',1,'FRIF']]],
   ['subjectpositioncandidate_24',['SubjectPositionCandidate',['../struct_f_r_i_f_1_1_subject_position_candidate.html',1,'FRIF::SubjectPositionCandidate'],['../struct_f_r_i_f_1_1_subject_position_candidate.html#a414a492c0f0deaefdf526ce48d14df04',1,'FRIF::SubjectPositionCandidate::SubjectPositionCandidate()']]],
   ['subjectpositioncandidatelist_25',['SubjectPositionCandidateList',['../namespace_f_r_i_f.html#a8c2225047b6c7664a43d8c58b13ad581',1,'FRIF']]],
-  ['subjectpositioncandidatelistcorrespondence_26',['SubjectPositionCandidateListCorrespondence',['../namespace_f_r_i_f.html#a0a603d413bb3429081ea6eb773cfded5',1,'FRIF']]],
+  ['subjectpositioncandidatelistcorrespondence_26',['SubjectPositionCandidateListCorrespondence',['../namespace_f_r_i_f.html#ad7f603b044e7dbd07adf9938c5b21ef5',1,'FRIF']]],
   ['subjectpositioncandidatelistkeyhash_27',['SubjectPositionCandidateListKeyHash',['../struct_f_r_i_f_1_1_subject_position_candidate_list_key_hash.html',1,'FRIF']]],
   ['substrate_28',['Substrate',['../namespace_f_r_i_f_1_1_e_f_s.html#af53ec4ae5791b0efd1706850bf650d50',1,'FRIF::EFS']]],
   ['success_29',['Success',['../struct_f_r_i_f_1_1_return_status.html#afbc41e9fd908a3e2ae6085f6a49f1615a505a83f220c02df2f85c3810cd9ceb38',1,'FRIF::ReturnStatus']]],
   ['supportscorrespondence_30',['supportsCorrespondence',['../struct_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_search_interface_1_1_compatibility.html#aa49089f4ffbd07812f173f9df5f70453',1,'FRIF::Evaluations::Exemplar1N::SearchInterface::Compatibility']]],
-  ['supportstemplateintrospection_31',['supportsTemplateIntrospection',['../struct_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface_1_1_compatibility.html#a860088c7c8fa4234fac706a52817f9ba',1,'FRIF::Evaluations::Exemplar1N::ExtractionInterface::Compatibility']]]
+  ['supportsprobetemplateintrospection_31',['supportsProbeTemplateIntrospection',['../struct_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface_1_1_compatibility.html#a8e566210c65074e7c67dfbf94853958e',1,'FRIF::Evaluations::Exemplar1N::ExtractionInterface::Compatibility']]],
+  ['supportsreferencetemplateintrospection_32',['supportsReferenceTemplateIntrospection',['../struct_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface_1_1_compatibility.html#a72de9fc7ac9421ddfd8b90898a7b6b39',1,'FRIF::Evaluations::Exemplar1N::ExtractionInterface::Compatibility']]]
 ];

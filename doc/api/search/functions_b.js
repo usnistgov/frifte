@@ -1,5 +1,21 @@
 var searchData=
 [
-  ['_7eextractioninterface_0',['~ExtractionInterface',['../class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface.html#abbd5b11f6fa0e71be287ab6f79441440',1,'FRIF::Evaluations::Exemplar1N::ExtractionInterface']]],
-  ['_7esearchinterface_1',['~SearchInterface',['../class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_search_interface.html#a0f1e5dd658d16c6df002a958ccf89be1',1,'FRIF::Evaluations::Exemplar1N::SearchInterface']]]
+  ['toarchpatternsubclassification_0',['toArchPatternSubclassification',['../namespace_f_r_i_f_1_1_e_f_s.html#a0e143e67d3005d53d3cf008519bcc406',1,'FRIF::EFS']]],
+  ['tobitsperchannel_1',['toBitsPerChannel',['../struct_f_r_i_f_1_1_image.html#af6766c69b17cb610a26e40f01705535c',1,'FRIF::Image']]],
+  ['tobitsperpixel_2',['toBitsPerPixel',['../struct_f_r_i_f_1_1_image.html#a89187e311703325e80ef47d9f8f59418',1,'FRIF::Image']]],
+  ['tocorrespondencetype_3',['toCorrespondenceType',['../namespace_f_r_i_f_1_1_e_f_s.html#ab693b2a269ef7575118cec69887bea74',1,'FRIF::EFS']]],
+  ['tofingercrease_4',['toFingerCrease',['../namespace_f_r_i_f_1_1_e_f_s.html#ac90424de8aa145e09b67be6e6699738e',1,'FRIF::EFS']]],
+  ['tofrictionridgecapturetechnology_5',['toFrictionRidgeCaptureTechnology',['../namespace_f_r_i_f_1_1_e_f_s.html#af4598ba41b03ac6281c5f2d063911dd6',1,'FRIF::EFS']]],
+  ['tofrictionridgegeneralizedposition_6',['toFrictionRidgeGeneralizedPosition',['../namespace_f_r_i_f_1_1_e_f_s.html#a99e99993a12457dc69cc7650cfedefa3',1,'FRIF::EFS']]],
+  ['toimpression_7',['toImpression',['../namespace_f_r_i_f_1_1_e_f_s.html#ad71e9a8a3d7476f34fa30834a9b85494',1,'FRIF::EFS']]],
+  ['tolineardiscontinuity_8',['toLinearDiscontinuity',['../namespace_f_r_i_f_1_1_e_f_s.html#acbe9ddde3a984d5ecdfd64d32d0df099',1,'FRIF::EFS']]],
+  ['tominutiatype_9',['toMinutiaType',['../namespace_f_r_i_f_1_1_e_f_s.html#a24557c2104d041198754ccf2dfcac91f',1,'FRIF::EFS']]],
+  ['topalmcrease_10',['toPalmCrease',['../namespace_f_r_i_f_1_1_e_f_s.html#aa3ba8a44a28e7ce214ed9ab5c0ae8e3e',1,'FRIF::EFS']]],
+  ['topatterngeneralclassification_11',['toPatternGeneralClassification',['../namespace_f_r_i_f_1_1_e_f_s.html#a3ff72734818050faace06b1b6193c826',1,'FRIF::EFS']]],
+  ['toprocessingmethod_12',['toProcessingMethod',['../namespace_f_r_i_f_1_1_e_f_s.html#acf0084fecbe1e8de93b940dc57d30804',1,'FRIF::EFS']]],
+  ['toridgequality_13',['toRidgeQuality',['../namespace_f_r_i_f_1_1_e_f_s.html#a5b3ee13ee2c13f95435d8ff44728f224',1,'FRIF::EFS']]],
+  ['tosubstrate_14',['toSubstrate',['../namespace_f_r_i_f_1_1_e_f_s.html#a22fa0e0858379a04a423cd476ea36da1',1,'FRIF::EFS']]],
+  ['tovalueassessment_15',['toValueAssessment',['../namespace_f_r_i_f_1_1_e_f_s.html#a9634d73b1aa67b3dcd25804e29e0390a',1,'FRIF::EFS']]],
+  ['towhorldeltarelationship_16',['toWhorlDeltaRelationship',['../namespace_f_r_i_f_1_1_e_f_s.html#a8a1825d005a077b765f65c1c92d43e1d',1,'FRIF::EFS']]],
+  ['towhorlpatternsubclassification_17',['toWhorlPatternSubclassification',['../namespace_f_r_i_f_1_1_e_f_s.html#a936b06092c16d2e6d8c42cc27357fbd9',1,'FRIF::EFS']]]
 ];
