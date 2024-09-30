@@ -67,6 +67,23 @@ namespace FRIF
 		using BPP = BitsPerPixel;
 
 		/**
+		 * @brief
+		 * Convert integer to enumerated type.
+		 *
+		 * @param i
+		 * Integer version of enumerated type.
+		 *
+		 * @return
+		 * Enumerated value of i.
+		 *
+		 * @throw
+		 * Cannot map i to valid enumerated value.
+		 */
+		static BitsPerPixel
+		toBitsPerPixel(
+		    const std::underlying_type_t<BitsPerPixel> i);
+
+		/**
 		 * Number of bits comprising a single color channel of a single
 		 * pixel.
 		 */
@@ -76,6 +93,23 @@ namespace FRIF
 			Sixteen = 16
 		};
 		using BPC = BitsPerChannel;
+
+		/**
+		 * @brief
+		 * Convert integer to enumerated type.
+		 *
+		 * @param i
+		 * Integer version of enumerated type.
+		 *
+		 * @return
+		 * Enumerated value of i.
+		 *
+		 * @throw
+		 * Cannot map i to valid enumerated value.
+		 */
+		static BitsPerChannel
+		toBitsPerChannel(
+		    const std::underlying_type_t<BitsPerChannel> i);
 
 		enum class Colorspace
 		{

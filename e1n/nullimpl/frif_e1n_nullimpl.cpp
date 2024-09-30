@@ -26,7 +26,7 @@ FRIF::Evaluations::Exemplar1N::NullExtractionImplementation::createTemplate(
     const std::vector<Sample> &samples)
     const
 {
-	return {{}, CreateTemplateResult{}};
+	return {ReturnStatus{}, CreateTemplateResult{}};
 }
 
 std::optional<std::tuple<FRIF::ReturnStatus,
@@ -103,7 +103,8 @@ FRIF::Evaluations::Exemplar1N::ExtractionInterface::getCompatibility()
 {
 	Compatibility compatibility{};
 
-	compatibility.supportsTemplateIntrospection = false;
+	compatibility.supportsProbeTemplateIntrospection = false;
+	compatibility.supportsReferenceTemplateIntrospection = false;
 
 	compatibility.probeTemplateVersions = {
 	    NullImplementationConstants::featureExtractionProductVersion,
@@ -176,7 +177,7 @@ FRIF::Evaluations::Exemplar1N::NullSearchImplementation::searchSubjectPosition(
 	FRIF::SearchSubjectPositionResult result{};
 	result.decision = false;
 
-	return {{}, result};
+	return {ReturnStatus{}, result};
 }
 
 std::tuple<FRIF::ReturnStatus, std::optional<FRIF::SearchSubjectResult>>
@@ -201,7 +202,8 @@ FRIF::Evaluations::Exemplar1N::NullSearchImplementation::searchSubject(
 	FRIF::SearchSubjectResult result{};
 	for (const auto &[candidate, score] : std::get<std::optional<
 	    FRIF::SearchSubjectPositionResult>>(spResult)->candidateList) {
-		/* XXX: If searchSubjectPosition would return duplicate finger
+		/*
+		 * XXX: If searchSubjectPosition would return duplicate finger
 		 *      positions for the same subject, you want some logic here
 		 *      to:
 		 *        - adjust the similarity score to encompass all the
@@ -213,13 +215,23 @@ FRIF::Evaluations::Exemplar1N::NullSearchImplementation::searchSubject(
 		result.candidateList[candidate.identifier] = score;
 	}
 
-	/* XXX: It's possible you can reuse these as-is, but confirm. */
-	result.correspondence = std::get<std::optional<
+	const auto &spCorrespondence = std::get<std::optional<
 	    FRIF::SearchSubjectPositionResult>>(spResult)->correspondence;
+	if (spCorrespondence) {
+		SubjectCandidateListCorrespondence corr{};
+		/*
+		 * XXX: See above note about duplicate finger positions.
+		 */
+		for (const auto &[candidate, list] : *spCorrespondence)
+			corr[candidate.identifier] = list;
+		result.correspondence = corr;
+	}
+
+	/* XXX: It's possible you can reuse this as-is, but confirm. */
 	result.decision = std::get<std::optional<
 	    FRIF::SearchSubjectPositionResult>>(spResult)->decision;
 
-	return {{}, result};
+	return {ReturnStatus{}, result};
 }
 
 std::optional<FRIF::SubjectPositionCandidateListCorrespondence>

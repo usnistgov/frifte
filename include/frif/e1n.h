@@ -81,9 +81,15 @@ namespace FRIF::Evaluations::Exemplar1N
 		{
 			/**
 			 * Is useful information returned from
-			 * extractTemplateData()?
+			 * extractTemplateData() for probes?
 			 */
-			bool supportsTemplateIntrospection{};
+			bool supportsProbeTemplateIntrospection{};
+
+			/**
+			 * Is useful information returned from
+			 * extractTemplateData() for references?
+			 */
+			bool supportsReferenceTemplateIntrospection{};
 
 			/**
 			 * LibraryIdentifier::versionNumber of
@@ -117,7 +123,7 @@ namespace FRIF::Evaluations::Exemplar1N
 			 * LibraryIdentifier::versionNumber of
 			 * previously-submitted software that generates
 			 * reference databases that may be safely and accurately
-			 * mixed with this version.
+			 * mixed with templates from this version.
 			 *
 			 * @note
 			 * The value of LibraryIdentifier::versionNumber

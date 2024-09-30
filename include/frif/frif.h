@@ -36,5 +36,6 @@
 #include <frif/efs.h>
 #include <frif/evaluations.h>
 #include <frif/io.h>
+#include <frif/util.h>
 
 #endif /* FRIF_H_ */

@@ -34,6 +34,23 @@ namespace FRIF::EFS
 	/** Convenience Impression type using ANSI/NIST-ITL mnemonic. */
 	using IMP = Impression;
 
+	/**
+	 * @brief
+	 * Convert integer to enumerated type.
+	 *
+	 * @param i
+	 * Integer version of enumerated type.
+	 *
+	 * @return
+	 * Enumerated value of i.
+	 *
+	 * @throw
+	 * Cannot map i to valid enumerated value.
+	 */
+	Impression
+	toImpression(
+	    const std::underlying_type_t<Impression> i);
+
 	/** Capture device codes from ANSI/NIST-ITL 1-2011 (2015). */
 	enum class FrictionRidgeCaptureTechnology
 	{
@@ -52,6 +69,23 @@ namespace FRIF::EFS
 	 * mnemonic.
 	 */
 	using FCT = FrictionRidgeCaptureTechnology;
+
+	/**
+	 * @brief
+	 * Convert integer to enumerated type.
+	 *
+	 * @param i
+	 * Integer version of enumerated type.
+	 *
+	 * @return
+	 * Enumerated value of i.
+	 *
+	 * @throw
+	 * Cannot map i to valid enumerated value.
+	 */
+	FrictionRidgeCaptureTechnology
+	toFrictionRidgeCaptureTechnology(
+	    const std::underlying_type_t<FrictionRidgeCaptureTechnology> i);
 
 	/** Friction positions codes from ANSI/NIST-ITL 1-2011 (2015). */
 	enum class FrictionRidgeGeneralizedPosition
@@ -109,6 +143,23 @@ namespace FRIF::EFS
 	 */
 	using FGP = FrictionRidgeGeneralizedPosition;
 
+	/**
+	 * @brief
+	 * Convert integer to enumerated type.
+	 *
+	 * @param i
+	 * Integer version of enumerated type.
+	 *
+	 * @return
+	 * Enumerated value of i.
+	 *
+	 * @throw
+	 * Cannot map i to valid enumerated value.
+	 */
+	FrictionRidgeGeneralizedPosition
+	toFrictionRidgeGeneralizedPosition(
+	    const std::underlying_type_t<FrictionRidgeGeneralizedPosition> i);
+
 	/** Processing method codes from ANSI/NIST-ITL 1-2011 (2015). */
 	enum class ProcessingMethod
 	{
@@ -127,6 +178,23 @@ namespace FRIF::EFS
 	 * mnemonic.
 	 */
 	using LPM = ProcessingMethod;
+
+	/**
+	 * @brief
+	 * Convert integer to enumerated type.
+	 *
+	 * @param i
+	 * Integer version of enumerated type.
+	 *
+	 * @return
+	 * Enumerated value of i.
+	 *
+	 * @throw
+	 * Cannot map i to valid enumerated value.
+	 */
+	ProcessingMethod
+	toProcessingMethod(
+	    const std::underlying_type_t<ProcessingMethod> i);
 
 	/**
 	 * General classification of friction ridge structure.
@@ -154,6 +222,23 @@ namespace FRIF::EFS
 	using GCF = PatternGeneralClassification;
 
 	/**
+	 * @brief
+	 * Convert integer to enumerated type.
+	 *
+	 * @param i
+	 * Integer version of enumerated type.
+	 *
+	 * @return
+	 * Enumerated value of i.
+	 *
+	 * @throw
+	 * Cannot map i to valid enumerated value.
+	 */
+	PatternGeneralClassification
+	toPatternGeneralClassification(
+	    const std::underlying_type_t<PatternGeneralClassification> i);
+
+	/**
 	 * Subclassification when PatternClassification is Arch.
 	 *
 	 * @note
@@ -165,6 +250,23 @@ namespace FRIF::EFS
 		PlainArch,
 		TentedArch
 	};
+
+	/**
+	 * @brief
+	 * Convert integer to enumerated type.
+	 *
+	 * @param i
+	 * Integer version of enumerated type.
+	 *
+	 * @return
+	 * Enumerated value of i.
+	 *
+	 * @throw
+	 * Cannot map i to valid enumerated value.
+	 */
+	ArchPatternSubclassification
+	toArchPatternSubclassification(
+	    const std::underlying_type_t<ArchPatternSubclassification> i);
 
 	/**
 	 * Subclassification when PatternClassification is Whorl.
@@ -180,6 +282,23 @@ namespace FRIF::EFS
 		DoubleLoop,
 		AccidentalWhorl
 	};
+
+	/**
+	 * @brief
+	 * Convert integer to enumerated type.
+	 *
+	 * @param i
+	 * Integer version of enumerated type.
+	 *
+	 * @return
+	 * Enumerated value of i.
+	 *
+	 * @throw
+	 * Cannot map i to valid enumerated value.
+	 */
+	WhorlPatternSubclassification
+	toWhorlPatternSubclassification(
+	    const std::underlying_type_t<WhorlPatternSubclassification> i);
 
 	/**
 	 * Subclassification of PatternClassification.
@@ -210,6 +329,23 @@ namespace FRIF::EFS
 		Outer,
 		Meeting
 	};
+
+	/**
+	 * @brief
+	 * Convert integer to enumerated type.
+	 *
+	 * @param i
+	 * Integer version of enumerated type.
+	 *
+	 * @return
+	 * Enumerated value of i.
+	 *
+	 * @throw
+	 * Cannot map i to valid enumerated value.
+	 */
+	WhorlDeltaRelationship
+	toWhorlDeltaRelationship(
+	    const std::underlying_type_t<WhorlDeltaRelationship> i);
 
 	/**
 	 * Convenience WhorlDeltaRelationship type using ANSI/NIST-ITL
@@ -310,6 +446,23 @@ namespace FRIF::EFS
 	 */
 	using EAA = ValueAssessment;
 
+	/**
+	 * @brief
+	 * Convert integer to enumerated type.
+	 *
+	 * @param i
+	 * Integer version of enumerated type.
+	 *
+	 * @return
+	 * Enumerated value of i.
+	 *
+	 * @throw
+	 * Cannot map i to valid enumerated value.
+	 */
+	ValueAssessment
+	toValueAssessment(
+	    const std::underlying_type_t<ValueAssessment> i);
+
 	/** Substrate codes from ANSI/NIST-ITL 1-2011 (2015). */
 	enum class Substrate
 	{
@@ -330,6 +483,23 @@ namespace FRIF::EFS
 		Unknown
 	};
 
+	/**
+	 * @brief
+	 * Convert integer to enumerated type.
+	 *
+	 * @param i
+	 * Integer version of enumerated type.
+	 *
+	 * @return
+	 * Enumerated value of i.
+	 *
+	 * @throw
+	 * Cannot map i to valid enumerated value.
+	 */
+	Substrate
+	toSubstrate(
+	    const std::underlying_type_t<Substrate> i);
+
 	/** Types of minutiae. */
 	enum class MinutiaType
 	{
@@ -338,6 +508,23 @@ namespace FRIF::EFS
 		Other,
 		Unknown
 	};
+
+	/**
+	 * @brief
+	 * Convert integer to enumerated type.
+	 *
+	 * @param i
+	 * Integer version of enumerated type.
+	 *
+	 * @return
+	 * Enumerated value of i.
+	 *
+	 * @throw
+	 * Cannot map i to valid enumerated value.
+	 */
+	MinutiaType
+	toMinutiaType(
+	    const std::underlying_type_t<MinutiaType> i);
 
 	/** Friction ridge feature details. */
 	struct Minutia
@@ -507,6 +694,23 @@ namespace FRIF::EFS
 	};
 	using TOC = CorrespondenceType;
 
+	/**
+	 * @brief
+	 * Convert integer to enumerated type.
+	 *
+	 * @param i
+	 * Integer version of enumerated type.
+	 *
+	 * @return
+	 * Enumerated value of i.
+	 *
+	 * @throw
+	 * Cannot map i to valid enumerated value.
+	 */
+	CorrespondenceType
+	toCorrespondenceType(
+	    const std::underlying_type_t<CorrespondenceType> i);
+
 	/** Relationship between probe and reference features. */
 	struct CorrespondenceRelationship
 	{
@@ -522,6 +726,8 @@ namespace FRIF::EFS
 		 * ExtractionInterface::createReferenceTemplate.
 		 */
 		std::string probeIdentifier{};
+		/** Probe finger position. */
+		FrictionRidgeGeneralizedPosition probeFGP{};
 		/**
 		 * Link to Image#identifier and/or Features#identifier for
 		 * probe.
@@ -539,6 +745,8 @@ namespace FRIF::EFS
 		 * ExtractionInterface::createReferenceTemplate.
 		 */
 		std::string referenceIdentifier{};
+		/** Reference finger position. */
+		FrictionRidgeGeneralizedPosition referenceFGP{};
 		/**
 		 * Link to Image#identifier and/or Features#identifier for
 		 * reference.
@@ -559,6 +767,9 @@ namespace FRIF::EFS
 		 * Type of correspondence seen at these points.
 		 * @param probeIdentifier
 		 * Identifier from the probe template.
+		 * @param probeFGP
+		 * Position of `probeIdentifier` being referred to, in the event
+		 * that it is a multi-finger image.
 		 * @param probeInputIdentifier
 		 * Link to Image#identifier and/or Features#identifier for
 		 * probe.
@@ -566,6 +777,9 @@ namespace FRIF::EFS
 		 * Location in the probe image of a reference image feature.
 		 * @param referenceIdentifier
 		 * Identifier from the reference template.
+		 * @param referenceFGP
+		 * Position of `referenceIdentifier` being referred to, in the
+		 * event that it is a multi-finger image.
 		 * @param referenceInputIdentifier
 		 * Link to Image#identifier and/or Features#identifier for
 		 * reference.
@@ -576,9 +790,11 @@ namespace FRIF::EFS
 		CorrespondenceRelationship(
 		    const CorrespondenceType type = {},
 		    const std::string &probeIdentifier = {},
+		    const FrictionRidgeGeneralizedPosition probeFGP = {},
 		    const uint8_t probeInputIdentifier = {},
 		    const Minutia &probeMinutia = {},
 		    const std::string &referenceIdentifier = {},
+		    const FrictionRidgeGeneralizedPosition referenceFGP = {},
 		    const uint8_t referenceInputIdentifier = {},
 		    const Minutia &referenceMinutia = {});
 	};
@@ -609,6 +825,23 @@ namespace FRIF::EFS
 		DefinitivePores = 5
 	};
 
+	/**
+	 * @brief
+	 * Convert integer to enumerated type.
+	 *
+	 * @param i
+	 * Integer version of enumerated type.
+	 *
+	 * @return
+	 * Enumerated value of i.
+	 *
+	 * @throw
+	 * Cannot map i to valid enumerated value.
+	 */
+	RidgeQuality
+	toRidgeQuality(
+	    const std::underlying_type_t<RidgeQuality> i);
+
 	/** Region defined in a map of ridge quality/confidence. */
 	struct RidgeQualityRegion
 	{
@@ -638,6 +871,23 @@ namespace FRIF::EFS
 		ProximalDigital
 	};
 
+	/**
+	 * @brief
+	 * Convert integer to enumerated type.
+	 *
+	 * @param i
+	 * Integer version of enumerated type.
+	 *
+	 * @return
+	 * Enumerated value of i.
+	 *
+	 * @throw
+	 * Cannot map i to valid enumerated value.
+	 */
+	FingerCrease
+	toFingerCrease(
+	    const std::underlying_type_t<FingerCrease> i);
+
 	/** Permanent flexion creases on palms. */
 	enum class PalmCrease
 	{
@@ -662,6 +912,23 @@ namespace FRIF::EFS
 		WristBracelet = Wrist
 	};
 
+	/**
+	 * @brief
+	 * Convert integer to enumerated type.
+	 *
+	 * @param i
+	 * Integer version of enumerated type.
+	 *
+	 * @return
+	 * Enumerated value of i.
+	 *
+	 * @throw
+	 * Cannot map i to valid enumerated value.
+	 */
+	PalmCrease
+	toPalmCrease(
+	    const std::underlying_type_t<PalmCrease> i);
+
 	/** Linear discontinuities that are not named permanent creases. */
 	enum class LinearDiscontinuity
 	{
@@ -676,6 +943,23 @@ namespace FRIF::EFS
 //		PermanentScar,
 		Other
 	};
+
+	/**
+	 * @brief
+	 * Convert integer to enumerated type.
+	 *
+	 * @param i
+	 * Integer version of enumerated type.
+	 *
+	 * @return
+	 * Enumerated value of i.
+	 *
+	 * @throw
+	 * Cannot map i to valid enumerated value.
+	 */
+	LinearDiscontinuity
+	toLinearDiscontinuity(
+	    const std::underlying_type_t<LinearDiscontinuity> i);
 
 	/**
 	 * Collection of crease types.

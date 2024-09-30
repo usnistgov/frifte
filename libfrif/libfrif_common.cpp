@@ -70,6 +70,40 @@ FRIF::Image::Image(
 
 }
 
+FRIF::Image::BitsPerPixel
+FRIF::Image::toBitsPerPixel(
+    const std::underlying_type_t<BitsPerPixel> i)
+{
+	switch (static_cast<BitsPerPixel>(i)) {
+	case BitsPerPixel::Eight:
+		[[fallthrough]];
+	case BitsPerPixel::Sixteen:
+		[[fallthrough]];
+	case BitsPerPixel::TwentyFour:
+		[[fallthrough]];
+	case BitsPerPixel::FortyEight:
+		return (static_cast<BitsPerPixel>(i));
+	default:
+		throw std::runtime_error{"Invalid BitsPerPixel value: " +
+		    std::to_string(i)};
+	}
+}
+
+FRIF::Image::BitsPerChannel
+FRIF::Image::toBitsPerChannel(
+    const std::underlying_type_t<BitsPerChannel> i)
+{
+	switch (static_cast<BitsPerChannel>(i)) {
+	case BitsPerChannel::Eight:
+		[[fallthrough]];
+	case BitsPerChannel::Sixteen:
+		return (static_cast<BitsPerChannel>(i));
+	default:
+		throw std::runtime_error{"Invalid BitsPerChannel value: " +
+		    std::to_string(i)};
+	}
+}
+
 void
 FRIF::Image::sanityCheck()
     const

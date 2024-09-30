@@ -15,7 +15,9 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_executable(frif_e1n_validation)
-target_sources(frif_e1n_validation PRIVATE frif_e1n_validation.cpp)
+target_sources(frif_e1n_validation PRIVATE
+    frif_e1n_data.cpp
+    frif_e1n_validation.cpp)
 target_include_directories(frif_e1n_validation PRIVATE .)
 target_include_directories(frif_e1n_validation PUBLIC ../../../include)
 

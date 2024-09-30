@@ -17,7 +17,8 @@ add_library(frif SHARED)
 target_sources(frif PRIVATE
     libfrif_common.cpp
     libfrif_efs.cpp
-    libfrif_io.cpp)
+    libfrif_io.cpp
+    libfrif_util.cpp)
 target_include_directories(frif PRIVATE ${PROJECT_SOURCE_DIR}/../include)
 
 #if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)

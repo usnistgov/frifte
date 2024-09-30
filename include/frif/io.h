@@ -29,18 +29,16 @@ namespace FRIF
 	 *
 	 * @note
 	 * If provided a multi-position image and applicable to the feature
-	 * extraction algorithm, `roi` should be populated with segmentation
-	 * coordinates and `fgp` should be set for each position.
+	 * extraction algorithm, Features#roi should be populated with
+	 * segmentation coordinates and Features#frgp should be set for each
+	 * position.
 	 */
 	struct TemplateData
 	{
-		/**
-		 * SubjectPositionCandidate identifier provided in
-		 * ExtractionInterface::createTemplate().
-		 */
-		std::string candidateIdentifier{};
+		/** Identifier provided during template creation. */
+		std::string identifier{};
 
-		/** Link to Image#identifier and/or EFS#identifier. */
+		/** Link to Image#identifier and/or Features#identifier. */
 		uint8_t inputIdentifier{};
 
 		/** Extended feature set data */
@@ -94,7 +92,7 @@ namespace FRIF
 		 * CorrespondenceRelationship groups multiple sets of
 		 * relationships corresponding to the same images.
 		 */
-		std::vector<EFS::CorrespondenceRelationship> correspondence{};
+		std::vector<EFS::CorrespondenceRelationship> relationships{};
 
 		/**
 		 * @brief
@@ -194,8 +192,9 @@ namespace FRIF
 	 * Correspondence that align features from the probe to features from
 	 * the reference (the key).
 	 */
-	using SubjectPositionCandidateListCorrespondence = std::unordered_map<SubjectPositionCandidate,
-	    std::vector<Correspondence>, SubjectPositionCandidateListKeyHash>;
+	using SubjectPositionCandidateListCorrespondence =
+	    std::unordered_map<SubjectPositionCandidate, Correspondence,
+	    SubjectPositionCandidateListKeyHash>;
 
 	/**
 	 * @brief
@@ -207,7 +206,7 @@ namespace FRIF
 	 * the probe to features from the reference (the key).
 	 */
 	using SubjectCandidateListCorrespondence =
-	    std::unordered_map<std::string, std::vector<Correspondence>>;
+	    std::unordered_map<std::string, Correspondence>;
 
 	/** The results of comparing two templates. */
 	struct ComparisonResult
@@ -228,16 +227,13 @@ namespace FRIF
 		 *
 		 * @details
 		 * Some participants may find they have already performed the
-		 * calculations needed for
-		 * SearchInterface::extractCorrespondence within
-		 * SearchInterface::searchSubjectPosition and
-		 * SearchInterface::searchSubject. If that is the case,
-		 * Correspondence may be returned here instead.
+		 * calculations needed during comparison. If that is the case,
+		 * correspondence may be returned here instead.
 		 *
 		 * @attention
-		 * If this value is populated,
-		 * SearchInterface::extractCorrespondence will not be called, as
-		 * the information returned is expected to be redundant.
+		 * If this value is populated, no separate correspondence
+		 * method will be called, as the information returned is
+		 * expected to be redundant.
 		 *
 		 * @note
 		 * Reported and enforced search times will include the time it
@@ -269,22 +265,20 @@ namespace FRIF
 		 *
 		 * @details
 		 * Some participants may find they have already performed the
-		 * calculations needed for
-		 * SearchInterface::extractCorrespondence within
-		 * SearchInterface::searchSubjectPosition and
-		 * SearchInterface::searchSubject. If that is the case,
-		 * Correspondence may be returned here instead.
+		 * calculations needed during search. If that is the case,
+		 * correspondence may be returned here instead.
 		 *
 		 * @attention
-		 * If this value is populated,
-		 * SearchInterface::extractCorrespondence will not be called, as
-		 * the information returned is expected to be redundant.
+		 * If this value is populated, no separate correspondence
+		 * method will be called, as the information returned is
+		 * expected to be redundant.
 		 *
 		 * @note
 		 * Reported and enforced search times will include the time it
 		 * takes to populate this variable.
 		 */
-		std::optional<Correspondence> correspondence{};
+		std::optional<SubjectPositionCandidateListCorrespondence>
+		    correspondence{};
 	};
 
 	/**
@@ -311,22 +305,20 @@ namespace FRIF
 		 *
 		 * @details
 		 * Some participants may find they have already performed the
-		 * calculations needed for
-		 * SearchInterface::extractCorrespondence within
-		 * SearchInterface::searchSubjectPosition and
-		 * SearchInterface::searchSubject. If that is the case,
-		 * Correspondence may be returned here instead.
+		 * calculations needed during search. If that is the case,
+		 * correspondence may be returned here instead.
 		 *
 		 * @attention
-		 * If this value is populated,
-		 * SearchInterface::extractCorrespondence will not be called, as
-		 * the information returned is expected to be redundant.
+		 * If this value is populated, no separate correspondence
+		 * method will be called, as the information returned is
+		 * expected to be redundant.
 		 *
 		 * @note
 		 * Reported and enforced search times will include the time it
 		 * takes to populate this variable.
 		 */
-		std::optional<Correspondence> correspondence{};
+		std::optional<SubjectCandidateListCorrespondence>
+		    correspondence{};
 	};
 
 	/** Collection of templates on disk. */
