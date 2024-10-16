@@ -62,7 +62,7 @@ else()
 endif()
 
 # Extern the version symbols
-target_compile_definitions(frif_e1n_validation PRIVATE NIST_EXTERN_FRIF_API_VERSION)
+target_compile_definitions(frif_e1n_validation PRIVATE NIST_EXTERN_FRIF_API_VERSION NIST_EXTERN_FRIF_E1N_API_VERSION)
 
 # Enable documentation warnings with clang
 target_compile_options(frif_e1n_validation PRIVATE
