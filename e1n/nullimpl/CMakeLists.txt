@@ -53,11 +53,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/../libfrif_e1n ${CMAKE_CURRENT_BINARY_DIR
 add_dependencies(${LIB_NAME} frif_e1n)
 target_link_libraries(${LIB_NAME} PUBLIC frif_e1n)
 
-# Depend on libfrif
-add_subdirectory(${PROJECT_SOURCE_DIR}/../../libfrif ${CMAKE_CURRENT_BINARY_DIR}/libfrif)
-add_dependencies(${LIB_NAME} frif)
-target_link_libraries(${LIB_NAME} PUBLIC frif)
-
 # Enable documentation warnings with clang
 target_compile_options(${LIB_NAME} PRIVATE
      $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:

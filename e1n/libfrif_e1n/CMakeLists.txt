@@ -21,6 +21,25 @@ target_include_directories(frif_e1n PRIVATE ${PROJECT_SOURCE_DIR}/../../include)
 # Extern the version symbols
 target_compile_definitions(frif_e1n PRIVATE NIST_EXTERN_FRIF_E1N_API_VERSION)
 
+# Require libfrif
+add_subdirectory(${PROJECT_SOURCE_DIR}/../../libfrif ${CMAKE_CURRENT_BINARY_DIR}/libfrif)
+add_dependencies(frif_e1n frif)
+target_link_libraries(frif_e1n PUBLIC frif)
+
+# Set RPATH to $ORIGIN
+set_target_properties(frif_e1n PROPERTIES
+    BUILD_RPATH_USE_ORIGIN TRUE)
+if(UNIX)
+	set_target_properties(frif_e1n PROPERTIES
+	    INSTALL_RPATH $ORIGIN)
+endif()
+
+# Use RUNPATH over RPATH
+if(NOT APPLE)
+	set_target_properties(frif_e1n PROPERTIES
+	    LINK_FLAGS -Wl,--enable-new-dtags)
+endif()
+
 # Enable documentation warnings with clang
 target_compile_options(frif_e1n PRIVATE
      $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:

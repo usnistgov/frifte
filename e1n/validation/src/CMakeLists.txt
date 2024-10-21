@@ -21,12 +21,10 @@ target_sources(frif_e1n_validation PRIVATE
 target_include_directories(frif_e1n_validation PRIVATE .)
 target_include_directories(frif_e1n_validation PUBLIC ../../../include)
 
-# Build libfrif and libfrif_e1n first
-add_subdirectory(${PROJECT_SOURCE_DIR}/../../../libfrif ${CMAKE_CURRENT_BINARY_DIR}/libfrif)
-add_dependencies(frif_e1n_validation frif)
+# Build libfrif_e1n first (which itself builds libfrif)
 add_subdirectory(${PROJECT_SOURCE_DIR}/../../libfrif_e1n ${CMAKE_CURRENT_BINARY_DIR}/libfrif_e1n)
 add_dependencies(frif_e1n_validation frif_e1n)
-target_link_libraries(frif_e1n_validation PUBLIC frif frif_e1n)
+target_link_libraries(frif_e1n_validation PUBLIC frif_e1n)
 
 # Find the participant's core library
 # Writes CORE_LIB as the name of the library in the parent scope
