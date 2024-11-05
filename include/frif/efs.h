@@ -656,6 +656,33 @@ namespace FRIF::EFS
 		        &directionUncertainty = {});
 	};
 
+	/** Deviation of an image from upright. */
+	struct Orientation
+	{
+		/** Degrees needed to rotate image upright. */
+		int16_t direction{0};
+		/**
+		 * Uncertainty of #direction in degrees [0,180].
+		 *
+		 * @details
+		 * When present, the orientation can be #direction +/-
+		 * #uncertainty degrees.
+		 */
+		std::optional<uint8_t> uncertainty{15};
+
+		/**
+		 * Orientation constructor.
+		 *
+		 * @param direction
+		 * Degrees needed to rotate image upright.
+		 * @param uncertainty
+		 * Uncertainty of #direction in degrees [0,180].
+		 */
+		Orientation(
+		    const int16_t direction = 0,
+		    const std::optional<uint8_t> &uncertainty = 15);
+	};
+
 	/**
 	 * Types of correspondence.
 	 *
@@ -1114,13 +1141,8 @@ namespace FRIF::EFS
 		FrictionRidgeGeneralizedPosition frgp{
 		    FrictionRidgeGeneralizedPosition::UnknownFrictionRidge};
 
-		/** Degrees to rotate image upright. */
-		std::optional<int16_t> orientation{};
-		/**
-		 * Uncertainty of #orientation, resulting in the orientation to
-		 * be #orientation +/- #orientationUncertainty degrees.
-		 */
-		std::optional<uint8_t> orientationUncertainty{};
+		/** Deviation of the friction ridge from an upright position/ */
+		std::optional<Orientation> orientation{};
 		/** Methods used process the print. */
 		std::optional<std::vector<ProcessingMethod>> lpm{};
 		/** Examiner/algorithmic value assessment for identification. */

@@ -821,8 +821,13 @@ FRIF::Evaluations::Exemplar1N::Validation::makeExtractTemplateDataLogLine(
 		const auto &efs = td.features.value();
 		logLine += Util::e2i2s(efs.imp) + ',' + Util::e2i2s(efs.frct) +
 		    ',' + Util::e2i2s(efs.frgp) + ',';
-		logLine += (efs.orientation ?
-		    Util::ts(*efs.orientation) : Util::NA) + ',';
+		if (efs.orientation) {
+			logLine += Util::ts(efs.orientation->direction) +
+			    ';' + (efs.orientation->uncertainty ?
+			    Util::ts(*efs.orientation->uncertainty) :
+			    Util::NA) + ',';
+		} else
+			logLine += Util::NA + ',';
 		logLine += (efs.lpm ? Util::splice(*efs.lpm) : Util::NA) + ',';
 		logLine += (efs.valueAssessment ?
 		    Util::e2i2s(*efs.valueAssessment) : Util::NA) + ',';

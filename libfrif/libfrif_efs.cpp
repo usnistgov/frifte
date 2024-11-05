@@ -478,6 +478,15 @@ FRIF::EFS::toFrictionRidgeGeneralizedPosition(
 	}
 }
 
+FRIF::EFS::Orientation::Orientation(
+    const int16_t direction_,
+    const std::optional<uint8_t> &uncertainty_) :
+    direction{direction_},
+    uncertainty{uncertainty_}
+{
+
+}
+
 FRIF::EFS::ProcessingMethod
 FRIF::EFS::toProcessingMethod(
     const std::underlying_type_t<ProcessingMethod> i)
