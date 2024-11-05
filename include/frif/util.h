@@ -170,15 +170,21 @@ namespace FRIF::Util
 	 *
 	 * @param v
 	 * Vector of Coordinate to output.
+	 * @param elementSep
+	 * Token to separate elements of Coordinate.
 	 * @param itemSep
 	 * Token to separate multiple Coordinate.
 	 *
 	 * @return
 	 * Log-able string version of `v`.
+	 *
+	 * @note
+	 * All separators must be distinct.
 	 */
 	std::string
 	splice(
 	    const std::vector<Coordinate> &v,
+	    const std::string &elementSep = ";",
 	    const std::string &itemSep = "|");
 
 	/**
@@ -187,15 +193,21 @@ namespace FRIF::Util
 	 *
 	 * @param v
 	 * Vector of Minutia to output.
+	 * @param elementSep
+	 * Token to separate elements of Minutia.
 	 * @param itemSep
 	 * Token to separate multiple Minutia.
 	 *
 	 * @return
 	 * Log-able string version of `v`.
+	 *
+	 * @note
+	 * All separators must be distinct.
 	 */
 	std::string
 	splice(
 	    const std::vector<EFS::Minutia> &v,
+	    const std::string &elementSep = ";",
 	    const std::string &itemSep = "|");
 
 	/**
@@ -204,15 +216,21 @@ namespace FRIF::Util
 	 *
 	 * @param v
 	 * Vector of Core to output.
+	 * @param elementSep
+	 * Token to separate elements of Core.
 	 * @param itemSep
 	 * Token to separate multiple Core.
 	 *
 	 * @return
 	 * Log-able string version of `v`.
+	 *
+	 * @note
+	 * All separators must be distinct.
 	 */
 	std::string
 	splice(
 	    const std::vector<EFS::Core> &v,
+	    const std::string &elementSep = ";",
 	    const std::string &itemSep = "|");
 
 	/**
@@ -221,15 +239,21 @@ namespace FRIF::Util
 	 *
 	 * @param v
 	 * Vector of Delta to output.
+	 * @param elementSep
+	 * Token to separate elements of Delta.
 	 * @param itemSep
 	 * Token to separate multiple Delta.
 	 *
 	 * @return
 	 * Log-able string version of `v`.
+	 *
+	 * @note
+	 * All separators must be distinct.
 	 */
 	std::string
 	splice(
 	    const std::vector<EFS::Delta> &v,
+	    const std::string &elementSep = ";",
 	    const std::string &itemSep = "|");
 
 	/**
@@ -238,16 +262,28 @@ namespace FRIF::Util
 	 *
 	 * @param v
 	 * Vector of RidgeQualityRegion to output.
+	 * @param elementSep
+	 * Token to separate elements of RidgeQualityRegion.
 	 * @param itemSep
 	 * Token to separate multiple RidgeQualityRegion.
+	 * @param coordinateElementSep
+	 * Token to separate elements of Coordinate.
+	 * @param coordinateItemSep
+	 * Token to separate multiple Coordinate.
 	 *
 	 * @return
 	 * Log-able string version of `v`.
+	 *
+	 * @note
+	 * All separators must be distinct.
 	 */
 	std::string
 	splice(
 	    const std::vector<EFS::RidgeQualityRegion> &v,
-	    const std::string &itemSep = "|");
+	    const std::string &elementSep = ":",
+	    const std::string &itemSep = "^",
+	    const std::string &coordinateElementSep = ";",
+	    const std::string &coordinateItemSep = "|");
 
 	/**
 	 * @brief

@@ -116,11 +116,15 @@ FRIF::Util::sanitizeMessage(
 std::string
 FRIF::Util::splice(
     const std::vector<Coordinate> &v,
+    const std::string &elementSep,
     const std::string &itemSep)
 {
+	if (elementSep == itemSep)
+		throw std::runtime_error{"elementSep == itemSep"};
+
 	std::string ret{};
 	for (const auto &c : v)
-		ret += ts(c.x) + ';' + ts(c.y) + itemSep;
+		ret += ts(c.x) + elementSep + ts(c.y) + itemSep;
 	ret.erase(ret.find_last_of(itemSep), itemSep.length());
 	return (ret);
 }
@@ -128,16 +132,21 @@ FRIF::Util::splice(
 std::string
 FRIF::Util::splice(
     const std::vector<EFS::Minutia> &v,
+    const std::string &elementSep,
     const std::string &itemSep)
 {
+	if (elementSep == itemSep)
+		throw std::runtime_error{"elementSep == itemSep"};
+
 	std::string ret{};
 	for (const auto &m : v)
-		ret += ts(m.coordinate.x) + ';' + ts(m.coordinate.y) + ';' +
+		ret += ts(m.coordinate.x) + elementSep + ts(m.coordinate.y) +
+		    elementSep +
 		    (m.coordinateUncertainty ?
-		    ts(*m.coordinateUncertainty) : NA) + ';' + ts(m.theta) +
-		    ';' +
-		    (m.thetaUncertainty ? ts(*m.thetaUncertainty) : NA) + ';' +
-		    e2i2s(m.type) + itemSep;
+		    ts(*m.coordinateUncertainty) : NA) + elementSep +
+		    ts(m.theta) + elementSep +
+		    (m.thetaUncertainty ? ts(*m.thetaUncertainty) : NA) +
+		    elementSep + e2i2s(m.type) + itemSep;
 	ret.erase(ret.find_last_of(itemSep), itemSep.length());
 	return (ret);
 }
@@ -145,13 +154,18 @@ FRIF::Util::splice(
 std::string
 FRIF::Util::splice(
     const std::vector<EFS::Core> &v,
+    const std::string &elementSep,
     const std::string &itemSep)
 {
+	if (elementSep == itemSep)
+		throw std::runtime_error{"elementSep == itemSep"};
+
 	std::string ret{};
 	for (const auto &c : v)
-		ret += ts(c.coordinate.x) + ';' + ts(c.coordinate.y) + ';' +
+		ret += ts(c.coordinate.x) + elementSep +
+		    ts(c.coordinate.y) + elementSep +
 		    (c.coordinateUncertainty ?
-		    ts(*c.coordinateUncertainty) : NA) + ';' +
+		    ts(*c.coordinateUncertainty) : NA) + elementSep +
 		    (c.direction ? ts(*c.direction) : NA) + itemSep;
 	ret.erase(ret.find_last_of(itemSep), itemSep.length());
 	return (ret);
@@ -160,33 +174,40 @@ FRIF::Util::splice(
 std::string
 FRIF::Util::splice(
     const std::vector<EFS::Delta> &v,
+    const std::string &elementSep,
     const std::string &itemSep)
 {
+	if (elementSep == itemSep)
+		throw std::runtime_error{"elementSep == itemSep"};
+
 	std::string ret{};
 	for (const auto &d : v) {
-		ret += ts(d.coordinate.x) + ';' +
-		    ts(d.coordinate.y) + ';' +
+		ret += ts(d.coordinate.x) + elementSep +
+		    ts(d.coordinate.y) + elementSep +
 		    (d.coordinateUncertainty ?
-		    ts(*d.coordinateUncertainty) : NA) + ';';
+		    ts(*d.coordinateUncertainty) : NA) + elementSep;
 		if (d.direction)
 			ret +=
 			    (std::get<0>(*d.direction) ?
-				ts(*std::get<0>(*d.direction)) : NA) + ';' +
+				ts(*std::get<0>(*d.direction)) : NA) +
+				elementSep +
 			    (std::get<1>(*d.direction) ?
-				ts(*std::get<1>(*d.direction)) : NA) + ';' +
+				ts(*std::get<1>(*d.direction)) : NA) +
+				elementSep +
 			    (std::get<2>(*d.direction) ?
-				ts(*std::get<2>(*d.direction)) : NA) + ';';
+				ts(*std::get<2>(*d.direction)) : NA) +
+				elementSep;
 		if (d.directionUncertainty)
 			ret +=
 			    (std::get<0>(*d.directionUncertainty) ?
 				ts(*std::get<0>(*d.directionUncertainty)) :
-				NA) + ';' +
+				NA) + elementSep +
 			    (std::get<1>(*d.directionUncertainty) ?
 				ts(*std::get<1>(*d.directionUncertainty)) :
-				NA) + ';' +
+				NA) + elementSep +
 			    (std::get<2>(*d.directionUncertainty) ?
 				ts(*std::get<2>(*d.directionUncertainty)) :
-				NA) + ';';
+				NA) + elementSep;
 		ret += itemSep;
 	}
 	ret.erase(ret.find_last_of(itemSep), itemSep.length());
@@ -196,11 +217,23 @@ FRIF::Util::splice(
 std::string
 FRIF::Util::splice(
     const std::vector<EFS::RidgeQualityRegion> &v,
-    const std::string &itemSep)
+    const std::string &elementSep,
+    const std::string &itemSep,
+    const std::string &coordinateElementSep,
+    const std::string &coordinateItemSep)
 {
+	if ((elementSep == itemSep) || (elementSep == coordinateElementSep) ||
+	    (elementSep == coordinateItemSep) ||
+	    (itemSep == coordinateElementSep) ||
+	    (itemSep == coordinateItemSep) ||
+	    (coordinateElementSep == coordinateItemSep))
+		throw std::runtime_error{"separator equality"};
+
 	std::string ret{};
 	for (const auto &r : v)
-		ret += e2i2s(r.quality) + ':' + splice(r.region) + itemSep;
+		ret += e2i2s(r.quality) + elementSep +
+		    splice(r.region, coordinateElementSep, coordinateItemSep) +
+		    itemSep;
 	ret.erase(ret.find_last_of(itemSep), itemSep.length());
 	return (ret);
 }
