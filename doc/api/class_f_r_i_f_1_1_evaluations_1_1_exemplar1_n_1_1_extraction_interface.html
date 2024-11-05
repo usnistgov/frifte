@@ -255,8 +255,8 @@ The value of the returned <a class="el" href="struct_f_r_i_f_1_1_create_template
 <dd>
 This method must return in &lt;= <code>N * M</code> milliseconds for each element of <code>samples</code>, on average, as measured on a fixed subset of data, where<ul>
 <li><code>N</code><ul>
-<li>500 for exemplar images</li>
-<li>250 for feature sets</li>
+<li>3000 for exemplar images</li>
+<li>1500 for feature sets</li>
 </ul>
 </li>
 <li><code>M</code><ul>
@@ -270,7 +270,7 @@ This method must return in &lt;= <code>N * M</code> milliseconds for each elemen
 </ul>
 </dd>
 <dd>
-If <code>samples</code> contained <code>RightThumb</code>, and <code>LeftFour</code>, the time requirement would be &lt;= ((500 * 1) + (500 * 4)) milliseconds.</dd>
+If <code>samples</code> contained <code>RightThumb</code>, and <code>LeftFour</code>, the time requirement would be &lt;= 15s (i.e., &lt;= ((3000 * 1) + (3000 * 4)) milliseconds).</dd>
 <dd>
 This method shall not spawn threads. </dd></dl>
 
