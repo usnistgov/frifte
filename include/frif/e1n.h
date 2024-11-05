@@ -176,8 +176,8 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * element of `samples`, on average, as measured on a fixed
 		 * subset of data, where
 		 *   * `N`
-		 *     *  500 for exemplar images
-		 *     *  250 for feature sets
+		 *     *  3000 for exemplar images
+		 *     *  1500 for feature sets
 		 *   * `M`
 		 *     * 1 for single fingers
 		 *     * 2 for two-finger simultaneous captures
@@ -187,8 +187,8 @@ namespace FRIF::Evaluations::Exemplar1N
 		 *
 		 * @note
 		 * If `samples` contained `RightThumb`, and `LeftFour`, the
-		 * time requirement would be
-		 * <= ((500 * 1) + (500 * 4)) milliseconds.
+		 * time requirement would be <= 15s (i.e.,
+		 * <= ((3000 * 1) + (3000 * 4)) milliseconds).
 		 *
 		 * @note
 		 * This method shall not spawn threads.
