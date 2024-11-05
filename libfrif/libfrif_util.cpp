@@ -150,6 +150,8 @@ FRIF::Util::splice(
 	std::string ret{};
 	for (const auto &c : v)
 		ret += ts(c.coordinate.x) + ';' + ts(c.coordinate.y) + ';' +
+		    (c.coordinateUncertainty ?
+		    ts(*c.coordinateUncertainty) : NA) + ';' +
 		    (c.direction ? ts(*c.direction) : NA) + sep;
 	ret.erase(ret.find_last_of(sep), sep.length());
 	return (ret);
@@ -163,7 +165,9 @@ FRIF::Util::splice(
 	std::string ret{};
 	for (const auto &d : v) {
 		ret += ts(d.coordinate.x) + ';' +
-		    ts(d.coordinate.y) + ';';
+		    ts(d.coordinate.y) + ';' +
+		    (d.coordinateUncertainty ?
+		    ts(*d.coordinateUncertainty) : NA) + ';';
 		if (d.direction)
 			ret +=
 			    (std::get<0>(*d.direction) ?
@@ -172,6 +176,17 @@ FRIF::Util::splice(
 				ts(*std::get<1>(*d.direction)) : NA) + ';' +
 			    (std::get<2>(*d.direction) ?
 				ts(*std::get<2>(*d.direction)) : NA) + ';';
+		if (d.directionUncertainty)
+			ret +=
+			    (std::get<0>(*d.directionUncertainty) ?
+				ts(*std::get<0>(*d.directionUncertainty)) :
+				NA) + ';' +
+			    (std::get<1>(*d.directionUncertainty) ?
+				ts(*std::get<1>(*d.directionUncertainty)) :
+				NA) + ';' +
+			    (std::get<2>(*d.directionUncertainty) ?
+				ts(*std::get<2>(*d.directionUncertainty)) :
+				NA) + ';';
 		ret += sep;
 	}
 	ret.erase(ret.find_last_of(sep), sep.length());

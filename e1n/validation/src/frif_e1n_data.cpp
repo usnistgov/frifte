@@ -129,7 +129,7 @@ FRIF::Evaluations::Exemplar1N::Validation::Data::readCSV(
 		    std::stoi(cols[11]));
 
 		/*
-		 * Cores
+		 * Cores (don't load uncertainty)
 		 */
 		std::stringstream coordSS{}, multiValSS{cols[12]};
 		std::string coord{}, multiVal{};
@@ -184,7 +184,7 @@ FRIF::Evaluations::Exemplar1N::Validation::Data::readCSV(
 		}
 
 		/*
-		 * Deltas
+		 * Deltas (don't load uncertainty)
 		 */
 		multiValSS.str(cols[13]);
 		coords.clear();
