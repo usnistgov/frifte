@@ -170,7 +170,7 @@ namespace FRIF::Util
 	 *
 	 * @param v
 	 * Vector of Coordinate to output.
-	 * @param sep
+	 * @param itemSep
 	 * Token to separate multiple Coordinate.
 	 *
 	 * @return
@@ -179,7 +179,7 @@ namespace FRIF::Util
 	std::string
 	splice(
 	    const std::vector<Coordinate> &v,
-	    const std::string &sep = "|");
+	    const std::string &itemSep = "|");
 
 	/**
 	 * @brief
@@ -187,7 +187,7 @@ namespace FRIF::Util
 	 *
 	 * @param v
 	 * Vector of Minutia to output.
-	 * @param sep
+	 * @param itemSep
 	 * Token to separate multiple Minutia.
 	 *
 	 * @return
@@ -196,7 +196,7 @@ namespace FRIF::Util
 	std::string
 	splice(
 	    const std::vector<EFS::Minutia> &v,
-	    const std::string &sep = "|");
+	    const std::string &itemSep = "|");
 
 	/**
 	 * @brief
@@ -204,7 +204,7 @@ namespace FRIF::Util
 	 *
 	 * @param v
 	 * Vector of Core to output.
-	 * @param sep
+	 * @param itemSep
 	 * Token to separate multiple Core.
 	 *
 	 * @return
@@ -213,7 +213,7 @@ namespace FRIF::Util
 	std::string
 	splice(
 	    const std::vector<EFS::Core> &v,
-	    const std::string &sep = "|");
+	    const std::string &itemSep = "|");
 
 	/**
 	 * @brief
@@ -221,7 +221,7 @@ namespace FRIF::Util
 	 *
 	 * @param v
 	 * Vector of Delta to output.
-	 * @param sep
+	 * @param itemSep
 	 * Token to separate multiple Delta.
 	 *
 	 * @return
@@ -230,7 +230,7 @@ namespace FRIF::Util
 	std::string
 	splice(
 	    const std::vector<EFS::Delta> &v,
-	    const std::string &sep = "|");
+	    const std::string &itemSep = "|");
 
 	/**
 	 * @brief
@@ -238,7 +238,7 @@ namespace FRIF::Util
 	 *
 	 * @param v
 	 * Vector of RidgeQualityRegion to output.
-	 * @param sep
+	 * @param itemSep
 	 * Token to separate multiple RidgeQualityRegion.
 	 *
 	 * @return
@@ -247,7 +247,7 @@ namespace FRIF::Util
 	std::string
 	splice(
 	    const std::vector<EFS::RidgeQualityRegion> &v,
-	    const std::string &sep = "|");
+	    const std::string &itemSep = "|");
 
 	/**
 	 * @brief
@@ -255,7 +255,7 @@ namespace FRIF::Util
 	 *
 	 * @param v
 	 * Vector of string to output.
-	 * @param sep
+	 * @param itemSep
 	 * Token to separate multiple strings.
 	 *
 	 * @return
@@ -264,7 +264,7 @@ namespace FRIF::Util
 	std::string
 	splice(
 	    const std::vector<std::string> &v,
-	    const std::string &sep);
+	    const std::string &itemSep);
 
 	/**
 	 * @brief
@@ -272,7 +272,7 @@ namespace FRIF::Util
 	 *
 	 * @param v
 	 * Vector of enumerations to output.
-	 * @param sep
+	 * @param itemSep
 	 * Token to separate multiple enumerations
 	 *
 	 * @return
@@ -283,12 +283,12 @@ namespace FRIF::Util
 	std::string
 	splice(
 	    const std::vector<T> &v,
-	    const std::string &sep = "|")
+	    const std::string &itemSep = "|")
 	{
 		std::string ret{};
 		for (const auto &e : v)
-			ret += e2i2s(e) + sep;
-		ret.erase(ret.find_last_of(sep), sep.length());
+			ret += e2i2s(e) + itemSep;
+		ret.erase(ret.find_last_of(itemSep), itemSep.length());
 		return (ret);
 	}
 

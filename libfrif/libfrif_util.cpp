@@ -116,19 +116,19 @@ FRIF::Util::sanitizeMessage(
 std::string
 FRIF::Util::splice(
     const std::vector<Coordinate> &v,
-    const std::string &sep)
+    const std::string &itemSep)
 {
 	std::string ret{};
 	for (const auto &c : v)
-		ret += ts(c.x) + ';' + ts(c.y) + sep;
-	ret.erase(ret.find_last_of(sep), sep.length());
+		ret += ts(c.x) + ';' + ts(c.y) + itemSep;
+	ret.erase(ret.find_last_of(itemSep), itemSep.length());
 	return (ret);
 }
 
 std::string
 FRIF::Util::splice(
     const std::vector<EFS::Minutia> &v,
-    const std::string &sep)
+    const std::string &itemSep)
 {
 	std::string ret{};
 	for (const auto &m : v)
@@ -137,30 +137,30 @@ FRIF::Util::splice(
 		    ts(*m.coordinateUncertainty) : NA) + ';' + ts(m.theta) +
 		    ';' +
 		    (m.thetaUncertainty ? ts(*m.thetaUncertainty) : NA) + ';' +
-		    e2i2s(m.type) + sep;
-	ret.erase(ret.find_last_of(sep), sep.length());
+		    e2i2s(m.type) + itemSep;
+	ret.erase(ret.find_last_of(itemSep), itemSep.length());
 	return (ret);
 }
 
 std::string
 FRIF::Util::splice(
     const std::vector<EFS::Core> &v,
-    const std::string &sep)
+    const std::string &itemSep)
 {
 	std::string ret{};
 	for (const auto &c : v)
 		ret += ts(c.coordinate.x) + ';' + ts(c.coordinate.y) + ';' +
 		    (c.coordinateUncertainty ?
 		    ts(*c.coordinateUncertainty) : NA) + ';' +
-		    (c.direction ? ts(*c.direction) : NA) + sep;
-	ret.erase(ret.find_last_of(sep), sep.length());
+		    (c.direction ? ts(*c.direction) : NA) + itemSep;
+	ret.erase(ret.find_last_of(itemSep), itemSep.length());
 	return (ret);
 }
 
 std::string
 FRIF::Util::splice(
     const std::vector<EFS::Delta> &v,
-    const std::string &sep)
+    const std::string &itemSep)
 {
 	std::string ret{};
 	for (const auto &d : v) {
@@ -187,33 +187,33 @@ FRIF::Util::splice(
 			    (std::get<2>(*d.directionUncertainty) ?
 				ts(*std::get<2>(*d.directionUncertainty)) :
 				NA) + ';';
-		ret += sep;
+		ret += itemSep;
 	}
-	ret.erase(ret.find_last_of(sep), sep.length());
+	ret.erase(ret.find_last_of(itemSep), itemSep.length());
 	return (ret);
 }
 
 std::string
 FRIF::Util::splice(
     const std::vector<EFS::RidgeQualityRegion> &v,
-    const std::string &sep)
+    const std::string &itemSep)
 {
 	std::string ret{};
 	for (const auto &r : v)
-		ret += e2i2s(r.quality) + ':' + splice(r.region) + sep;
-	ret.erase(ret.find_last_of(sep), sep.length());
+		ret += e2i2s(r.quality) + ':' + splice(r.region) + itemSep;
+	ret.erase(ret.find_last_of(itemSep), itemSep.length());
 	return (ret);
 }
 
 std::string
 FRIF::Util::splice(
     const std::vector<std::string> &v,
-    const std::string &sep)
+    const std::string &itemSep)
 {
 	std::string ret{};
 	for (const auto &s : v)
-		ret += s + sep;
-	ret.erase(ret.find_last_of(sep), sep.length());
+		ret += s + itemSep;
+	ret.erase(ret.find_last_of(itemSep), itemSep.length());
 	return (ret);
 }
 
