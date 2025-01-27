@@ -1820,18 +1820,18 @@ main(
     char *argv[])
 {
 	/*
-	 * Check API version.
+	 * Check FRIF API version.
 	 */
-	static const uint16_t expectedMajor{0};
-	static const uint16_t expectedMinor{0};
-	static const uint16_t expectedPatch{1};
-	if (!((FRIF::API_MAJOR_VERSION == expectedMajor) &&
-	    (FRIF::API_MINOR_VERSION == expectedMinor) &&
-	    (FRIF::API_PATCH_VERSION == expectedPatch))) {
+	static const uint16_t expectedFRIFMajor{1};
+	static const uint16_t expectedFRIFMinor{0};
+	static const uint16_t expectedFRIFPatch{0};
+	if (!((FRIF::API_MAJOR_VERSION == expectedFRIFMajor) &&
+	    (FRIF::API_MINOR_VERSION == expectedFRIFMinor) &&
+	    (FRIF::API_PATCH_VERSION == expectedFRIFPatch))) {
 		std::cerr << "Incompatible API version encountered.\n "
-		    "- Validation: " << expectedMajor << '.' << expectedMinor <<
-		    '.' << expectedPatch << "\n - Participant: " <<
-		    FRIF::API_MAJOR_VERSION << '.' <<
+		    "- Validation: " << expectedFRIFMajor << '.' <<
+		    expectedFRIFMinor << '.' << expectedFRIFPatch << "\n - "
+		    "Participant: " << FRIF::API_MAJOR_VERSION << '.' <<
 		    FRIF::API_MINOR_VERSION << '.' <<
 		    FRIF::API_PATCH_VERSION << '\n';
 		std::cerr << "Rebuild your core library with the latest FRIF "
