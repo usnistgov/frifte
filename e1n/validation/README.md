@@ -43,10 +43,11 @@ Requirements
    - Because organizations must agree to NIST Special Database terms and
      conditions, the required fingerprint imagery is not included in this GitHub
      repository. Request and download the data from our [requests website].
- * Ubuntu Server 24.04 LTS
+ * Ubuntu Server 24.04.1 LTS
    - Even if this is not the latest version of Ubuntu Server, it will be the
      version used to run the evaluation. [Direct downloads] are available from
-     the [Ubuntu Mirrors] and directly from the [NIST Image Group].
+     the [Ubuntu Mirrors] and directly from the
+     [NIST Biometric Technologies Group].
    - We **highly suggest** matching the exact versions of packages installed in
      our environment. A link to the names and versions of these pacakages is
      available.
@@ -93,7 +94,7 @@ $ ./validate
 Checking for required packages... [OKAY]
 Checking for previous validation attempts... [OKAY]
 Checking validation version... (no Internet connection) [SKIP]
-Checking OS and version... (Ubuntu Server 24.04 LTS (Noble Numbat)) [OKAY]
+Checking OS and version... (Ubuntu Server 24.04.1 LTS (Noble Numbat)) [OKAY]
 Checking for unexpanded validation image tarballs... [DEFER]
  -> Expanding "frif_e1n_validation_images-2024093014427.tar.xz"... [OKAY]
 Checking for unexpanded validation image tarballs... [OKAY]
@@ -367,8 +368,8 @@ The items in this repository are released in the public domain. See the
 
 [API]: https://pages.nist.gov/frif/doc/api/e1n.html
 [Ubuntu Mirrors]: https://launchpad.net/ubuntu/+cdmirrors
-[Direct downloads]: https://old-releases.ubuntu.com/releases/24.04/ubuntu-24.04-live-server-amd64.iso
-[NIST Image Group]: https://nigos.nist.gov/evaluations/ubuntu-24.04-live-server-amd64.iso
+[Direct downloads]: https://releases.ubuntu.com/releases/24.04.1/ubuntu-24.04.1-live-server-amd64.iso
+[NIST Biometric Technologies Group]: https://nigos.nist.gov/evaluations/ubuntu-24.04.1-live-server-amd64.iso
 [lib/]: https://github.com/usnistgov/frif/tree/main/e1n/validation/lib
 [../libfrif_e1n/]: https://github.com/usnistgov/frif/tree/main/e1n/libfrif_e1n
 [../../libfrif/]: https://github.com/usnistgov/frif/tree/main/libfrif
