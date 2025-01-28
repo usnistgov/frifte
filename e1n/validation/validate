@@ -1185,7 +1185,7 @@ compile()
 			msg+="that are being found in a location other than "
 			msg+="the lib directory. Review the filtered "
 			msg+="'ldd' output below for more information (please "
-			msg+="report any false-positives):"
+			msg+="report any false positives):"
 			warn "${msg}"
 
 			ldd "${binary}" | grep -v \
