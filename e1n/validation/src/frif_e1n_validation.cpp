@@ -1839,6 +1839,30 @@ main(
 		return (EXIT_FAILURE);
 	}
 
+	/*
+	 * Check E1N API version.
+	 */
+	static const uint16_t expectedE1NMajor{1};
+	static const uint16_t expectedE1NMinor{0};
+	static const uint16_t expectedE1NPatch{0};
+	if (!((FRIF::Evaluations::Exemplar1N::API_MAJOR_VERSION ==
+	    expectedE1NMajor) &&
+	    (FRIF::Evaluations::Exemplar1N::API_MINOR_VERSION ==
+	    expectedE1NMinor) &&
+	    (FRIF::Evaluations::Exemplar1N::API_PATCH_VERSION ==
+	    expectedE1NPatch))) {
+		std::cerr << "Incompatible API version encountered.\n "
+		    "- Validation: " << expectedE1NMajor << '.' <<
+		    expectedE1NMinor << '.' << expectedE1NPatch << "\n - "
+		    "Participant: " <<
+		    FRIF::Evaluations::Exemplar1N::API_MAJOR_VERSION << '.' <<
+		    FRIF::Evaluations::Exemplar1N::API_MINOR_VERSION << '.' <<
+		    FRIF::Evaluations::Exemplar1N::API_PATCH_VERSION << '\n';
+		std::cerr << "Rebuild your core library with the latest FRIF "
+		    "E1N header files\n";
+		return (EXIT_FAILURE);
+	}
+
 	FRIF::Evaluations::Exemplar1N::Validation::Arguments args{};
 	try {
 		args = FRIF::Evaluations::Exemplar1N::Validation::
