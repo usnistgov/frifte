@@ -29,16 +29,16 @@ namespace FRIF
 	 *
 	 * @note
 	 * If provided a multi-position image and applicable to the feature
-	 * extraction algorithm, Features#roi should be populated with
-	 * segmentation coordinates and Features#frgp should be set for each
-	 * position.
+	 * extraction algorithm, EFS::Features#roi should be populated with
+	 * segmentation coordinates and EFS::Features#frgp should be set for
+	 * each position.
 	 */
 	struct TemplateData
 	{
 		/** Identifier provided during template creation. */
 		std::string identifier{};
 
-		/** Link to Image#identifier and/or Features#identifier. */
+		/** Link to Image#identifier and/or EFS::Features#identifier. */
 		uint8_t inputIdentifier{};
 
 		/** Extended feature set data */
@@ -184,8 +184,8 @@ namespace FRIF
 
 	/**
 	 * @brief
-	 * Representation to output Correspondence for each SubjectPositionCandidate from
-	 * a SubjectPositionCandidateList.
+	 * Representation to output Correspondence for each
+	 * SubjectPositionCandidate from a SubjectPositionCandidateList.
 	 * @details
 	 * Key is a unique subject identifier and finger position from that
 	 * subject, representing a reference identity. Value is a set of
@@ -198,8 +198,8 @@ namespace FRIF
 
 	/**
 	 * @brief
-	 * Representation to output Correspondence for each SubjectCandidate from
-	 * a SubjectCandidateList.
+	 * Representation to output Correspondence for each SubjectCandidate
+	 * from a SubjectCandidateList.
 	 * @details
 	 * Key is a unique subject identifier, representing a reference
 	 * identity. Value is a set of Correspondence that align features from

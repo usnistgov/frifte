@@ -211,7 +211,7 @@ FRIF::Evaluations::Exemplar1N::Validation::forkOperation(
 			}
 
 			std::exit(EXIT_SUCCESS);
-		case -1: 	/* Error */
+		case -1:	/* Error */
 			throw std::runtime_error{"Error during fork()"};
 		default:	/* Parent */
 			break;
@@ -1547,8 +1547,8 @@ FRIF::Evaluations::Exemplar1N::Validation::singleSearch(
 	 *       Hopefully passing a 0-byte template during validation will
 	 *       encourage you to validate templates first.
 	 */
-// 	if (probeTemplate.size() == 0) {
-// 	}
+//	if (probeTemplate.size() == 0) {
+//	}
 
 	/* Checked in parseArguments */
 	const uint16_t maxCandidates = static_cast<uint16_t>(args.maximum);
@@ -1618,7 +1618,7 @@ FRIF::Evaluations::Exemplar1N::Validation::singleSearch(
 		std::stable_sort(sorted.begin(), sorted.end(), [](
 		    const SubjectCandidateList::value_type &a,
 		    const SubjectCandidateList::value_type &b) {
-		    	return (std::get<double>(a) > std::get<double>(b));
+			return (std::get<double>(a) > std::get<double>(b));
 		});
 
 		std::vector<SubjectCandidateList::value_type>::size_type rank{};
@@ -1669,7 +1669,7 @@ FRIF::Evaluations::Exemplar1N::Validation::singleSearch(
 		std::stable_sort(sorted.begin(), sorted.end(), [](
 		    const SubjectPositionCandidateList::value_type &a,
 		    const SubjectPositionCandidateList::value_type &b) {
-		    	return (std::get<double>(a) > std::get<double>(b));
+			return (std::get<double>(a) > std::get<double>(b));
 		});
 
 		std::vector<SubjectPositionCandidateList::value_type>::size_type
@@ -1733,8 +1733,8 @@ FRIF::Evaluations::Exemplar1N::Validation::singleExtractCorrespondence(
 	 *       Hopefully passing a 0-byte template during validation will
 	 *       encourage you to validate templates first.
 	 */
-// 	if (probeTemplate.size() == 0) {
-// 	}
+//	if (probeTemplate.size() == 0) {
+//	}
 
 	std::chrono::steady_clock::time_point start{}, stop{};
 	std::variant<std::optional<SubjectCandidateListCorrespondence>,
@@ -1820,22 +1820,46 @@ main(
     char *argv[])
 {
 	/*
-	 * Check API version.
+	 * Check FRIF API version.
 	 */
-	static const uint16_t expectedMajor{0};
-	static const uint16_t expectedMinor{0};
-	static const uint16_t expectedPatch{1};
-	if (!((FRIF::API_MAJOR_VERSION == expectedMajor) &&
-	    (FRIF::API_MINOR_VERSION == expectedMinor) &&
-	    (FRIF::API_PATCH_VERSION == expectedPatch))) {
+	static const uint16_t expectedFRIFMajor{1};
+	static const uint16_t expectedFRIFMinor{0};
+	static const uint16_t expectedFRIFPatch{0};
+	if (!((FRIF::API_MAJOR_VERSION == expectedFRIFMajor) &&
+	    (FRIF::API_MINOR_VERSION == expectedFRIFMinor) &&
+	    (FRIF::API_PATCH_VERSION == expectedFRIFPatch))) {
 		std::cerr << "Incompatible API version encountered.\n "
-		    "- Validation: " << expectedMajor << '.' << expectedMinor <<
-		    '.' << expectedPatch << "\n - Participant: " <<
-		    FRIF::API_MAJOR_VERSION << '.' <<
+		    "- Validation: " << expectedFRIFMajor << '.' <<
+		    expectedFRIFMinor << '.' << expectedFRIFPatch << "\n - "
+		    "Participant: " << FRIF::API_MAJOR_VERSION << '.' <<
 		    FRIF::API_MINOR_VERSION << '.' <<
 		    FRIF::API_PATCH_VERSION << '\n';
 		std::cerr << "Rebuild your core library with the latest FRIF "
 		    "header files\n";
+		return (EXIT_FAILURE);
+	}
+
+	/*
+	 * Check E1N API version.
+	 */
+	static const uint16_t expectedE1NMajor{1};
+	static const uint16_t expectedE1NMinor{0};
+	static const uint16_t expectedE1NPatch{0};
+	if (!((FRIF::Evaluations::Exemplar1N::API_MAJOR_VERSION ==
+	    expectedE1NMajor) &&
+	    (FRIF::Evaluations::Exemplar1N::API_MINOR_VERSION ==
+	    expectedE1NMinor) &&
+	    (FRIF::Evaluations::Exemplar1N::API_PATCH_VERSION ==
+	    expectedE1NPatch))) {
+		std::cerr << "Incompatible API version encountered.\n "
+		    "- Validation: " << expectedE1NMajor << '.' <<
+		    expectedE1NMinor << '.' << expectedE1NPatch << "\n - "
+		    "Participant: " <<
+		    FRIF::Evaluations::Exemplar1N::API_MAJOR_VERSION << '.' <<
+		    FRIF::Evaluations::Exemplar1N::API_MINOR_VERSION << '.' <<
+		    FRIF::Evaluations::Exemplar1N::API_PATCH_VERSION << '\n';
+		std::cerr << "Rebuild your core library with the latest FRIF "
+		    "E1N header files\n";
 		return (EXIT_FAILURE);
 	}
 

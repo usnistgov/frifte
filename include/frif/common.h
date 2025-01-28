@@ -24,7 +24,7 @@
 
 namespace FRIF
 {
-	/** Information about the result of calling a FRIF API function. */
+	/** Information about the result of calling a %FRIF TE API function. */
 	struct ReturnStatus
 	{
 		/** Possible outcomes when performing operations. */
@@ -291,11 +291,11 @@ namespace FRIF
 	extern uint16_t API_PATCH_VERSION;
 	#else /* NIST_EXTERN_API_VERSION */
 	/** API major version number. */
-	uint16_t API_MAJOR_VERSION{0};
+	uint16_t API_MAJOR_VERSION{1};
 	/** API minor version number. */
 	uint16_t API_MINOR_VERSION{0};
 	/** API patch version number. */
-	uint16_t API_PATCH_VERSION{1};
+	uint16_t API_PATCH_VERSION{0};
 	#endif /* NIST_FRIF_EXTERN_API_VERSION */
 
 	/*
