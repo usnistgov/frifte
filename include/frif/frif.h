@@ -17,8 +17,8 @@
  *  - Slap Fingerprint Segmentation --- _Coming Soon!_
  *
  * @section Contact
- * Additional information regarding %FRIF can be received by emailing questions
- * to the test liaisons at frif@nist.gov.
+ * Additional information regarding %FRIF %TEs can be received by emailing
+ * questions to the test liaisons at frif@nist.gov.
  *
  * @section License
  * This software was developed at NIST by employees of the Federal Government

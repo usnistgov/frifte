@@ -24,7 +24,7 @@
 
 namespace FRIF
 {
-	/** Information about the result of calling a FRIF API function. */
+	/** Information about the result of calling a %FRIF TE API function. */
 	struct ReturnStatus
 	{
 		/** Possible outcomes when performing operations. */
