@@ -184,8 +184,8 @@ namespace FRIF
 
 	/**
 	 * @brief
-	 * Representation to output Correspondence for each SubjectPositionCandidate from
-	 * a SubjectPositionCandidateList.
+	 * Representation to output Correspondence for each
+	 * SubjectPositionCandidate from a SubjectPositionCandidateList.
 	 * @details
 	 * Key is a unique subject identifier and finger position from that
 	 * subject, representing a reference identity. Value is a set of
@@ -198,8 +198,8 @@ namespace FRIF
 
 	/**
 	 * @brief
-	 * Representation to output Correspondence for each SubjectCandidate from
-	 * a SubjectCandidateList.
+	 * Representation to output Correspondence for each SubjectCandidate
+	 * from a SubjectCandidateList.
 	 * @details
 	 * Key is a unique subject identifier, representing a reference
 	 * identity. Value is a set of Correspondence that align features from

@@ -211,7 +211,7 @@ FRIF::Evaluations::Exemplar1N::Validation::forkOperation(
 			}
 
 			std::exit(EXIT_SUCCESS);
-		case -1: 	/* Error */
+		case -1:	/* Error */
 			throw std::runtime_error{"Error during fork()"};
 		default:	/* Parent */
 			break;
@@ -1547,8 +1547,8 @@ FRIF::Evaluations::Exemplar1N::Validation::singleSearch(
 	 *       Hopefully passing a 0-byte template during validation will
 	 *       encourage you to validate templates first.
 	 */
-// 	if (probeTemplate.size() == 0) {
-// 	}
+//	if (probeTemplate.size() == 0) {
+//	}
 
 	/* Checked in parseArguments */
 	const uint16_t maxCandidates = static_cast<uint16_t>(args.maximum);
@@ -1618,7 +1618,7 @@ FRIF::Evaluations::Exemplar1N::Validation::singleSearch(
 		std::stable_sort(sorted.begin(), sorted.end(), [](
 		    const SubjectCandidateList::value_type &a,
 		    const SubjectCandidateList::value_type &b) {
-		    	return (std::get<double>(a) > std::get<double>(b));
+			return (std::get<double>(a) > std::get<double>(b));
 		});
 
 		std::vector<SubjectCandidateList::value_type>::size_type rank{};
@@ -1669,7 +1669,7 @@ FRIF::Evaluations::Exemplar1N::Validation::singleSearch(
 		std::stable_sort(sorted.begin(), sorted.end(), [](
 		    const SubjectPositionCandidateList::value_type &a,
 		    const SubjectPositionCandidateList::value_type &b) {
-		    	return (std::get<double>(a) > std::get<double>(b));
+			return (std::get<double>(a) > std::get<double>(b));
 		});
 
 		std::vector<SubjectPositionCandidateList::value_type>::size_type
@@ -1733,8 +1733,8 @@ FRIF::Evaluations::Exemplar1N::Validation::singleExtractCorrespondence(
 	 *       Hopefully passing a 0-byte template during validation will
 	 *       encourage you to validate templates first.
 	 */
-// 	if (probeTemplate.size() == 0) {
-// 	}
+//	if (probeTemplate.size() == 0) {
+//	}
 
 	std::chrono::steady_clock::time_point start{}, stop{};
 	std::variant<std::optional<SubjectCandidateListCorrespondence>,
