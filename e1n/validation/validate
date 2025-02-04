@@ -1354,8 +1354,8 @@ move_back_dirs()
 log_canaries()
 {
 	local canary_prefix="canary"
-	find -L "${wd}/${validation_image_dir}" -maxdepth 1 \
-	    -name "${canary_prefix}*" \
+	find -L "${wd}/${validation_image_dir}/nonsense" -maxdepth 1 \
+	    -name "${canary_prefix}*gray" \
 	    -exec cksum -a sha256 {} \; >> "${output_dir}/canary.log"
 }
 
