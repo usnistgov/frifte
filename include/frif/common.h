@@ -57,7 +57,7 @@ namespace FRIF
 	struct Image
 	{
 		/** Number of bits comprising a single image pixel. */
-		enum class BitsPerPixel
+		enum class BitsPerPixel : uint8_t
 		{
 			Eight = 8,
 			Sixteen = 16,
@@ -87,7 +87,7 @@ namespace FRIF
 		 * Number of bits comprising a single color channel of a single
 		 * pixel.
 		 */
-		enum class BitsPerChannel
+		enum class BitsPerChannel : uint8_t
 		{
 			Eight = 8,
 			Sixteen = 16
