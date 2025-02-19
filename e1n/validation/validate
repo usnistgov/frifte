@@ -980,12 +980,13 @@ compile()
 		msg+="been modified. Refer to \"${wd}/CHECKSUMS\"."
 		fail "${msg}"
 	fi
-	echo >> "${log}"
+	{
+		echo
+		cksum -a sha256 "${wd}/validate"
+		echo
+	} >> "${log}"
 
-	cksum -a sha256 "${wd}/validate" >> "${log}"
-	echo >> "${log}"
-
-	if ! [ -z "${LD_LIBRARY_PATH}" ]; then
+	if [ -n "${LD_LIBRARY_PATH}" ]; then
 		local msg="You appear to have set the variable "
 		msg+="LD_LIBRARY_PATH. This is something that you should not "
 		msg+="do. Instead, ensure the RUNPATH of your core library is "
