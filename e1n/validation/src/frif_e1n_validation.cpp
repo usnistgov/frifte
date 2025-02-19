@@ -1080,7 +1080,7 @@ FRIF::Evaluations::Exemplar1N::Validation::parseArguments(
 			}
 			break;
 
-		case 'j': 	/* Number of processes */
+		case 'j': {	/* Number of processes */
 			try {
 				args.numProcs = static_cast<uint8_t>(
 				    std::stoul(optarg));
@@ -1090,17 +1090,27 @@ FRIF::Evaluations::Exemplar1N::Validation::parseArguments(
 				    "parsing \"" + std::string(optarg) + "\""};
 			}
 
-			/* Need to test 2 procs, even if only 1 core */
-			if (const auto threadCount = std::max(
-			    static_cast<unsigned int>(2), std::thread::
-			    hardware_concurrency());
-			    (threadCount == 0 && args.numProcs > 4) ||
-			    (args.numProcs > threadCount))
-				throw std::invalid_argument{"Number of "
-				    "processes (-f): Asked to spawn " +
-				    Util::ts(args.numProcs) + " processes, but "
-				    "refusing"};
+			const auto hwConcurrency = std::thread::
+			    hardware_concurrency();
+
+			/* Need to test multiple procs, even if only 1 core */
+			if (hwConcurrency == 0) {
+				if (args.numProcs > 2)
+					throw std::invalid_argument{"Number of "
+					    "processes (-f): Asked to spawn " +
+					    Util::ts(args.numProcs) + " "
+					    "processes, but refusing because "
+					    "number of cores cannot be "
+					    "determined"};
+			} else if (args.numProcs > hwConcurrency) {
+				std::cerr << "[NOTE] Number of processes seems "
+				    "too large. Reducing to number of "
+				    "concurrent threads detected (" +
+				    std::to_string(hwConcurrency) + ").\n";
+				args.numProcs = hwConcurrency;
+			}
 			break;
+		}
 		case 'm':	/* Maximum size */
 			try {
 				args.maximum = std::stoull(optarg);

@@ -1468,7 +1468,7 @@ run_createTemplate()
 	fi
 
 	# Check for runtime error messages
-	if [ "$(wc -l < "${log}")" -ne 1 ]; then
+	if [ "$(grep -c -v 'NOTE' "${log}")" -ne 1 ]; then
 		local msg="Unexpected output was logged. Please review: "
 		fail "${msg}" "$(rp "${log}")"
 	fi
@@ -1560,7 +1560,7 @@ run_search()
 	fi
 
 	# Check for runtime error messages
-	if [ "$(wc -l < "${log}")" -ne 1 ]; then
+	if [ "$(grep -c -v 'NOTE' "${log}")" -ne 1 ]; then
 		local msg="Unexpected output was logged. Please review: "
 		fail "${msg}" "$(rp "${log}")"
 	fi
