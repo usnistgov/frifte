@@ -17,4 +17,4 @@ SHA256 (src/../../../include/frifte/evaluations.h) = 807feb57eb68906bd60e1877dfc
 SHA256 (src/../../../include/frifte/frifte.h) = 924dc1c2575542e4b9ae35520c8d8db7254a4f4ce2e9ca6de2f186a703649e93
 SHA256 (src/../../../include/frifte/io.h) = ac4b5a8198aeb535f5f14fdeea882ac04924d97fb00a1f1719fcd774dfcb612c
 SHA256 (src/../../../include/frifte/util.h) = 419dffeed0cf8c19f57e9f459bd9298aeb83697ebc64a1abf31ad5e47641e6d4
-SHA256 (src/../validate) = dbbbe3501544c684c7ea601c8fa6ce64efa2b58bee55ca3b96b80a62f55ae814
+SHA256 (src/../validate) = 616b82ef7ee1697b592ec55ef03799d6066e15624641eff32f10255a2e1aa3e9

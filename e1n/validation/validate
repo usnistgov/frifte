@@ -14,7 +14,7 @@
 #     b. Unsuccessful? Work to resolve the listed errors, run                  #
 #        './validate clean', and repeat these steps.                           #
 #  3. Upload the encrypted file along with your public key via                 #
-#     https://pages.nist.gov/frifte/upload                                     #
+#     https://pages.nist.gov/frifte/e1n/upload                                 #
 ################################################################################
 #     E-mail: frifte@nist.gov                                                  #
 #        URL: https://github.com/usnistgov/frifte                              #
@@ -401,7 +401,7 @@ print_final_success()
 	boxline
 
 	msg="Please upload both ${tar_file}.asc and your public key via "
-	msg+="https://pages.nist.gov/frifte/upload"
+	msg+="https://pages.nist.gov/frifte/e1n/upload"
 
 	box "${msg}" 80 '=' '|' 'l' 0 1
 	font_reset
@@ -464,7 +464,7 @@ print_instructions()
 	echo "       './validate clean', and repeat these steps."
 	echo -n " 3. Upload the signed and encrypted file along with your "
 	echo "public key via"
-	echo "    https://pages.nist.gov/frifte/upload"
+	echo "    https://pages.nist.gov/frifte/e1n/upload"
 }
 
 # Print CBEFF information recorded to the console
