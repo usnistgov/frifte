@@ -13,7 +13,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Friction Ridge Image and Features: FRIF::EFS::Features Struct Reference</title>
+<title>Friction Ridge Image and Features Technology Evaluations: FRIF::EFS::Features Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,7 +39,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Friction Ridge Image and Features
+   <div id="projectname">Friction Ridge Image and Features Technology Evaluations
    </div>
    <div id="projectbrief">API for participating in NIST&#39;s Friction Ridge Image and Features Technology Evaluations.</div>
   </td>
@@ -123,6 +123,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a91ed7f5281ee50ca4904ab93c5b7141d" id="r_a91ed7f5281ee50ca4904ab93c5b7141d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91ed7f5281ee50ca4904ab93c5b7141d">ppi</a> {}</td></tr>
 <tr class="memdesc:a91ed7f5281ee50ca4904ab93c5b7141d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolution of the image used to derive these features in pixels per inch.  <br /></td></tr>
 <tr class="separator:a91ed7f5281ee50ca4904ab93c5b7141d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6325bfb79f621fc985fa6a95ca88ff7" id="r_ad6325bfb79f621fc985fa6a95ca88ff7"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="namespace_f_r_i_f_1_1_e_f_s.html#a09a66fa7b0ea3e5a2beb3cd459ddef4c">QualityMeasureMap</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6325bfb79f621fc985fa6a95ca88ff7">quality</a> {}</td></tr>
+<tr class="memdesc:ad6325bfb79f621fc985fa6a95ca88ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quality measures of the biometric sample.  <br /></td></tr>
+<tr class="separator:ad6325bfb79f621fc985fa6a95ca88ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88da981b824e3972d5ef68d3bbfe205d" id="r_a88da981b824e3972d5ef68d3bbfe205d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_f_r_i_f_1_1_e_f_s.html#aaac3a13e08279640e83afe55225ead4b">Impression</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88da981b824e3972d5ef68d3bbfe205d">imp</a> {<a class="el" href="namespace_f_r_i_f_1_1_e_f_s.html#aaac3a13e08279640e83afe55225ead4ba88183b946cc5f0e8c96b2e66e1c74a7e">Impression::Unknown</a>}</td></tr>
 <tr class="memdesc:a88da981b824e3972d5ef68d3bbfe205d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Impression type of the depicted region.  <br /></td></tr>
 <tr class="separator:a88da981b824e3972d5ef68d3bbfe205d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,7 +182,7 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p>Collection of ANSI/NIST-ITL 1-2011 (Update: 2015) Extended Feature Set fields understood by <a class="el" href="namespace_f_r_i_f.html" title="TE input/output types.">FRIF</a>. </p>
 <dl class="section note"><dt>Note</dt><dd>All measurements and locations within the image SHALL be expressed in pixels, <em>not</em> units of 10 micrometers. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01121">1121</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01271">1271</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="add5cc048ec5623c6da9e2611b7b8b519" name="add5cc048ec5623c6da9e2611b7b8b519"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#add5cc048ec5623c6da9e2611b7b8b519">&#9670;&#160;</a></span>identifier</h2>
@@ -196,7 +199,7 @@ Public Attributes</h2></td></tr>
 <p>An identifier for this set of data. </p>
 <p>Used to link <a class="el" href="struct_f_r_i_f_1_1_e_f_s_1_1_features.html" title="Collection of ANSI/NIST-ITL 1-2011 (Update: 2015) Extended Feature Set fields understood by FRIF.">Features</a> to <a class="el" href="struct_f_r_i_f_1_1_image.html" title="Data and metadata for an image.">Image</a>, <a class="el" href="struct_f_r_i_f_1_1_template_data.html" title="Information possibly stored in a template.">TemplateData</a>, and <a class="el" href="struct_f_r_i_f_1_1_correspondence.html" title="Information about a probe/reference relationship.">Correspondence</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01127">1127</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01277">1277</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -214,7 +217,26 @@ Public Attributes</h2></td></tr>
 
 <p>Resolution of the image used to derive these features in pixels per inch. </p>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01133">1133</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01283">1283</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+
+</div>
+</div>
+<a id="ad6325bfb79f621fc985fa6a95ca88ff7" name="ad6325bfb79f621fc985fa6a95ca88ff7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6325bfb79f621fc985fa6a95ca88ff7">&#9670;&#160;</a></span>quality</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;<a class="el" href="namespace_f_r_i_f_1_1_e_f_s.html#a09a66fa7b0ea3e5a2beb3cd459ddef4c">QualityMeasureMap</a>&gt; FRIF::EFS::Features::quality {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Quality measures of the biometric sample. </p>
+<p>If <a class="el" href="#a0b6257fc41ac5ed28544cee1c594652d" title="Closed convex polygon forming region of interest.">roi</a> is provided, quality measures should encompass only the region specified by <a class="el" href="#a0b6257fc41ac5ed28544cee1c594652d" title="Closed convex polygon forming region of interest.">roi</a>. Otherwise, the entire source image should be considered. </p>
+
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01294">1294</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -232,7 +254,7 @@ Public Attributes</h2></td></tr>
 
 <p>Impression type of the depicted region. </p>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01136">1136</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01297">1297</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -253,7 +275,7 @@ Public Attributes</h2></td></tr>
 </div><!-- fragment -->
 <p>Capture technology that created this image. </p>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01138">1138</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01299">1299</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -274,7 +296,7 @@ Public Attributes</h2></td></tr>
 </div><!-- fragment -->
 <p>Description of the depicted region. </p>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01141">1141</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01302">1302</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -292,7 +314,7 @@ Public Attributes</h2></td></tr>
 
 <p>Deviation of the friction ridge from an upright position/. </p>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01145">1145</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01306">1306</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -310,7 +332,7 @@ Public Attributes</h2></td></tr>
 
 <p>Methods used process the print. </p>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01147">1147</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01308">1308</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -328,7 +350,7 @@ Public Attributes</h2></td></tr>
 
 <p>Examiner/algorithmic value assessment for identification. </p>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01149">1149</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01310">1310</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -346,7 +368,7 @@ Public Attributes</h2></td></tr>
 
 <p>Substrate from which the print was developed. </p>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01151">1151</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01312">1312</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -364,7 +386,7 @@ Public Attributes</h2></td></tr>
 
 <p>Observed pattern classification. </p>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01153">1153</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01314">1314</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -382,7 +404,7 @@ Public Attributes</h2></td></tr>
 
 <p><a class="el" href="struct_f_r_i_f_1_1_image.html" title="Data and metadata for an image.">Image</a> is known to be or may possibly be laterally reversed. </p>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01158">1158</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01319">1319</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -400,7 +422,7 @@ Public Attributes</h2></td></tr>
 
 <p>Part or all of image is known to be or may possibly be tonally reversed. </p>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01163">1163</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01324">1324</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -419,7 +441,7 @@ Public Attributes</h2></td></tr>
 <p><a class="el" href="struct_f_r_i_f_1_1_e_f_s_1_1_core.html" title="Singular point of focus of innermost recurving ridge.">Core</a> locations. </p>
 <p><a class="el" href="struct_f_r_i_f_1_1_coordinate.html" title="Pixel location in an image.">Coordinate</a> are relative to the bounding rectangle created by <a class="el" href="#a0b6257fc41ac5ed28544cee1c594652d" title="Closed convex polygon forming region of interest.">roi</a>, if supplied. Otherwise, they are relative to the source image. Add the minimum X and Y values from <a class="el" href="#a0b6257fc41ac5ed28544cee1c594652d" title="Closed convex polygon forming region of interest.">roi</a> to convert ROI-relative <a class="el" href="struct_f_r_i_f_1_1_coordinate.html" title="Pixel location in an image.">Coordinate</a> to image-relative <a class="el" href="struct_f_r_i_f_1_1_coordinate.html" title="Pixel location in an image.">Coordinate</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01175">1175</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01336">1336</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -438,7 +460,7 @@ Public Attributes</h2></td></tr>
 <p><a class="el" href="struct_f_r_i_f_1_1_e_f_s_1_1_delta.html" title="Singular point of ridge divergence.">Delta</a> locations. </p>
 <p><a class="el" href="struct_f_r_i_f_1_1_coordinate.html" title="Pixel location in an image.">Coordinate</a> are relative to the bounding rectangle created by <a class="el" href="#a0b6257fc41ac5ed28544cee1c594652d" title="Closed convex polygon forming region of interest.">roi</a>, if supplied. Otherwise, they are relative to the source image. Add the minimum X and Y values from <a class="el" href="#a0b6257fc41ac5ed28544cee1c594652d" title="Closed convex polygon forming region of interest.">roi</a> to convert ROI-relative <a class="el" href="struct_f_r_i_f_1_1_coordinate.html" title="Pixel location in an image.">Coordinate</a> to image-relative <a class="el" href="struct_f_r_i_f_1_1_coordinate.html" title="Pixel location in an image.">Coordinate</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01186">1186</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01347">1347</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -458,7 +480,7 @@ Public Attributes</h2></td></tr>
 <p><a class="el" href="struct_f_r_i_f_1_1_coordinate.html" title="Pixel location in an image.">Coordinate</a> are relative to the bounding rectangle created by <a class="el" href="#a0b6257fc41ac5ed28544cee1c594652d" title="Closed convex polygon forming region of interest.">roi</a>, if supplied. Otherwise, they are relative to the source image. Add the minimum X and Y values from <a class="el" href="#a0b6257fc41ac5ed28544cee1c594652d" title="Closed convex polygon forming region of interest.">roi</a> to convert ROI-relative <a class="el" href="struct_f_r_i_f_1_1_coordinate.html" title="Pixel location in an image.">Coordinate</a> to image-relative <a class="el" href="struct_f_r_i_f_1_1_coordinate.html" title="Pixel location in an image.">Coordinate</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>NIST <b>strongly</b> discourages more than one <a class="el" href="struct_f_r_i_f_1_1_e_f_s_1_1_minutia.html" title="Friction ridge feature details.">Minutia</a> at equivalent <a class="el" href="struct_f_r_i_f_1_1_coordinate.html" title="Pixel location in an image.">Coordinate</a>. This can result in ambiguous <a class="el" href="struct_f_r_i_f_1_1_correspondence.html" title="Information about a probe/reference relationship.">Correspondence</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01202">1202</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01363">1363</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -476,7 +498,7 @@ Public Attributes</h2></td></tr>
 
 <p>Creases and other linear discontinuities. </p>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01204">1204</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01365">1365</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -495,7 +517,7 @@ Public Attributes</h2></td></tr>
 <p>Closed convex polygon forming region of interest. </p>
 <p>When specified, <a class="el" href="struct_f_r_i_f_1_1_coordinate.html" title="Pixel location in an image.">Coordinate</a> in <a class="el" href="struct_f_r_i_f_1_1_e_f_s_1_1_features.html" title="Collection of ANSI/NIST-ITL 1-2011 (Update: 2015) Extended Feature Set fields understood by FRIF.">Features</a> are relative to the bounding rectangle created here. Otherwise, they are relative to the source image. Add the minimum X and Y values here to convert ROI-relative <a class="el" href="struct_f_r_i_f_1_1_coordinate.html" title="Pixel location in an image.">Coordinate</a> to image-relative <a class="el" href="struct_f_r_i_f_1_1_coordinate.html" title="Pixel location in an image.">Coordinate</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01216">1216</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01377">1377</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -515,7 +537,7 @@ Public Attributes</h2></td></tr>
 <p><a class="el" href="struct_f_r_i_f_1_1_coordinate.html" title="Pixel location in an image.">Coordinate</a> are relative to the bounding rectangle created by <a class="el" href="#a0b6257fc41ac5ed28544cee1c594652d" title="Closed convex polygon forming region of interest.">roi</a>, if supplied. Otherwise, they are relative to the source image. Add the minimum X and Y values from <a class="el" href="#a0b6257fc41ac5ed28544cee1c594652d" title="Closed convex polygon forming region of interest.">roi</a> to convert ROI-relative <a class="el" href="struct_f_r_i_f_1_1_coordinate.html" title="Pixel location in an image.">Coordinate</a> to image-relative <a class="el" href="struct_f_r_i_f_1_1_coordinate.html" title="Pixel location in an image.">Coordinate</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>If populated, regions not explicitly defined will default to <a class="el" href="namespace_f_r_i_f_1_1_e_f_s.html#af2c0b8f1daa94d733bd833575d926619aa9ded1e5ce5d75814730bb4caaf49419" title="No ridge information.">RidgeQuality::Background</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01232">1232</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01393">1393</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>
@@ -534,7 +556,7 @@ Public Attributes</h2></td></tr>
 <p>Whether or not feature extraction was complex. </p>
 <p>Complexity should be determined as specified by the documentation for the "analysis complexity flag (CXF)" of ANSI/NIST-ITL 1-2011 (2015) Field 9.353. </p>
 
-<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01243">1243</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="efs_8h_source.html#l01404">1404</a> of file <a class="el" href="efs_8h_source.html">efs.h</a>.</p>
 
 </div>
 </div>

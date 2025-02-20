@@ -13,7 +13,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Friction Ridge Image and Features: efs.h File Reference</title>
+<title>Friction Ridge Image and Features Technology Evaluations: efs.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,7 +39,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Friction Ridge Image and Features
+   <div id="projectname">Friction Ridge Image and Features Technology Evaluations
    </div>
    <div id="projectbrief">API for participating in NIST&#39;s Friction Ridge Image and Features Technology Evaluations.</div>
   </td>
@@ -98,7 +98,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_01dcc045c9934696bf7edd904823b1ba.html">frif</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_9899a17b0d7648b9fa4f0a0a61f952e9.html">frifte</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -112,8 +112,9 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">efs.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;variant&gt;</code><br />
-<code>#include &lt;<a class="el" href="common_8h_source.html">frif/common.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;unordered_map&gt;</code><br />
+<code>#include &lt;variant&gt;</code><br />
+<code>#include &lt;<a class="el" href="common_8h_source.html">frifte/common.h</a>&gt;</code><br />
 </div>
 <p><a href="efs_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -142,6 +143,15 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_r_i_f_1_1_e_f_s_1_1_crease.html">FRIF::EFS::Crease</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Friction ridge linear flexion creases.  <a href="class_f_r_i_f_1_1_e_f_s_1_1_crease.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_r_i_f_1_1_e_f_s_1_1_quality_measure.html">FRIF::EFS::QualityMeasure</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measurement on the biometric sample.  <a href="class_f_r_i_f_1_1_e_f_s_1_1_quality_measure.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_f_r_i_f_1_1_e_f_s_1_1_quality_measure_1_1_description.html">FRIF::EFS::QualityMeasure::Description</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of algorithm that computed a <a class="el" href="class_f_r_i_f_1_1_e_f_s_1_1_quality_measure.html" title="Measurement on the biometric sample.">QualityMeasure</a>.  <a href="struct_f_r_i_f_1_1_e_f_s_1_1_quality_measure_1_1_description.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_f_r_i_f_1_1_e_f_s_1_1_quality_measure_1_1_description_hash.html">FRIF::EFS::QualityMeasure::DescriptionHash</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash function for <a class="el" href="struct_f_r_i_f_1_1_e_f_s_1_1_quality_measure_1_1_description.html" title="Description of algorithm that computed a QualityMeasure.">Description</a>.  <a href="struct_f_r_i_f_1_1_e_f_s_1_1_quality_measure_1_1_description_hash.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_f_r_i_f_1_1_e_f_s_1_1_features.html">FRIF::EFS::Features</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of ANSI/NIST-ITL 1-2011 (Update: 2015) Extended Feature Set fields understood by <a class="el" href="namespace_f_r_i_f.html" title="TE input/output types.">FRIF</a>.  <a href="struct_f_r_i_f_1_1_e_f_s_1_1_features.html#details">More...</a><br /></td></tr>
@@ -190,6 +200,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a15d1c4505f7f4e6b80e282fa53dc290a" id="r_a15d1c4505f7f4e6b80e282fa53dc290a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_r_i_f_1_1_e_f_s.html#a15d1c4505f7f4e6b80e282fa53dc290a">FRIF::EFS::CreaseClassification</a></td></tr>
 <tr class="memdesc:a15d1c4505f7f4e6b80e282fa53dc290a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of crease types.  <br /></td></tr>
 <tr class="separator:a15d1c4505f7f4e6b80e282fa53dc290a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09a66fa7b0ea3e5a2beb3cd459ddef4c" id="r_a09a66fa7b0ea3e5a2beb3cd459ddef4c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_r_i_f_1_1_e_f_s.html#a09a66fa7b0ea3e5a2beb3cd459ddef4c">FRIF::EFS::QualityMeasureMap</a></td></tr>
+<tr class="memdesc:a09a66fa7b0ea3e5a2beb3cd459ddef4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience type for storing <a class="el" href="class_f_r_i_f_1_1_e_f_s_1_1_quality_measure.html" title="Measurement on the biometric sample.">QualityMeasure</a>.  <br /></td></tr>
+<tr class="separator:a09a66fa7b0ea3e5a2beb3cd459ddef4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>

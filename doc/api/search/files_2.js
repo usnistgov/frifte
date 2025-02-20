@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['frif_2eh_0',['frif.h',['../frif_8h.html',1,'']]]
+  ['frifte_2eh_0',['frifte.h',['../frifte_8h.html',1,'']]]
 ];
