@@ -20,3 +20,6 @@ e1n/validation/lib/*
 e1n/validation/images
 e1n/validation/frif_e1n_validation_images-*.tar.xz
 
+# Documentation
+doc/doxygen/html
+
