@@ -250,6 +250,90 @@ FRIF::Util::splice(
 	return (ret);
 }
 
+std::string
+FRIF::Util::splice(
+    const EFS::QualityMeasure::Description &d,
+    const std::string &elementSep)
+{
+	std::string ret{};
+	if (d.identifier) {
+		if (d.identifier->marketing)
+			ret += sanitizeMessage(*d.identifier->marketing);
+		else
+			ret += NA;
+		ret += elementSep;
+
+		if (d.identifier->cbeff) {
+			ret += std::to_string(d.identifier->cbeff->owner) +
+			    elementSep;
+			if (d.identifier->cbeff->algorithm)
+				ret += std::to_string(
+				    *d.identifier->cbeff->algorithm);
+			else
+				ret += NA;
+			ret += elementSep;
+		} else
+			ret += NA + elementSep + NA + elementSep;
+	} else
+		ret += NA + elementSep + NA + elementSep + NA + elementSep;
+
+	if (d.version)
+		ret += sanitizeMessage(*d.version);
+	else
+		ret += NA;
+	ret += elementSep;
+
+	if (d.comment)
+		ret += sanitizeMessage(*d.comment);
+	else
+		ret += NA;
+	ret += elementSep;
+
+	if (d.modelSHA256)
+		ret += sanitizeMessage(*d.modelSHA256);
+	else
+		ret += NA;
+
+	return (ret);
+}
+
+std::string
+FRIF::Util::splice(
+    const EFS::QualityMeasure &q,
+    const std::string &elementSep)
+{
+	std::string ret = e2i2s(q.getStatus()) + elementSep;
+	if (q)
+		ret += std::to_string(q.getValue());
+	else
+		ret += NA;
+	ret += elementSep;
+
+	if (q.getMessage())
+		ret += sanitizeMessage(*q.getMessage());
+	else
+		ret += NA;
+
+	return (ret);
+}
+
+std::string
+FRIF::Util::splice(
+    const EFS::QualityMeasureMap &m,
+    const std::string &elementSep,
+    const std::string &itemSep)
+{
+	if (elementSep == itemSep)
+		throw std::runtime_error{"elementSep == itemSep"};
+
+	std::string ret{};
+	for (const auto &[k, v] : m)
+		ret += splice(k, elementSep) + elementSep +
+		    splice(v, elementSep) + itemSep;
+	ret.erase(ret.find_last_of(itemSep), itemSep.length());
+	return (ret);
+}
+
 std::vector<std::vector<uint64_t>>
 FRIF::Util::splitSet(
     const std::vector<uint64_t> &combinedSet,

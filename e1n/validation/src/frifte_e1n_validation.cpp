@@ -807,10 +807,8 @@ FRIF::Evaluations::Exemplar1N::Validation::makeExtractTemplateDataLogLine(
 		logLine += logLinePrefix + Util::ts(i) + ',' +
 		    Util::ts(extractedData->size()) + ',' +
 		    Util::ts(td.inputIdentifier) + ',';
-		logLine += (td.imageQuality ?
-		   Util::ts(*td.imageQuality) : Util::NA) + ',';
 
-		static const uint8_t efsElements{16};
+		static const uint8_t efsElements{17};
 		static const std::string NAEFS = Util::splice(
 		    std::vector<std::string>(efsElements, Util::NA), ",");
 		if (!td.features) {
@@ -819,6 +817,9 @@ FRIF::Evaluations::Exemplar1N::Validation::makeExtractTemplateDataLogLine(
 		}
 
 		const auto &efs = td.features.value();
+
+		logLine += (efs.quality ?
+		    Util::splice(*efs.quality) : Util::NA) + ',';
 		logLine += Util::e2i2s(efs.imp) + ',' + Util::e2i2s(efs.frct) +
 		    ',' + Util::e2i2s(efs.frgp) + ',';
 		if (efs.orientation) {

@@ -304,6 +304,64 @@ namespace FRIF::Util
 
 	/**
 	 * @brief
+	 * Make a log-able string out of a QualityMeasure::Description.
+	 *
+	 * @param d
+	 * QualityMeasure::Description to output.
+	 * @param elementSep
+	 * Token to separate elements of QualityMeasure::Description.
+	 *
+	 * @return
+	 * Log-able string version of `d`.
+	 */
+	std::string
+	splice(
+	    const EFS::QualityMeasure::Description &d,
+	    const std::string &elementSep = ";");
+
+	/**
+	 * @brief
+	 * Make a log-able string out of a QualityMeasure.
+	 *
+	 * @param q
+	 * QualityMeasure to output.
+	 * @param elementSep
+	 * Token to separate elements of QualityMeasure.
+	 *
+	 * @return
+	 * Log-able string version of `q`.
+	 */
+	std::string
+	splice(
+	    const EFS::QualityMeasure &q,
+	    const std::string &elementSep = ";");
+
+	/**
+	 * @brief
+	 * Make a log-able string out of a QualityMeasureMap.
+	 *
+	 * @param m
+	 * QualityMeasure::Description to output.
+	 * @param elementSep
+	 * Token to separate elements of QualityMeasure and
+	 * QualityMeasure::Description.
+	 * @param itemSep
+	 * Token to separate multiple entries.
+	 *
+	 * @return
+	 * Log-able string version of `m`.
+	 *
+	 * @note
+	 * All separators must be distinct.
+	 */
+	std::string
+	splice(
+	    const EFS::QualityMeasureMap &m,
+	    const std::string &elementSep = ";",
+	    const std::string &itemSep = "|");
+
+	/**
+	 * @brief
 	 * Make a log-able string out of a vector of enumerations.
 	 *
 	 * @param v

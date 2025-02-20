@@ -43,9 +43,6 @@ namespace FRIF
 
 		/** Extended feature set data */
 		std::optional<EFS::Features> features{};
-
-		/** Quality of the image, [0-100]. */
-		std::optional<uint8_t> imageQuality{};
 	};
 
 	/** Output from extracting features into a template .*/
