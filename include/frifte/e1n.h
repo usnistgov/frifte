@@ -844,7 +844,7 @@ namespace FRIF::Evaluations::Exemplar1N
 	/** API major version number. */
 	uint16_t API_MAJOR_VERSION{1};
 	/** API minor version number. */
-	uint16_t API_MINOR_VERSION{1};
+	uint16_t API_MINOR_VERSION{2};
 	/** API patch version number. */
 	uint16_t API_PATCH_VERSION{0};
 	#endif /* NIST_EXTERN_FRIFTE_E1N_API_VERSION */
