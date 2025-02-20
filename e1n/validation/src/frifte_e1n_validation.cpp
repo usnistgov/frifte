@@ -1833,7 +1833,7 @@ main(
 	 * Check FRIF API version.
 	 */
 	static const uint16_t expectedFRIFMajor{1};
-	static const uint16_t expectedFRIFMinor{0};
+	static const uint16_t expectedFRIFMinor{1};
 	static const uint16_t expectedFRIFPatch{0};
 	if (!((FRIF::API_MAJOR_VERSION == expectedFRIFMajor) &&
 	    (FRIF::API_MINOR_VERSION == expectedFRIFMinor) &&
@@ -1853,7 +1853,7 @@ main(
 	 * Check E1N API version.
 	 */
 	static const uint16_t expectedE1NMajor{1};
-	static const uint16_t expectedE1NMinor{0};
+	static const uint16_t expectedE1NMinor{1};
 	static const uint16_t expectedE1NPatch{0};
 	if (!((FRIF::Evaluations::Exemplar1N::API_MAJOR_VERSION ==
 	    expectedE1NMajor) &&
