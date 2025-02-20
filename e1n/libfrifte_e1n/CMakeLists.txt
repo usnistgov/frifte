@@ -8,66 +8,66 @@
 
 cmake_minimum_required(VERSION 3.22)
 
-project(frif_e1n_library)
+project(frifte_e1n_library)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-add_library(frif_e1n SHARED)
-target_sources(frif_e1n PRIVATE
-    libfrif_e1n.cpp)
-target_include_directories(frif_e1n PRIVATE ${PROJECT_SOURCE_DIR}/../../include)
+add_library(frifte_e1n SHARED)
+target_sources(frifte_e1n PRIVATE
+    libfrifte_e1n.cpp)
+target_include_directories(frifte_e1n PRIVATE ${PROJECT_SOURCE_DIR}/../../include)
 
 # Extern the version symbols
-target_compile_definitions(frif_e1n PRIVATE NIST_EXTERN_FRIF_E1N_API_VERSION)
+target_compile_definitions(frifte_e1n PRIVATE NIST_EXTERN_FRIFTE_E1N_API_VERSION)
 
-# Require libfrif
-add_subdirectory(${PROJECT_SOURCE_DIR}/../../libfrif ${CMAKE_CURRENT_BINARY_DIR}/libfrif)
-add_dependencies(frif_e1n frif)
-target_link_libraries(frif_e1n PUBLIC frif)
+# Require libfrifte
+add_subdirectory(${PROJECT_SOURCE_DIR}/../../libfrifte ${CMAKE_CURRENT_BINARY_DIR}/libfrifte)
+add_dependencies(frifte_e1n frifte)
+target_link_libraries(frifte_e1n PUBLIC frifte)
 
 # Set RPATH to $ORIGIN
-set_target_properties(frif_e1n PROPERTIES
+set_target_properties(frifte_e1n PROPERTIES
     BUILD_RPATH_USE_ORIGIN TRUE)
 if(UNIX)
-	set_target_properties(frif_e1n PROPERTIES
+	set_target_properties(frifte_e1n PROPERTIES
 	    INSTALL_RPATH $ORIGIN)
 endif()
 
 # Use RUNPATH over RPATH
 if(NOT APPLE)
-	set_target_properties(frif_e1n PROPERTIES
+	set_target_properties(frifte_e1n PROPERTIES
 	    LINK_FLAGS -Wl,--enable-new-dtags)
 endif()
 
 # Enable documentation warnings with clang
-target_compile_options(frif_e1n PRIVATE
+target_compile_options(frifte_e1n PRIVATE
      $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:
           -Wdocumentation>)
 
 # Enable all clang warnings
-#target_compile_options(frif_e1n PRIVATE
+#target_compile_options(frifte_e1n PRIVATE
 #     $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:
 #          -Weverything -Wno-c++98-compat -Wno-padded>)
 
 # Turn on common clang/gcc warnings
-target_compile_options(frif_e1n PRIVATE
+target_compile_options(frifte_e1n PRIVATE
    -Wall -Wextra -pedantic -Wconversion -Wsign-conversion -Wshadow
    -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused
    -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion
    -Wformat=2 -Wimplicit-fallthrough)
 
 # gcc has some additional useful warnings
-target_compile_options(frif_e1n PRIVATE
+target_compile_options(frifte_e1n PRIVATE
     $<$<CXX_COMPILER_ID:GNU>:
          -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches
          -Wlogical-op -Wnull-dereference -Wuseless-cast -Wdouble-promotion>)
 
-#set_target_properties(frif_e1n PROPERTIES
+#set_target_properties(frifte_e1n PROPERTIES
 #  PUBLIC_HEADER
-#       ${PROJECT_SOURCE_DIR}/../../include/frif/e1n.h)
+#       ${PROJECT_SOURCE_DIR}/../../include/frifte/e1n.h)
 
 include(GNUInstallDirs)
-install(TARGETS frif_e1n
+install(TARGETS frifte_e1n
 #    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})

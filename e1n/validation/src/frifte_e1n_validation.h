@@ -18,7 +18,7 @@
 #include <utility>
 #include <variant>
 
-#include <frif/e1n.h>
+#include <frifte/e1n.h>
 
 namespace FRIF::Evaluations::Exemplar1N::Validation
 {

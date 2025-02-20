@@ -19,7 +19,7 @@
 #include <utility>
 #include <vector>
 
-#include <frif/frif.h>
+#include <frifte/frifte.h>
 
 namespace FRIF::Evaluations::Exemplar1N::Validation::Data
 {

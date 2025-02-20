@@ -18,8 +18,8 @@
 #include <unordered_map>
 #include <vector>
 
-#include <frif/common.h>
-#include <frif/efs.h>
+#include <frifte/common.h>
+#include <frifte/efs.h>
 
 /** TE input/output types. */
 namespace FRIF

@@ -23,9 +23,9 @@ Contents
    - **[lib/]:** Directory in which all required libraries reside. There must
      be at least library, the **core** library, and that library **must** follow
      the FRIF E1N naming convention.
-   - **[../libfrif_e1n/]:** Code for the shared library implementing methods
-     declared in [../../include/frif/e1n.h].
-   - **[../../libfrif/]:** Code for the shared library implementing methods
+   - **[../libfrifte_e1n/]:** Code for the shared library implementing methods
+     declared in [../../include/frifte/e1n.h].
+   - **[../../libfrifte/]:** Code for the shared library implementing methods
      shared by all FRIF evaluations, declared in [../../include/frif].
    - **[../../include/e1n.h]:** The FRIF E1N [API].
    - **[validate]:** Script that automates running the validation and performing
@@ -84,7 +84,7 @@ How to Run
 
 ```
 $ bash
-$ cp /path/to/libfrif_e1n_nullimpl_0001.so lib/
+$ cp /path/to/libfrifte_e1n_nullimpl_0001.so lib/
 $ cp /path/to/config.txt config/
 $ cp /path/to/frif_e1n_validation_images-*.tar.xz .
 $ ./validate
@@ -99,7 +99,7 @@ Checking for unexpanded validation image tarballs... [DEFER]
  -> Expanding "frif_e1n_validation_images-2024093014427.tar.xz"... [OKAY]
 Checking for unexpanded validation image tarballs... [OKAY]
 Checking validation image versions... (VERSION = 202409301442) [OKAY]
-Looking for core library... (libfrif_e1n_nullimpl_0001.so) [OKAY]
+Looking for core library... (libfrifte_e1n_nullimpl_0001.so) [OKAY]
 Checking for known environment variables... [OKAY]
 Building... [OKAY]
 Checking API version... [OKAY]
@@ -268,7 +268,7 @@ Creating validation submission... (frif_e1n_validation_nullimpl_0001.tar.xz) [OK
 + version. Retrieve the latest version number by visiting the URL below and    +
 + be sure it matches this version: 202405221259.                               +
 +                                                                              +
-+ https://github.com/usnistgov/frif/tree/main/e1n/validation/VERSION           +
++ https://github.com/usnistgov/frifte/tree/main/e1n/validation/VERSION           +
 +                                                                              +
 + If these numbers don't match, visit our website to retrieve the latest       +
 + version.                                                                     +
@@ -282,7 +282,7 @@ Creating validation submission... (frif_e1n_validation_nullimpl_0001.tar.xz) [OK
 |                   frif_e1n_validation_nullimpl_0001.tar.xz                   |
 |                                                                              |
 | Please upload both frif_e1n_validation_nullimpl_0001.tar.xz.asc and your     |
-| public key via https://pages.nist.gov/frif/upload                            |
+| public key via https://pages.nist.gov/frifte/upload                            |
 ================================================================================
 Completed: 30 Sep 2024 | 13:57:37 EDT (Runtime: 379s)
 ```
@@ -355,38 +355,38 @@ Communication
 -------------
 If you found a bug and can provide steps to reliably reproduce it, or if you
 have a feature request, please [open an issue]. Other questions may be addressed
-to the [NIST FRIF team].
+to the [NIST FRIF TE team].
 
-The FRIF team sends updates about the FRIF tests to their mailing list. Enter
+The FRIF TE team sends updates about the FRIF tests to their mailing list. Enter
 your e-mail address on the [mailing list site], or send a blank e-mail to
-FRIF+subscribe@list.nist.gov to be automatically subscribed.
+FRIFTE+subscribe@list.nist.gov to be automatically subscribed.
 
 License
 -------
 The items in this repository are released in the public domain. See the
 [LICENSE] for details.
 
-[API]: https://pages.nist.gov/frif/doc/api/e1n.html
+[API]: https://pages.nist.gov/frifte/doc/api/e1n.html
 [Ubuntu Mirrors]: https://launchpad.net/ubuntu/+cdmirrors
 [Direct downloads]: https://releases.ubuntu.com/releases/24.04.1/ubuntu-24.04.1-live-server-amd64.iso
 [NIST Biometric Technologies Group]: https://nigos.nist.gov/evaluations/ubuntu-24.04.1-live-server-amd64.iso
-[lib/]: https://github.com/usnistgov/frif/tree/main/e1n/validation/lib
-[../libfrif_e1n/]: https://github.com/usnistgov/frif/tree/main/e1n/libfrif_e1n
-[../../libfrif/]: https://github.com/usnistgov/frif/tree/main/libfrif
-[../../include/e1n.h]: https://github.com/usnistgov/frif/blob/main/include/frif/e1n.h
-[bin/]: https://github.com/usnistgov/frif/tree/main/e1n/validation/bin
-[config/]: https://github.com/usnistgov/frif/tree/main/e1n/validation/config
-[README.md]: https://github.com/usnistgov/frif/blob/main/e1n/validation/README.md
-[src/]: https://github.com/usnistgov/frif/tree/main/e1n/validation/src
-[CHECKSUMS]: https://github.com/usnistgov/frif/blob/main/e1n/validation/CHECKSUMS
-[VERSION]: https://github.com/usnistgov/frif/tree/main/e1n/validation/VERSION
-[validate]: https://github.com/usnistgov/frif/tree/main/e1n/validation/validate
-[NIST FRIF team]: mailto:frif@nist.gov
-[open an issue]: https://github.com/usnistgov/frif/issues
+[lib/]: https://github.com/usnistgov/frifte/tree/main/e1n/validation/lib
+[../libfrifte_e1n/]: https://github.com/usnistgov/frifte/tree/main/e1n/libfrifte_e1n
+[../../libfrifte/]: https://github.com/usnistgov/frifte/tree/main/libfrifte
+[../../include/e1n.h]: https://github.com/usnistgov/frifte/blob/main/include/frifte/e1n.h
+[bin/]: https://github.com/usnistgov/frifte/tree/main/e1n/validation/bin
+[config/]: https://github.com/usnistgov/frifte/tree/main/e1n/validation/config
+[README.md]: https://github.com/usnistgov/frifte/blob/main/e1n/validation/README.md
+[src/]: https://github.com/usnistgov/frifte/tree/main/e1n/validation/src
+[CHECKSUMS]: https://github.com/usnistgov/frifte/blob/main/e1n/validation/CHECKSUMS
+[VERSION]: https://github.com/usnistgov/frifte/tree/main/e1n/validation/VERSION
+[validate]: https://github.com/usnistgov/frifte/tree/main/e1n/validation/validate
+[NIST FRIF TE team]: mailto:frifte@nist.gov
+[open an issue]: https://github.com/usnistgov/frifte/issues
 [mailing list site]: https://groups.google.com/a/list.nist.gov/g/frif
-[LICENSE]: https://github.com/usnistgov/frif/blob/main/LICENSE.md
-[test plan]: https://pages.nist.gov/frif/doc/testplan/e1n_testplan.pdf
+[LICENSE]: https://github.com/usnistgov/frifte/blob/main/LICENSE.md
+[test plan]: https://pages.nist.gov/frifte/doc/testplan/e1n_testplan.pdf
 [requests website]: https://nigos.nist.gov/datasets/frif_e1n_validation/request
-[the FRIF upload form]: https://pages.nist.gov/frif/e1n/upload
-[../../include/frif]: https://github.com/usnistgov/frif/tree/main/include/frif
-[../../include/frif/e1n.h]: https://github.com/usnistgov/frif/blob/main/include/frif/e1n.h
+[the FRIF upload form]: https://pages.nist.gov/frifte/e1n/upload
+[../../include/frifte]: https://github.com/usnistgov/frifte/tree/main/include/frifte
+[../../include/frifte/e1n.h]: https://github.com/usnistgov/frifte/blob/main/include/frifte/e1n.h

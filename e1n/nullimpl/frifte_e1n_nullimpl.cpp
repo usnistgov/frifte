@@ -8,7 +8,7 @@
  * about its quality, reliability, or any other characteristic.
  */
 
-#include <frif_e1n_nullimpl.h>
+#include <frifte_e1n_nullimpl.h>
 
 FRIF::Evaluations::Exemplar1N::NullExtractionImplementation::
     NullExtractionImplementation(

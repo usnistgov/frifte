@@ -18,7 +18,7 @@
  *
  * @section Contact
  * Additional information regarding %FRIF %TEs can be received by emailing
- * questions to the test liaisons at frif@nist.gov.
+ * questions to the test liaisons at frifte@nist.gov.
  *
  * @section License
  * This software was developed at NIST by employees of the Federal Government
@@ -32,10 +32,10 @@
 #ifndef FRIF_H_
 #define FRIF_H_
 
-#include <frif/common.h>
-#include <frif/efs.h>
-#include <frif/evaluations.h>
-#include <frif/io.h>
-#include <frif/util.h>
+#include <frifte/common.h>
+#include <frifte/efs.h>
+#include <frifte/evaluations.h>
+#include <frifte/io.h>
+#include <frifte/util.h>
 
 #endif /* FRIF_H_ */

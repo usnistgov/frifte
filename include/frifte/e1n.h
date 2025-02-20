@@ -60,7 +60,7 @@
 #include <tuple>
 #include <vector>
 
-#include <frif/frif.h>
+#include <frifte/frifte.h>
 
 /** %FRIF TE Exemplar 1:N functionality. */
 namespace FRIF::Evaluations::Exemplar1N
@@ -833,21 +833,21 @@ namespace FRIF::Evaluations::Exemplar1N
 	 * NIST code will extern the version number symbols. Participant code
 	 * shall compile them into their core library.
 	 */
-	#ifdef NIST_EXTERN_FRIF_E1N_API_VERSION
+	#ifdef NIST_EXTERN_FRIFTE_E1N_API_VERSION
 	/** API major version number. */
 	extern uint16_t API_MAJOR_VERSION;
 	/** API minor version number. */
 	extern uint16_t API_MINOR_VERSION;
 	/** API patch version number. */
 	extern uint16_t API_PATCH_VERSION;
-	#else /* NIST_EXTERN_FRIF_E1N_API_VERSION */
+	#else /* NIST_EXTERN_FRIFTE_E1N_API_VERSION */
 	/** API major version number. */
 	uint16_t API_MAJOR_VERSION{1};
 	/** API minor version number. */
 	uint16_t API_MINOR_VERSION{0};
 	/** API patch version number. */
 	uint16_t API_PATCH_VERSION{0};
-	#endif /* NIST_EXTERN_FRIF_E1N_API_VERSION */
+	#endif /* NIST_EXTERN_FRIFTE_E1N_API_VERSION */
 }
 
 #endif /* FRIF_EVALUATIONS_E1N_H_ */

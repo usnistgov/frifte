@@ -23,11 +23,11 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
-#include <frif/e1n.h>
-#include <frif/util.h>
+#include <frifte/e1n.h>
+#include <frifte/util.h>
 
-#include "frif_e1n_data.h"
-#include "frif_e1n_validation.h"
+#include "frifte_e1n_data.h"
+#include "frifte_e1n_validation.h"
 
 void
 FRIF::Evaluations::Exemplar1N::Validation::dispatchCreateTemplates(

@@ -8,7 +8,7 @@
 
 cmake_minimum_required(VERSION 3.22)
 
-project(frif_e1n_nullimpl)
+project(frifte_e1n_nullimpl)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -17,7 +17,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Sets LIBRARY_NAME and LIBRARY_VERSION in parent context
 function(find_name_and_version)
 	# Read each line of a file into a list
-	file(READ frif_e1n_nullimpl.h HEADER_CONTENTS)
+	file(READ frifte_e1n_nullimpl.h HEADER_CONTENTS)
 	string(REGEX REPLACE ";" "\\\\;" HEADER_CONTENTS "${HEADER_CONTENTS}")
 	string(REGEX REPLACE "\n" ";" HEADER_CONTENTS "${HEADER_CONTENTS}")
 
@@ -41,17 +41,17 @@ find_name_and_version()
 if(NOT LIBRARY_NAME OR NOT LIBRARY_VERSION)
 	message(FATAL_ERROR "Could not discover library name or version")
 endif()
-set(LIB_NAME "frif_e1n_${LIBRARY_NAME}_${LIBRARY_VERSION}")
+set(LIB_NAME "frifte_e1n_${LIBRARY_NAME}_${LIBRARY_VERSION}")
 
 add_library(${LIB_NAME} SHARED)
-target_sources(${LIB_NAME} PRIVATE frif_e1n_nullimpl.cpp)
+target_sources(${LIB_NAME} PRIVATE frifte_e1n_nullimpl.cpp)
 target_include_directories(${LIB_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/../../include)
 target_include_directories(${LIB_NAME} PRIVATE ${PROJECT_SOURCE_DIR})
 
-# Depend on libfrif_e1n
-add_subdirectory(${PROJECT_SOURCE_DIR}/../libfrif_e1n ${CMAKE_CURRENT_BINARY_DIR}/libfrif_e1n)
-add_dependencies(${LIB_NAME} frif_e1n)
-target_link_libraries(${LIB_NAME} PUBLIC frif_e1n)
+# Depend on libfrifte_e1n
+add_subdirectory(${PROJECT_SOURCE_DIR}/../libfrifte_e1n ${CMAKE_CURRENT_BINARY_DIR}/libfrifte_e1n)
+add_dependencies(${LIB_NAME} frifte_e1n)
+target_link_libraries(${LIB_NAME} PUBLIC frifte_e1n)
 
 # Enable documentation warnings with clang
 target_compile_options(${LIB_NAME} PRIVATE

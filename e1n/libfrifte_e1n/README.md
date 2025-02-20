@@ -1,14 +1,12 @@
-FRIF TE E1N Null Implementation
-===============================
+libfrifte_e1n
+=============
 
-This directory contains example code that could be used as a starting point for
-a [E1N API] implementation.
+This directory contains the implementation of methods specific to E1N that are
+required to be implemented by [E1N API] implementations.
 
 Building
 --------
-Use the included `CMakeLists.txt` to build out of source. This will build
-`libfrifte_e1n_nullimpl_0001.so` and its dependencies, [`libfrifte`] and
-[`libfrifte_e1n`].
+Use the included `CMakeLists.txt` to build out of source.
 
 ```sh
 mkdir build
@@ -16,9 +14,6 @@ cd build
 cmake ..
 make
 ```
-
-The name and version number for the library to be built are extracted from
-within the C++ source.
 
 Communication
 -------------
@@ -35,8 +30,6 @@ License
 The items in this repository are released in the public domain. See the
 [LICENSE] for details.
 
-[`libfrifte`]: https://github.com/usnistgov/frifte/blob/main/libfrifte
-[`libfrifte_e1n`]: https://github.com/usnistgov/frifte/blob/main/e1n/libfrifte_e1n
 [NIST FRIF TE team]: mailto:frifte@nist.gov
 [open an issue]: https://github.com/usnistgov/frifte/issues
 [mailing list site]: https://groups.google.com/a/list.nist.gov/forum/#!forum/frifte/join

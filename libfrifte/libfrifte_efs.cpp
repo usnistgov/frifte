@@ -8,7 +8,7 @@
  * about its quality, reliability, or any other characteristic.
  */
 
-#include <frif/efs.h>
+#include <frifte/efs.h>
 
 FRIF::EFS::CorrespondenceRelationship::CorrespondenceRelationship(
     CorrespondenceType type_,

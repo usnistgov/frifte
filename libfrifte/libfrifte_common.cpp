@@ -10,7 +10,7 @@
 
 #include <exception>
 
-#include <frif/common.h>
+#include <frifte/common.h>
 
 FRIF::Coordinate::Coordinate(
     const uint32_t x_,

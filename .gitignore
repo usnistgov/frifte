@@ -10,6 +10,8 @@ e1n/validation/config/*
 !e1n/validation/config/README
 e1n/validation/lib/*
 !e1n/validation/lib/README
+e1n/validation/frifte_e1n_validation_*
+e1n/validation/output
 
 # Temp files
 .DS_Store
@@ -19,6 +21,7 @@ e1n/validation/lib/*
 # Validation images
 e1n/validation/images
 e1n/validation/frif_e1n_validation_images-*.tar.xz
+e1n/validation/frifte_e1n_validation_images-*.tar.xz
 
 # Documentation
 doc/doxygen/html

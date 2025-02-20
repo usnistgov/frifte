@@ -14,7 +14,7 @@
 #include <unordered_map>
 #include <variant>
 
-#include <frif/common.h>
+#include <frifte/common.h>
 
 /** Types (mostly) mirroring the ANSI/NIST-ITL Type 9 Extended Feature Set */
 namespace FRIF::EFS

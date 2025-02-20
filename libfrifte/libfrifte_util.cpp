@@ -16,8 +16,8 @@
 #include <numeric>
 #include <string>
 
-#include <frif/efs.h>
-#include <frif/util.h>
+#include <frifte/efs.h>
+#include <frifte/util.h>
 
 std::string
 FRIF::Util::duration(

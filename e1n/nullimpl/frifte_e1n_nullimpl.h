@@ -11,7 +11,7 @@
 #ifndef FRIF_E1N_NULLIMPL_H_
 #define FRIF_E1N_NULLIMPL_H_
 
-#include <frif/e1n.h>
+#include <frifte/e1n.h>
 
 namespace FRIF::Evaluations::Exemplar1N
 {

@@ -8,7 +8,7 @@
  * about its quality, reliability, or any other characteristic.
  */
 
-#include <frif/e1n.h>
+#include <frifte/e1n.h>
 
 FRIF::Evaluations::Exemplar1N::ExtractionInterface::ExtractionInterface() =
     default;

@@ -14,10 +14,10 @@
 #     b. Unsuccessful? Work to resolve the listed errors, run                  #
 #        './validate clean', and repeat these steps.                           #
 #  3. Upload the encrypted file along with your public key via                 #
-#     https://pages.nist.gov/frif/upload                                       #
+#     https://pages.nist.gov/frifte/upload                                     #
 ################################################################################
-#     E-mail: frif@nist.gov                                                    #
-#        URL: https://github.com/usnistgov/frif                                #
+#     E-mail: frifte@nist.gov                                                  #
+#        URL: https://github.com/usnistgov/frifte                              #
 #    License: This software was developed at the National Institute of         #
 #             Standards and Technology (NIST) by employees of the Federal      #
 #             Government in the course of their official duties. Pursuant to   #
@@ -42,10 +42,10 @@
 start_sec="$(date +%s)"
 
 # URL where the complete validation package can be downloaded
-validation_dl_url="https://github.com/usnistgov/frif/releases"
+validation_dl_url="https://github.com/usnistgov/frifte/releases"
 # URL where the validation imagery is requested
 validation_image_request_url="https://nigos.nist.gov/datasets/"
-validation_image_request_url+="frif_e1n_validation/request"
+validation_image_request_url+="frifte_e1n_validation/request"
 
 # Directory where user currently resides
 cwd="$(pwd)"
@@ -70,17 +70,17 @@ local_config_dir="${config_dir}"
 # Reference database directory provided to implementation
 db_dir="${driver_output_dir}/reference_databases"
 # Path to the compiled validation driver binary
-binary="${bin_dir}/frif_e1n_validation"
+binary="${bin_dir}/frifte_e1n_validation"
 # Suffix given to files set aside by this script
 move_suffix=".moved"
 # Name of log that stores compilation information
 compile_log="compile.log"
 
 # Prefix for downloaded validation imagery tarballs
-validation_image_download_prefix=frif_e1n_validation_images
+validation_image_download_prefix=frifte_e1n_validation_images
 
 # Regular expression that must match core library name
-lib_regex="libfrif_e1n_[A-Za-z0-9]+_[0-9A-F]{4}.so"
+lib_regex="libfrifte_e1n_[A-Za-z0-9]+_[0-9A-F]{4}.so"
 
 ################################################################################
 # Output                                                                       #
@@ -320,7 +320,7 @@ box()
 # Print validation script header message
 print_header()
 {
-	local header="FRIF E1N Validation | Version ${validation_version} | "
+	local header="FRIF TE E1N Validation | Version ${validation_version} | "
 	header+="$(get_date)"
 	box "${header}"
 }
@@ -361,11 +361,11 @@ print_couldnt_check_version()
 {
 	font_lightred
 
-	local vers_url="https://github.com/usnistgov/frif/tree/main/e1n/"
+	local vers_url="https://github.com/usnistgov/frifte/tree/main/e1n/"
 	vers_url+="validation/VERSION"
 
 	local msg="This script could not check online to ensure there are no "
-	msg+="updates available. NIST requires that FRIF submissions always "
+	msg+="updates available. NIST requires that FRIF TE submissions always "
 	msg+="use the latest version. Retrieve the latest version number by "
 	msg+="visiting the URL below and be sure it matches this version: "
 	msg+="${validation_version}."
@@ -392,7 +392,7 @@ print_final_success()
 	echo
 	font_green
 
-	local msg="You have successfully completed your part of FRIF E1N "
+	local msg="You have successfully completed your part of FRIF TE E1N "
 	msg+="validation. Please sign and encrypt the file listed below (run "
 	msg+="'${0} encrypt' for an example)."
 	box "${msg}" 80 '=' '|' 'l' 1 0
@@ -401,7 +401,7 @@ print_final_success()
 	boxline
 
 	msg="Please upload both ${tar_file}.asc and your public key via "
-	msg+="https://pages.nist.gov/frif/upload"
+	msg+="https://pages.nist.gov/frifte/upload"
 
 	box "${msg}" 80 '=' '|' 'l' 0 1
 	font_reset
@@ -411,7 +411,7 @@ print_encryption()
 {
 	local tar_file
 	if ! tar_file="$(get_final_output_name).tar.xz"; then
-		tar_file="frif_e1n_validation_nullimpl_0001.tar.xz"
+		tar_file="frifte_e1n_validation_nullimpl_0001.tar.xz"
 	fi
 
 
@@ -420,14 +420,14 @@ print_encryption()
 	echo "  gpg --output ${tar_file}.asc \\"
 	echo "      --default-key <!-- YOUR EMAIL ADDRESS --> \\"
 	echo "      --recipient <!-- YOUR EMAIL ADDRESS --> \\"
-	echo "      --recipient frif@nist.gov \\"
+	echo "      --recipient frifte@nist.gov \\"
 	echo "      --armor --sign --encrypt ${tar_file}"
 	echo
 
 	# Extract public key example
 	local lib_name
 	if ! lib_name="$(get_core_library_name)"; then
-		lib_name="libfrif_e1n_nullimpl_0001.so"
+		lib_name="libfrifte_e1n_nullimpl_0001.so"
 	fi
 	lib_name="$(basename "${lib_name}" .so)"
 	echo "Example of extracting public key with GnuPG:"
@@ -464,7 +464,7 @@ print_instructions()
 	echo "       './validate clean', and repeat these steps."
 	echo -n " 3. Upload the signed and encrypted file along with your "
 	echo "public key via"
-	echo "    https://pages.nist.gov/frif/upload"
+	echo "    https://pages.nist.gov/frifte/upload"
 }
 
 # Print CBEFF information recorded to the console
@@ -509,7 +509,7 @@ check_wd()
 	if [ "${wd}" == "" ]; then
 		local msg="The directory containing \"validate\" could not be "
 		msg+="found, possibly because you are not using GNU realpath. "
-		msg+="If you are, please report an issue on the FRIF GitHub "
+		msg+="If you are, please report an issue on the FRIF TE GitHub "
 		msg+="repository."
 		fail "${msg}"
 	fi
@@ -660,8 +660,9 @@ check_for_previous_attempts()
 		    "You can remove it by running: '${0} clean'"
 	fi
 
-	output_found=$(find "${wd}" -maxdepth 1 -name "frif_e1n_validation_*" \
-	    \! -name "frif_e1n_validation_images*" -print -quit)
+	output_found=$(find "${wd}" -maxdepth 1 \
+	    -name "frifte_e1n_validation_*" \! \
+	    -name "frifte_e1n_validation_images*" -print -quit)
 	if [ "${output_found}" != "" ]; then
 		fail "Previous attempt at validation found:" \
 		    "$(rp "${output_found}")" "" \
@@ -745,7 +746,7 @@ check_library()
 	else
 		if ! get_core_library_name; then
 			local msg="No core library found in the library "
-			msg+="directory. Please review the FRIF E1N library "
+			msg+="directory. Please review the FRIF TE E1N library "
 			msg+="naming conventions."
 			fail "${msg}" "" "The library directory is:" \
 			    "$(rp "${local_lib_dir}")"
@@ -836,7 +837,7 @@ get_core_library_name()
 	    -regex "${local_lib_dir}/${lib_regex}" -printf "%P\n")
 	if [ "${core_lib}" == "" ]; then
 		local msg="No core library found in the library directory. "
-		msg+="Please review the FRIF E1N library naming conventions."
+		msg+="Please review the FRIF TE E1N library naming conventions."
 		fail "${msg}" "" "The library directory is:" \
 		    "$(rp "${local_lib_dir}")"
 	fi
@@ -881,7 +882,7 @@ get_date()
 
 get_final_output_name()
 {
-	local name="frif_e1n_validation_"
+	local name="frifte_e1n_validation_"
 	if ! name+="$(get_organization_name)"; then
 		fail "Could not get organization name."
 	fi
@@ -995,8 +996,8 @@ compile()
 	fi
 
 	# Check for pre-built libelft.so
-	if [ -e "${local_lib_dir}/libfrif.so" ]; then
-		local msg="The library 'libfrif.so' is in the directory "
+	if [ -e "${local_lib_dir}/libfrifte.so" ]; then
+		local msg="The library 'libfrifte.so' is in the directory "
 		msg+="$(rp "${local_lib_dir}"). This script will build its own "
 		msg+="copy of the library to ensure that modifications have "
 		msg+="not been made, since doing so may cause issues during "
@@ -1004,17 +1005,17 @@ compile()
 		warn "${msg}"
 
 		echo -n "Still building... "
-		rm -f "${local_lib_dir}/libfrif.so"
-		if [ -e "${local_lib_dir}/libfrif.so" ]; then
+		rm -f "${local_lib_dir}/libfrifte.so"
+		if [ -e "${local_lib_dir}/libfrifte.so" ]; then
 			msg="This script could not overwrite your copy of "
-			msg+="libfrif.so."
+			msg+="libfrifte.so."
 			fail "${msg}"
 		fi
 	fi
 
 	# Check for pre-built libelft_e1n.so
-	if [ -e "${local_lib_dir}/libfrif_e1n.so" ]; then
-		local msg="The library 'libfrif_e1n.so' is in the directory "
+	if [ -e "${local_lib_dir}/libfrifte_e1n.so" ]; then
+		local msg="The library 'libfrifte_e1n.so' is in the directory "
 		msg+="$(rp "${local_lib_dir}"). This script will build its own "
 		msg+="copy of the library to ensure that modifications have "
 		msg+="not been made, since doing so may cause issues during "
@@ -1022,10 +1023,10 @@ compile()
 		warn "${msg}"
 
 		echo -n "Still building... "
-		rm -f "${local_lib_dir}/libfrif_e1n.so"
-		if [ -e "${local_lib_dir}/libfrif_e1n.so" ]; then
+		rm -f "${local_lib_dir}/libfrifte_e1n.so"
+		if [ -e "${local_lib_dir}/libfrifte_e1n.so" ]; then
 			msg="This script could not overwrite your copy of "
-			msg+="libfrif.so."
+			msg+="libfrifte_e1n.so."
 			fail "${msg}"
 		fi
 	fi
@@ -1051,7 +1052,7 @@ compile()
 	# Catch the case of hardcoding "../lib", etc. into library by always
 	# linking against libs in a different directory
 	local tmp_dir
-	tmp_dir="$(mktemp -u -t frif_e1n_libs.XXXXXXXXXX)"
+	tmp_dir="$(mktemp -u -t frifte_e1n_libs.XXXXXXXXXX)"
 	mkdir -p "${tmp_dir}"
 	cp -r "${lib_dir}" "${tmp_dir}/lib"
 	lib_dir="${tmp_dir}/lib"
@@ -1069,7 +1070,7 @@ compile()
 		local_lib_dir="${local_lib_dir}${move_suffix}"
 	fi
 
-	tmp_dir="$(mktemp -u -t frif_e1n_configs.XXXXXXXXXX)"
+	tmp_dir="$(mktemp -u -t frifte_e1n_configs.XXXXXXXXXX)"
 	cp -r "${config_dir}" "${tmp_dir}"
 	chmod -R -w "${tmp_dir}"
 	config_dir="${tmp_dir}"
@@ -1091,7 +1092,7 @@ compile()
 	# Compile
 	echo "Compilation:" >> "${log}"
 	local build_dir
-	build_dir="$(mktemp -d -t frif_e1n_validation_build.XXXXXXXXXX)"
+	build_dir="$(mktemp -d -t frifte_e1n_validation_build.XXXXXXXXXX)"
 	if [ "${build_dir}" == "" ]; then
 		fail "Could not create build directory."
 	fi
@@ -1198,7 +1199,7 @@ compile()
 		# Does it look like we're finding libraries elsewhere?
 		if grep -q -v -e "=> /lib/x86_64-linux-gnu/" \
 		    -e "/ld-linux-x86-64.so" -e "linux-vdso.so.1 " \
-		    -e "=> /tmp/frif_e1n_libs." < \
+		    -e "=> /tmp/frifte_e1n_libs." < \
 		    <(ldd "${binary}"); then
 			local msg="You may have required non-system libraries "
 			msg+="that are being found in a location other than "
@@ -1210,7 +1211,7 @@ compile()
 			ldd "${binary}" | grep -v \
 			    -e "=> /lib/x86_64-linux-gnu/" -e " /lib64/" \
 			    -e "/ld-linux-x86-64.so" -e "linux-vdso.so.1 " \
-			    -e "=> /tmp/frif_e1n_libs."
+			    -e "=> /tmp/frifte_e1n_libs."
 
 			echo
 
@@ -1307,14 +1308,14 @@ clean_previous_attempts()
 		fail "Failed to remove" "${output_dir}"
 	fi
 
-	rm -rf "${lib_dir}/libfrif.so" "${lib_dir}/libfrif_e1n.so"
+	rm -rf "${lib_dir}/libfrifte.so" "${lib_dir}/libfrifte_e1n.so"
 
-	find /tmp -maxdepth 1 -type d -name 'frif_e1n_libs.*' -exec rm -rf {} \;
-	find /tmp -maxdepth 1 -type d -name 'frif_e1n_configs.*' \
+	find /tmp -maxdepth 1 -type d -name 'frifte_e1n_libs.*' -exec rm -rf {} \;
+	find /tmp -maxdepth 1 -type d -name 'frifte_e1n_configs.*' \
 	    -exec chmod -R +w {} \;
-	find /tmp -maxdepth 1 -type d -name 'frif_e1n_configs.*' \
+	find /tmp -maxdepth 1 -type d -name 'frifte_e1n_configs.*' \
 	    -exec rm -rf {} \;
-	find /tmp -maxdepth 1 -type d -name 'frif_e1n_validation_build.*' \
+	find /tmp -maxdepth 1 -type d -name 'frifte_e1n_validation_build.*' \
 	    -exec rm -rf {} \;
 
 	local org_name
@@ -1322,8 +1323,8 @@ clean_previous_attempts()
 		fail "Could not get organization name."
 	fi
 
-	rm -rf "${wd}"/frif_e1n_validation_"${org_name}"_*
-	if [ "$(find "${wd}" -name "frif_e1n_validation_""${org_name}""_*" | \
+	rm -rf "${wd}"/frifte_e1n_validation_"${org_name}"_*
+	if [ "$(find "${wd}" -name "frifte_e1n_validation_""${org_name}""_*" | \
 	    wc -l)" -ne 0 ];
 	then
 		fail "Failed to remove some output. Please delete it manually."
@@ -1519,7 +1520,7 @@ run_create_databases()
 
 # Run searches and extract correspondence
 # @param type ("s" [subject] or "p" [subject + position], argument to
-# frif_e1n_validation)
+# frifte_e1n_validation)
 # @param random seed
 run_search()
 {

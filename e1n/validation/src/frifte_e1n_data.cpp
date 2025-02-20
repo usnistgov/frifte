@@ -12,7 +12,7 @@
 #include <string>
 #include <unordered_map>
 
-#include "frif_e1n_data.h"
+#include "frifte_e1n_data.h"
 
 FRIF::TemplateArchive
 FRIF::Evaluations::Exemplar1N::Validation::Data::getTemplateArchive(

@@ -8,7 +8,7 @@
  * about its quality, reliability, or any other characteristic.
  */
 
-#include <frif/io.h>
+#include <frifte/io.h>
 
 FRIF::SubjectPositionCandidate::SubjectPositionCandidate(
     const std::string &identifier_,
