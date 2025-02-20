@@ -252,6 +252,63 @@ FRIF::Util::splice(
 
 std::string
 FRIF::Util::splice(
+    const std::vector<Segment> &v,
+    const std::string &itemSep,
+    const std::string &coordinateElementSep,
+    const std::string &coordinateItemSep)
+{
+	if ((itemSep == coordinateElementSep) ||
+	    (itemSep == coordinateItemSep) ||
+	    (coordinateElementSep == coordinateItemSep))
+		throw std::runtime_error{"separator equality"};
+
+	std::string ret{};
+	for (const auto &s : v) {
+		ret += ts(std::get<0>(s).x) + coordinateElementSep +
+		    ts(std::get<0>(s).y) + coordinateItemSep +
+		    ts(std::get<1>(s).x) + coordinateElementSep +
+		    ts(std::get<1>(s).y) + itemSep;
+	}
+
+	ret.erase(ret.find_last_of(itemSep), itemSep.length());
+	return (ret);
+}
+
+std::string
+FRIF::Util::splice(
+    const std::vector<EFS::Crease> &v,
+    const std::string &elementSep,
+    const std::string &itemSep,
+    const std::string &segmentItemSep,
+    const std::string &coordinateElementSep,
+    const std::string &coordinateItemSep)
+{
+	if ((elementSep == itemSep) || (elementSep == segmentItemSep) ||
+	    (elementSep == coordinateElementSep) ||
+	    (elementSep == coordinateItemSep) ||
+	    (itemSep == segmentItemSep) ||
+	    (itemSep == coordinateElementSep) ||
+	    (itemSep == coordinateItemSep) ||
+	    (segmentItemSep == coordinateElementSep) ||
+	    (segmentItemSep == coordinateItemSep) ||
+	    (coordinateElementSep == coordinateItemSep))
+		throw std::runtime_error{"separator equality"};
+
+	std::string ret{};
+	for (const auto &c : v) {
+		ret += e2i2s(c.getFrictionRidgeGeneralizedPosition()) +
+		    elementSep;
+		ret += ts(c.getCreaseClassification()) + elementSep;
+		ret += splice(c.getSegments(), segmentItemSep,
+		    coordinateItemSep, coordinateElementSep) + itemSep;
+	}
+
+	ret.erase(ret.find_last_of(itemSep), itemSep.length());
+	return (ret);
+}
+
+std::string
+FRIF::Util::splice(
     const EFS::QualityMeasure::Description &d,
     const std::string &elementSep)
 {
@@ -361,6 +418,23 @@ FRIF::Util::splitSet(
 	}
 
 	return (sets);
+}
+
+std::string
+FRIF::Util::ts(
+    const EFS::CreaseClassification &c)
+{
+	return (std::visit([](auto &&v) {
+		using T = std::decay_t<decltype(v)>;
+		if constexpr (std::is_same_v<T, EFS::FingerCrease>)
+	                return ("F" + e2i2s(v));
+		else if constexpr (std::is_same_v<T, EFS::PalmCrease>)
+	                return ("P" + e2i2s(v));
+		else if constexpr (std::is_same_v<T, EFS::LinearDiscontinuity>)
+	                return ("L" + e2i2s(v));
+	        else
+	        	return (NA);
+	}, c));
 }
 
 void

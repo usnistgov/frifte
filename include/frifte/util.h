@@ -304,6 +304,56 @@ namespace FRIF::Util
 
 	/**
 	 * @brief
+	 * Make a log-able string out of a vector of Segment.
+	 *
+	 * @param v
+	 * Vector of Segment to output.
+	 * @param itemSep
+	 * Token to separate multiple Segment.
+	 * @param coordinateElementSep
+	 * Token to separate elements of Coordinate (within Segment).
+	 * @param coordinateItemSep
+	 * Token to separate multiple Coordinate (within Segment).
+	 *
+	 * @return
+	 * Log-able string version of `d`.
+	 */
+	std::string
+	splice(
+	    const std::vector<Segment> &v,
+	    const std::string &itemSep = "^",
+	    const std::string &coordinateElementSep = ";",
+	    const std::string &coordinateItemSep = "|");
+
+	/**
+	 * @brief
+	 * Make a log-able string out of a vector of Crease.
+	 *
+	 * @param v
+	 * Vector of Crease to output.
+	 * @param itemSep
+	 * Token to separate multiple Crease.
+	 * @param segmentItemSep
+	 * Token to separate multiple Segment (within Crease).
+	 * @param coordinateElementSep
+	 * Token to separate elements of Coordinate (within Segment).
+	 * @param coordinateItemSep
+	 * Token to separate multiple Coordinate (within Segment).
+	 *
+	 * @return
+	 * Log-able string version of `d`.
+	 */
+	std::string
+	splice(
+	    const std::vector<EFS::Crease> &v,
+	    const std::string &elementSep = ":",
+	    const std::string &itemSep = "^",
+	    const std::string &segmentItemSep = "~",
+	    const std::string &coordinateElementSep = ";",
+	    const std::string &coordinateItemSep = "|");
+
+	/**
+	 * @brief
 	 * Make a log-able string out of a QualityMeasure::Description.
 	 *
 	 * @param d
@@ -426,6 +476,20 @@ namespace FRIF::Util
 	{
 		return (std::to_string(t));
 	}
+
+	/**
+	 * @brief
+	 * Stringification of CreaseClassification.
+	 *
+	 * @param c
+	 * CreaseClassification to convert.
+	 *
+	 * @return
+	 * String representation of `c`.
+	 */
+	std::string
+	ts(
+	    const EFS::CreaseClassification &c);
 
 	/**
 	 * @brief

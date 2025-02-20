@@ -867,6 +867,8 @@ FRIF::Evaluations::Exemplar1N::Validation::makeExtractTemplateDataLogLine(
 		    '"' + Util::splice(*efs.deltas)  + '"': Util::NA) + ',';
 		logLine += (efs.minutiae ?
 		    '"' + Util::splice(*efs.minutiae) + '"' : Util::NA) + ',';
+		logLine += (efs.creases ?
+		    '"' + Util::splice(*efs.creases) + '"' : Util::NA) + ',';
 		logLine += (efs.roi ?
 		    '"' + Util::splice(*efs.roi)  + '"': Util::NA) + ',';
 		logLine += (efs.rqm ?
@@ -1232,7 +1234,7 @@ FRIF::Evaluations::Exemplar1N::Validation::runPartialCreateTemplates(
 		    "elapsed,type,index,num_templates_in_buffer,"
 		    "image_identifier,quality,imp,frct,frgp,orientation,lpm,"
 		    "value_assessment,lsb,pat,plr,trv,\"cores\",\"deltas\","
-		    "\"minutia\",\"roi\",\"rqm\",complex"};
+		    "\"minutia\",\"creases\",\"roi\",\"rqm\",complex"};
 
 		std::string extractPrefix{"extractTemplateData-" + typeStr +
 		    '-' + std::get<std::string>(dataset)};
