@@ -368,7 +368,7 @@ The items in this repository are released in the public domain. See the
 
 [API]: https://pages.nist.gov/frifte/doc/api/e1n.html
 [Ubuntu Mirrors]: https://launchpad.net/ubuntu/+cdmirrors
-[Direct downloads]: https://releases.ubuntu.com/releases/24.04.1/ubuntu-24.04.1-live-server-amd64.iso
+[Direct downloads]: https://old-releases.ubuntu.com/releases/noble/ubuntu-24.04.1-live-server-arm64.iso
 [NIST Biometric Technologies Group]: https://nigos.nist.gov/evaluations/ubuntu-24.04.1-live-server-amd64.iso
 [lib/]: https://github.com/usnistgov/frifte/tree/main/e1n/validation/lib
 [../libfrifte_e1n/]: https://github.com/usnistgov/frifte/tree/main/e1n/libfrifte_e1n
@@ -386,7 +386,7 @@ The items in this repository are released in the public domain. See the
 [mailing list site]: https://groups.google.com/a/list.nist.gov/g/frif
 [LICENSE]: https://github.com/usnistgov/frifte/blob/main/LICENSE.md
 [test plan]: https://pages.nist.gov/frifte/doc/testplan/e1n_testplan.pdf
-[requests website]: https://nigos.nist.gov/datasets/frif_e1n_validation/request
+[requests website]: https://nigos.nist.gov/datasets/frifte_e1n_validation/request
 [the FRIF upload form]: https://pages.nist.gov/frifte/e1n/upload
 [../../include/frifte]: https://github.com/usnistgov/frifte/tree/main/include/frifte
 [../../include/frifte/e1n.h]: https://github.com/usnistgov/frifte/blob/main/include/frifte/e1n.h

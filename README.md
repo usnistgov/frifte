@@ -1,4 +1,4 @@
-Friction Ridge Image and Features <img src="doc/doxygen/assets/nist_itl_two_color.svg" align="right" alt="NIST Information Technology Laboratory" style="width:250px;" />
+Friction Ridge Image and Features Technology Evaluations <img src="doc/doxygen/assets/nist_itl_two_color.svg" align="right" alt="NIST Information Technology Laboratory" style="width:150px" />
 =================================
 
 Friction Ridge Image and Features (FRIF) Technology Evaluations (TEs) are a
