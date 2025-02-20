@@ -10,5 +10,6 @@ var searchData=
   ['minorcrease_7',['MinorCrease',['../namespace_f_r_i_f_1_1_e_f_s.html#a6c0a04a14b88c75007297b90e62eca76a806f3bba635b3fc91a65c65540da1699',1,'FRIF::EFS']]],
   ['minutia_8',['Minutia',['../struct_f_r_i_f_1_1_e_f_s_1_1_minutia.html',1,'FRIF::EFS::Minutia'],['../struct_f_r_i_f_1_1_e_f_s_1_1_minutia.html#abbce79e530acd343ec9d6abf91bff658',1,'FRIF::EFS::Minutia::Minutia()']]],
   ['minutiae_9',['minutiae',['../struct_f_r_i_f_1_1_e_f_s_1_1_features.html#a7fc17c745e494bf3246c2ea6cb5cbff0',1,'FRIF::EFS::Features']]],
-  ['minutiatype_10',['MinutiaType',['../namespace_f_r_i_f_1_1_e_f_s.html#acbe143012892faae1c2cbd357736d31e',1,'FRIF::EFS']]]
+  ['minutiatype_10',['MinutiaType',['../namespace_f_r_i_f_1_1_e_f_s.html#acbe143012892faae1c2cbd357736d31e',1,'FRIF::EFS']]],
+  ['modelsha256_11',['modelSHA256',['../struct_f_r_i_f_1_1_e_f_s_1_1_quality_measure_1_1_description.html#a5cdcc3160c9d4d69ce9d3c1319134f27',1,'FRIF::EFS::QualityMeasure::Description']]]
 ];

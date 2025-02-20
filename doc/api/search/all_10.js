@@ -14,7 +14,7 @@ var searchData=
   ['result_11',['result',['../struct_f_r_i_f_1_1_return_status.html#a5b29d0ace460a94021fb61a575134259',1,'FRIF::ReturnStatus']]],
   ['returnstatus_12',['ReturnStatus',['../struct_f_r_i_f_1_1_return_status.html',1,'FRIF']]],
   ['rgb_13',['RGB',['../struct_f_r_i_f_1_1_image.html#a99c8e2c0f778815112ec3b49b01d5efca889574aebacda6bfd3e534e2b49b8028',1,'FRIF::Image']]],
-  ['ridge_20image_20and_20features_14',['Friction Ridge Image and Features',['../index.html',1,'']]],
+  ['ridge_20image_20and_20features_20technology_20evaluations_14',['Friction Ridge Image and Features Technology Evaluations',['../index.html',1,'']]],
   ['ridgeending_15',['RidgeEnding',['../namespace_f_r_i_f_1_1_e_f_s.html#acbe143012892faae1c2cbd357736d31ea61ec52603470e28c6dfd65a24feb2c0a',1,'FRIF::EFS']]],
   ['ridgequality_16',['RidgeQuality',['../namespace_f_r_i_f_1_1_e_f_s.html#af2c0b8f1daa94d733bd833575d926619',1,'FRIF::EFS']]],
   ['ridgequalityregion_17',['RidgeQualityRegion',['../struct_f_r_i_f_1_1_e_f_s_1_1_ridge_quality_region.html',1,'FRIF::EFS']]],

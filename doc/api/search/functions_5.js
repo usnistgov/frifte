@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['image_0',['Image',['../struct_f_r_i_f_1_1_image.html#a9bd52b898c5b004096228ca338b03e73',1,'FRIF::Image::Image()'],['../struct_f_r_i_f_1_1_image.html#ab13e34c36aa4cea3c3138e099f30d147',1,'FRIF::Image::Image(const uint8_t identifier, const uint16_t width, const uint16_t height, const uint16_t ppi, const Colorspace colorspace, const BitsPerChannel bpc, const BitsPerPixel bpp, const std::vector&lt; std::byte &gt; &amp;pixels)']]]
+  ['hasvalue_0',['hasValue',['../class_f_r_i_f_1_1_e_f_s_1_1_quality_measure.html#a2e62f7f38e7ed76d510b40388eede0ae',1,'FRIF::EFS::QualityMeasure']]]
 ];

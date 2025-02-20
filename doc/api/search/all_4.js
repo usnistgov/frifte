@@ -10,11 +10,13 @@ var searchData=
   ['definitiveridgeedges_7',['DefinitiveRidgeEdges',['../namespace_f_r_i_f_1_1_e_f_s.html#af2c0b8f1daa94d733bd833575d926619a7ca153999e97cb14e87658b69457812f',1,'FRIF::EFS']]],
   ['delta_8',['Delta',['../struct_f_r_i_f_1_1_e_f_s_1_1_delta.html',1,'FRIF::EFS::Delta'],['../struct_f_r_i_f_1_1_e_f_s_1_1_delta.html#a3feb720576d71b5ff54ee39acb572403',1,'FRIF::EFS::Delta::Delta()']]],
   ['deltas_9',['deltas',['../struct_f_r_i_f_1_1_e_f_s_1_1_features.html#a6dbea56ca42135240d34ea0667393ade',1,'FRIF::EFS::Features']]],
-  ['direction_10',['direction',['../struct_f_r_i_f_1_1_e_f_s_1_1_core.html#a08173852d6d0b1c30244ae2affc67673',1,'FRIF::EFS::Core::direction'],['../struct_f_r_i_f_1_1_e_f_s_1_1_delta.html#af690a4237f72fa8bf47a18ced71d8ec8',1,'FRIF::EFS::Delta::direction'],['../struct_f_r_i_f_1_1_e_f_s_1_1_orientation.html#a6c5a94555333b145269065d45e02d85b',1,'FRIF::EFS::Orientation::direction']]],
-  ['directionuncertainty_11',['directionUncertainty',['../struct_f_r_i_f_1_1_e_f_s_1_1_core.html#a737c53f7dd39a28bf1573e43fe39a70d',1,'FRIF::EFS::Core::directionUncertainty'],['../struct_f_r_i_f_1_1_e_f_s_1_1_delta.html#aa7369237863a8b6d5b8630f4843225d4',1,'FRIF::EFS::Delta::directionUncertainty']]],
-  ['dissociatedridges_12',['DissociatedRidges',['../namespace_f_r_i_f_1_1_e_f_s.html#a26bdf9928794647be7b7b61aef936736ac203d3b367b2505630fdd8a93d345310',1,'FRIF::EFS']]],
-  ['distalinterphalangeal_13',['DistalInterphalangeal',['../namespace_f_r_i_f_1_1_e_f_s.html#a5b02c57f25c4bfcdf7271744479ce381aa1bfc5f92e921ed0f30e43be6251cfef',1,'FRIF::EFS']]],
-  ['distaltransverse_14',['DistalTransverse',['../namespace_f_r_i_f_1_1_e_f_s.html#ae37635e33876f0d2747c8481e2f68804aaf36732f1caaf85b32eb724d6d7ec2bb',1,'FRIF::EFS']]],
-  ['doesnotexist_15',['DoesNotExist',['../namespace_f_r_i_f_1_1_e_f_s.html#acc975acb790010847a4de6dfd6ef3c3fac47c93cf49de211bba5d62d65225f128',1,'FRIF::EFS']]],
-  ['doubleloop_16',['DoubleLoop',['../namespace_f_r_i_f_1_1_e_f_s.html#a78cadc7a029e47d96920e70641b51881a3212b51b6d42697102b5ef40bbb9f05d',1,'FRIF::EFS']]]
+  ['description_10',['Description',['../struct_f_r_i_f_1_1_e_f_s_1_1_quality_measure_1_1_description.html',1,'FRIF::EFS::QualityMeasure']]],
+  ['descriptionhash_11',['DescriptionHash',['../struct_f_r_i_f_1_1_e_f_s_1_1_quality_measure_1_1_description_hash.html',1,'FRIF::EFS::QualityMeasure']]],
+  ['direction_12',['direction',['../struct_f_r_i_f_1_1_e_f_s_1_1_core.html#a08173852d6d0b1c30244ae2affc67673',1,'FRIF::EFS::Core::direction'],['../struct_f_r_i_f_1_1_e_f_s_1_1_delta.html#af690a4237f72fa8bf47a18ced71d8ec8',1,'FRIF::EFS::Delta::direction'],['../struct_f_r_i_f_1_1_e_f_s_1_1_orientation.html#a6c5a94555333b145269065d45e02d85b',1,'FRIF::EFS::Orientation::direction']]],
+  ['directionuncertainty_13',['directionUncertainty',['../struct_f_r_i_f_1_1_e_f_s_1_1_core.html#a737c53f7dd39a28bf1573e43fe39a70d',1,'FRIF::EFS::Core::directionUncertainty'],['../struct_f_r_i_f_1_1_e_f_s_1_1_delta.html#aa7369237863a8b6d5b8630f4843225d4',1,'FRIF::EFS::Delta::directionUncertainty']]],
+  ['dissociatedridges_14',['DissociatedRidges',['../namespace_f_r_i_f_1_1_e_f_s.html#a26bdf9928794647be7b7b61aef936736ac203d3b367b2505630fdd8a93d345310',1,'FRIF::EFS']]],
+  ['distalinterphalangeal_15',['DistalInterphalangeal',['../namespace_f_r_i_f_1_1_e_f_s.html#a5b02c57f25c4bfcdf7271744479ce381aa1bfc5f92e921ed0f30e43be6251cfef',1,'FRIF::EFS']]],
+  ['distaltransverse_16',['DistalTransverse',['../namespace_f_r_i_f_1_1_e_f_s.html#ae37635e33876f0d2747c8481e2f68804aaf36732f1caaf85b32eb724d6d7ec2bb',1,'FRIF::EFS']]],
+  ['doesnotexist_17',['DoesNotExist',['../namespace_f_r_i_f_1_1_e_f_s.html#acc975acb790010847a4de6dfd6ef3c3fac47c93cf49de211bba5d62d65225f128',1,'FRIF::EFS']]],
+  ['doubleloop_18',['DoubleLoop',['../namespace_f_r_i_f_1_1_e_f_s.html#a78cadc7a029e47d96920e70641b51881a3212b51b6d42697102b5ef40bbb9f05d',1,'FRIF::EFS']]]
 ];
