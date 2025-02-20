@@ -166,7 +166,8 @@ namespace FRIF
 	 * This structure is used to disallow duplicate finger positions from
 	 * the same subject identifier.
 	 */
-	using SubjectPositionCandidateList = std::unordered_map<SubjectPositionCandidate, double,
+	using SubjectPositionCandidateList = std::unordered_map<
+	    SubjectPositionCandidate, double,
 	    SubjectPositionCandidateListKeyHash>;
 
 	/**

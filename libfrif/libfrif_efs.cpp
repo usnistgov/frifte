@@ -769,3 +769,114 @@ FRIF::EFS::toLinearDiscontinuity(
 		    std::to_string(i)};
 	}
 }
+
+auto
+FRIF::EFS::QualityMeasure::Description::operator<=>(
+    const FRIF::EFS::QualityMeasure::Description&)
+    const = default;
+
+bool
+FRIF::EFS::QualityMeasure::Description::operator==(
+    const FRIF::EFS::QualityMeasure::Description&)
+    const = default;
+
+const FRIF::EFS::QualityMeasure::Description FRIF::EFS::QualityMeasure::NFIQ2v23
+{
+	ProductIdentifier{"NFIQ 2 v2.3",
+	    ProductIdentifier::CBEFFIdentifier{0x101, 0x0057}},
+	"2.3",
+	std::nullopt,
+	"b4a1e7586b3be906f9770e4b77768038"
+};
+
+std::size_t
+FRIF::EFS::QualityMeasure::DescriptionHash::operator()(
+    const FRIF::EFS::QualityMeasure::Description &d)
+    const
+{
+	static const std::string fs = "\x1C";
+	static const std::string us = "\x1F";
+	static const std::string gs = "\x1D";
+
+	std::string id{};
+	if (d.identifier.has_value()) {
+		id += d.identifier->marketing.value_or("") + us;
+
+		if (d.identifier->cbeff.has_value()) {
+			id += std::to_string(d.identifier->cbeff->owner) + us;
+
+			if (d.identifier->cbeff->algorithm.has_value())
+				id += std::to_string(
+				    *d.identifier->cbeff->algorithm);
+		} else
+			id += us;
+	} else
+		id += us + us;
+
+	return (std::hash<std::string>{}(
+	    id + gs +
+	    d.version.value_or("") + gs +
+	    d.comment.value_or("") + gs +
+	    d.modelSHA256.value_or("") + fs
+	));
+}
+
+FRIF::EFS::QualityMeasure::QualityMeasure() = default;
+
+FRIF::EFS::QualityMeasure::QualityMeasure(
+    const double value_) :
+    value{value_}
+{
+
+}
+
+FRIF::EFS::QualityMeasure::operator bool()
+    const
+    noexcept
+{
+	return (this->hasValue());
+}
+
+bool
+FRIF::EFS::QualityMeasure::hasValue()
+    const
+    noexcept
+{
+	return ((this->status == Status::Success) &&
+	    this->value.has_value());
+}
+
+double
+FRIF::EFS::QualityMeasure::operator*()
+    const
+{
+	return (*this->value);
+}
+
+double
+FRIF::EFS::QualityMeasure::getValue()
+    const
+{
+	return (this->value.value());
+}
+
+FRIF::EFS::QualityMeasure::Status
+FRIF::EFS::QualityMeasure::getStatus()
+    const
+{
+	return (this->status);
+}
+
+std::optional<std::string>
+FRIF::EFS::QualityMeasure::getMessage()
+    const
+{
+	return (this->message);
+}
+
+void
+FRIF::EFS::QualityMeasure::setMessage(
+    const std::string &message_)
+{
+	this->message = message_;
+}

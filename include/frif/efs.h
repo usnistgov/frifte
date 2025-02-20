@@ -11,6 +11,7 @@
 #ifndef FRIF_EFS_H_
 #define FRIF_EFS_H_
 
+#include <unordered_map>
 #include <variant>
 
 #include <frif/common.h>
@@ -1110,6 +1111,155 @@ namespace FRIF::EFS
 		std::vector<Segment> segments{};
 	};
 
+	/** Measurement on the biometric sample */
+	class QualityMeasure
+	{
+	public:
+		/** Status of QualityMeasure value computation. */
+		enum class Status : uint8_t
+		{
+			/** Value computed successfully. */
+			Success = 0,
+
+			/** No attempt made to compute value. */
+			NotComputed = 254,
+			/** Error occurred during computation of value. */
+			Error = 255
+		};
+
+		/** %Description of algorithm that computed a QualityMeasure. */
+		struct Description
+		{
+			/** Registered algorithm identifier (QAV, QAP) */
+			std::optional<ProductIdentifier> identifier{};
+			/** Algorithm product version (QPV) */
+			std::optional<std::string> version{};
+			/** Other information (QCM) */
+			std::optional<std::string> comment{};
+			/** Model SHA-256 checksum (QCK) */
+			std::optional<std::string> modelSHA256{};
+
+			auto operator<=>(const Description&) const;
+			bool operator==(const Description&) const;
+		};
+
+		/** Description for NFIQ 2 v2.3 */
+		static const Description NFIQ2v23;
+
+		/** Hash function for Description. */
+		struct DescriptionHash
+		{
+			std::size_t
+			operator()(
+			    const Description &d)
+			    const;
+		};
+
+		QualityMeasure();
+
+		/**
+		 * @param value
+		 * Successfully computed quality measure value.
+		 */
+		QualityMeasure(
+		    const double value);
+
+		/**
+		 * @return
+		 * `true` if status is Status::Success and quality value has
+		 * been stored, `false` otherwise.
+		 *
+		 * @see hasValue()
+		 */
+		explicit operator bool()
+		    const
+		    noexcept;
+
+		/**
+		 * @return
+		 * `true` if status is Status::Success and quality value has
+		 * been stored, `false` otherwise.
+		 */
+		bool
+		hasValue()
+		    const
+		    noexcept;
+
+		/**
+		 * @return
+		 * Stored quality measure value. The behavior is undefined if
+		 * status is not Status::Success.
+		 * @warning
+		 * This operator does not check that #value has been stored.
+		 * Use hasValue() or cast the QualityMeasure to `bool` to check.
+		 * Alternatively, catch the exception from getValue().
+		 *
+		 * @see getValue()
+		 */
+		double
+		operator*()
+		    const;
+
+		/**
+		 * @return
+		 * Stored quality measure value.
+		 * @throw std::bad_optional_access
+		 * Quality measure value never set.
+		 */
+		double
+		getValue()
+		    const;
+
+		Status
+		getStatus()
+		    const;
+
+		std::optional<std::string>
+		getMessage()
+		    const;
+
+		/**
+		 * @param message
+		 * Message about quality measure computation. Must match the
+		 * regular expression `[[:graph:] ]*`.
+		 *
+		 * @note
+		 * Most useful when status is Status::Error.
+		 */
+		void
+		setMessage(
+		    const std::string &message);
+
+	private:
+		/** Status of computing quality measure value. */
+		Status status{Status::NotComputed};
+
+		/**
+		 * @brief
+		 * Computed value of quality measure (QVU).
+		 *
+		 * @note
+		 * Value is undefined is #status is not Status::Success.
+		 */
+		std::optional<double> value{};
+
+		/**
+		 * @brief
+		 * Message about quality measure computation.
+		 *
+		 * @note
+		 * Must match the regular expression `[[:graph:] ]*`.
+		 * @note
+		 * Most useful when #status is Status::Error.
+		 */
+		std::optional<std::string> message{};
+	};
+
+	/** Convenience type for storing QualityMeasure */
+	using QualityMeasureMap = std::unordered_map<
+	    QualityMeasure::Description, QualityMeasure,
+	    QualityMeasure::DescriptionHash>;
+
 	/**
 	 * Collection of ANSI/NIST-ITL 1-2011 (Update: 2015) Extended Feature
 	 * Set fields understood by FRIF.
@@ -1131,6 +1281,17 @@ namespace FRIF::EFS
 		 * pixels per inch.
 		 */
 		uint16_t ppi{};
+
+		/**
+		 * @brief
+		 * Quality measures of the biometric sample.
+		 *
+		 * @details
+		 * If #roi is provided, quality measures should encompass only
+		 * the region specified by #roi. Otherwise, the entire source
+		 * image should be considered.
+		 */
+		std::optional<QualityMeasureMap> quality{};
 
 		/** Impression type of the depicted region. */
 		Impression imp{Impression::Unknown};

@@ -259,6 +259,9 @@ namespace FRIF
 			uint16_t owner{};
 			/** CBEFF Algorithm Identifier of the product. */
 			std::optional<uint16_t> algorithm{};
+
+			auto operator<=>(const CBEFFIdentifier&) const;
+			bool operator==(const CBEFFIdentifier&) const;
 		};
 
 		/**
@@ -274,6 +277,9 @@ namespace FRIF
 		 * [IBIA](https://www.ibia.org/cbeff/iso).
 		 */
 		std::optional<CBEFFIdentifier> cbeff{};
+
+		auto operator<=>(const ProductIdentifier&) const;
+		bool operator==(const ProductIdentifier&) const;
 	};
 
 	/*

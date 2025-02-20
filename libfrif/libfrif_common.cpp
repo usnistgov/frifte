@@ -22,11 +22,33 @@ FRIF::Coordinate::Coordinate(
 }
 
 auto
-FRIF::Coordinate::operator<=>(const FRIF::Coordinate&)
+FRIF::Coordinate::operator<=>(
+    const FRIF::Coordinate&)
     const = default;
 
 bool
-FRIF::Coordinate::operator==(const FRIF::Coordinate&)
+FRIF::Coordinate::operator==(
+    const FRIF::Coordinate&)
+    const = default;
+
+auto
+FRIF::ProductIdentifier::CBEFFIdentifier::operator<=>(
+    const FRIF::ProductIdentifier::CBEFFIdentifier&)
+    const = default;
+
+bool
+FRIF::ProductIdentifier::CBEFFIdentifier::operator==(
+    const FRIF::ProductIdentifier::CBEFFIdentifier&)
+    const = default;
+
+auto
+FRIF::ProductIdentifier::operator<=>(
+    const FRIF::ProductIdentifier&)
+    const = default;
+
+bool
+FRIF::ProductIdentifier::operator==(
+    const FRIF::ProductIdentifier&)
     const = default;
 
 FRIF::ReturnStatus::operator bool()
