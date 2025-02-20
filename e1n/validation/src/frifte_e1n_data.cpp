@@ -108,8 +108,10 @@ FRIF::Evaluations::Exemplar1N::Validation::Data::readCSV(
 				throw std::runtime_error{"Invalid colorspace "
 				    "value: " + cols[5]};
 
-			im.bpc = Image::toBitsPerChannel(std::stoi(cols[6]));
-			im.bpp = Image::toBitsPerPixel(std::stoi(cols[7]));
+			im.bpc = Image::toBitsPerChannel(static_cast<uint8_t>(
+			    std::stoul(cols[6])));
+			im.bpp = Image::toBitsPerPixel(static_cast<uint8_t>(
+			    std::stoul(cols[7])));
 
 			input.image = im;
 		}

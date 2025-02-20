@@ -1106,11 +1106,15 @@ FRIF::Evaluations::Exemplar1N::Validation::parseArguments(
 					    "number of cores cannot be "
 					    "determined"};
 			} else if (args.numProcs > hwConcurrency) {
+				const uint8_t newVal = static_cast<uint8_t>(
+				    std::min(hwConcurrency,
+				    static_cast<unsigned int>(
+				    std::numeric_limits<uint8_t>::max())));
 				std::cerr << "[NOTE] Number of processes seems "
 				    "too large. Reducing to number of "
 				    "concurrent threads detected (" +
-				    std::to_string(hwConcurrency) + ").\n";
-				args.numProcs = hwConcurrency;
+				    std::to_string(newVal) + ").\n";
+				args.numProcs = newVal;
 			}
 			break;
 		}
