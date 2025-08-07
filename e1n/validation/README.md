@@ -89,11 +89,11 @@ $ cp /path/to/config.txt config/
 $ cp /path/to/frif_e1n_validation_images-*.tar.xz .
 $ ./validate
 ================================================================================
-|   FRIF E1N Validation | Version 202409301547 | 30 Sep 2024 | 15:48:27 EDT    |
+|   FRIF E1N Validation | Version 202508071643 | 30 Sep 2024 | 15:48:27 EDT    |
 ================================================================================
 Checking for required packages... [OKAY]
 Checking for previous validation attempts... [OKAY]
-Checking validation version... (no Internet connection) [SKIP]
+Checking validation version... (202508071643) [OKAY]
 Checking OS and version... (Ubuntu Server 24.04.3 LTS (Noble Numbat)) [OKAY]
 Checking for unexpanded validation image tarballs... [DEFER]
  -> Expanding "frif_e1n_validation_images-2024093014427.tar.xz"... [OKAY]
