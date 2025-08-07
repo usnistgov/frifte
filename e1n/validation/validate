@@ -1154,13 +1154,13 @@ compile()
 		local origin_in_rpath=0
 		if [ "${uses_rpath}" == "1" ]; then
 			if readelf -d "${lib_dir}/${core_lib}" | \
-			    grep RPATH | grep "\$ORIGIN" > /dev/null; then
+			    grep RPATH | grep -q "\$ORIGIN"; then
 				for p in $(readelf -d "${lib_dir}/${core_lib}" \
 				    | grep RUNPATH | grep "\$ORIGIN" | \
 				    cut -f 2 -d '[' | tr -d ']' | tr ':' ' ');
 				    do
-					if [ "${p}" == "$ORIGIN" ] || \
-					    [ "${p}" == "$ORIGIN/" ]; then
+					if [ "${p}" == "\$ORIGIN" ] || \
+					    [ "${p}" == "\$ORIGIN/" ]; then
 						origin_in_rpath=1
 						break
 					fi
@@ -1169,13 +1169,13 @@ compile()
 		fi
 		local origin_in_runpath=0
 		if readelf -d "${lib_dir}/${core_lib}" | \
-		    grep RUNPATH | grep "\$ORIGIN" > /dev/null; then
+		    grep RUNPATH | grep -q "\$ORIGIN"; then
 			for p in $(readelf -d "${lib_dir}/${core_lib}" \
 			    | grep RUNPATH | grep "\$ORIGIN" | \
 			    cut -f 2 -d '[' | tr -d ']' | tr ':' ' ');
 			    do
-				if [ "${p}" == "$ORIGIN" ] || \
-				    [ "${p}" == "$ORIGIN/" ]; then
+				if [ "${p}" == "\$ORIGIN" ] || \
+				    [ "${p}" == "\$ORIGIN/" ]; then
 					origin_in_runpath=1
 					break
 				fi
