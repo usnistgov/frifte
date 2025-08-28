@@ -46,6 +46,8 @@ validation_dl_url="https://github.com/usnistgov/frifte/releases"
 # URL where the validation imagery is requested
 validation_image_request_url="https://nigos.nist.gov/datasets/"
 validation_image_request_url+="frifte_e1n_validation/request"
+# Branch on GitHub where links should point
+git_branch="main"
 
 # Directory where user currently resides
 cwd="$(pwd)"
@@ -361,8 +363,8 @@ print_couldnt_check_version()
 {
 	font_lightred
 
-	local vers_url="https://github.com/usnistgov/frifte/tree/main/e1n/"
-	vers_url+="validation/VERSION"
+	local vers_url="https://github.com/usnistgov/frifte/tree/${git_branch}/"
+	vers_url+="e1n/validation/VERSION"
 
 	local msg="This script could not check online to ensure there are no "
 	msg+="updates available. NIST requires that FRIF TE submissions always "
@@ -567,8 +569,8 @@ check_validation_version()
 	fi
 
 	# URL with the most recent version number of the validation package
-	local version_url="https://raw.githubusercontent.com/usnistgov/frif/"
-	local version_url+="main/e1n/validation/VERSION"
+	local version_url="https://raw.githubusercontent.com/usnistgov/frifte/"
+	local version_url+="${git_branch}/e1n/validation/VERSION"
 
 	echo -n "Checking validation version... "
 	# d.root-servers.net -> 199.7.91.13
