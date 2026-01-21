@@ -1864,7 +1864,8 @@ check_search_candidates()
 
 		# Success and candidate list set, but no candidates
 		if [ "${result}" == "0" ] && [ "${cl_present}" == "1" ] &&
-		    [ "${num_candidates}" == "0" ]; then
+		    [[ "${num_candidates}" == "0"  ||
+		    "${num_candidates}" == "NA" ]]; then
 			no_candidates=$(( no_candidates + 1 ))
 			continue
 		fi
@@ -1904,11 +1905,10 @@ check_search_candidates()
 	if [ "${no_candidates}" -gt 0 ]; then
 		local msg="There are some (${no_candidates}) searches that "
 		msg+="returned successfully and instantiated a candidate list "
-		msg+="but did not enter any candidates. This situation is "
-		msg+="converted to a failure to search during analysis. Please "
-		msg+="review:"
-		warn "${msg}" "$(rp "${candidate_log}")"
-		echo -n "Still checking search logs... "
+		msg+="but did not enter any candidates. This situation would "
+		msg+="be converted to a failure to search during analysis, but "
+		msg+="is also not a valid API implementation. Please review: "
+		fail "${msg}" "$(rp "${candidate_log}")"
 	fi
 
 	if [ "${too_many}" -gt 0 ]; then
