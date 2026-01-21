@@ -523,11 +523,12 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * SearchSubjectPositionResult object containing a list of one
 		 * to less than or equal to `maxCandidates`
 		 * SubjectPositionCandidate. If no SubjectPositionCandidate
-		 * were found, the implementation shall return std::nullopt
+		 * were found, the implementation shall return `std::nullopt`
 		 * instead of a SearchSubjectPositionResult, but would still
-		 * set Result::Success. If an error prevented the search from
-		 * completing (e.g., invalid template, database error), the
-		 * ReturnStatus should contain Result::Failure.
+		 * set ReturnStatus::Result::Success. If an error prevented the
+		 * search from completing (e.g., invalid template, database
+		 * error), the ReturnStatus should contain
+		 * ReturnStatus::Result::Failure.
 		 *
 		 * @warning
 		 * **DO NOT MODIFY** the database loaded with load() either in
@@ -540,17 +541,17 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * behavior for the many running search processes.
 		 *
 		 * @note
-		 * SearchSubjectPositionResult.candidateList will be sorted by
-		 * descending SubjectPositionCandidate.similarity upon return
+		 * SearchSubjectPositionResult::candidateList will be sorted by
+		 * descending SubjectPositionCandidate::similarity upon return
 		 * from this method using `std::stable_sort()`.
 		 *
 		 * @note
 		 * If provided a probe template that contains images from
 		 * multiple regions of the same candidate,
-		 * SubjectPositionCandidate.frgp will be ignored in analysis.
+		 * SubjectPositionCandidate::frgp will be ignored in analysis.
 		 *
 		 * @note
-		 * SubjectPositionCandidate.frgp shall be the most localized
+		 * SubjectPositionCandidate::frgp shall be the most localized
 		 * region where the correspondence was noted to be considered
 		 * as correct as possible. See the test plan for more
 		 * information.
@@ -574,45 +575,51 @@ namespace FRIF::Evaluations::Exemplar1N
 		    const = 0;
 
 		/**
-		 * @brief Search the reference database for the samples
-		 * represented in `probeTemplate` including the most localized
-		 * friction ridge region.
+		 * @brief
+		 * Search the reference database for the samples represented in
+		 * `probeTemplate` including the most localized friction ridge
+		 * region.
 		 *
-		 * @param probeTemplate Object returned from createTemplate()
-		 * with `templateType` of TemplateType::Probe.  @param
-		 * maxCandidates The maximum number of
-		 * SubjectCandidate to return.
+		 * @param probeTemplate
+		 * Object returned from createTemplate() with `templateType` of
+		 * TemplateType::Probe.
+		 * @param maxCandidates
+		 * The maximum number of SubjectCandidate to return.
 		 *
-		 * @return A tuple containing a ReturnStatus containing
-		 * information on the result of completing the search task, and
-		 * a SearchSubjectResult object containing a list of one to
-		 * less than or equal to `maxCandidates`
-		 * SubjectPositionCandidate. If no SubjectCandidate were found,
-		 * the implementation shall return std::nullopt instead of a
-		 * SearchSubjectResult, but would still set Result::Success. If
-		 * an error prevented the search from completing (e.g., invalid
+		 * @return
+		 * A tuple containing a ReturnStatus containing information on
+		 * the result of completing the search task, and a
+		 * SearchSubjectResult object containing a list of one to less
+		 * than or equal to `maxCandidates` subject identifiers. If no
+		 * suitable candidates were found, the implementation shall
+		 * return `std::nullopt` instead of a SearchSubjectResult, but
+		 * would still set ReturnStatus::Result::Success. If an error
+		 * prevented the search from completing (e.g., invalid
 		 * template, database error), the ReturnStatus should contain
-		 * Result::Failure.
+		 * ReturnStatus::Result::Failure.
 		 *
-		 * @warning **DO NOT MODIFY** the database loaded with load()
-		 * either in memory or on disk. This method will be called
-		 * after calling load() and most likely from a `fork()`ed
-		 * process, allowing the read-only database in memory to be
-		 * shared using `fork()`'s copy-on-write semantics while not
-		 * requiring this method to be threadsafe. Modifying the
-		 * database will at best cause an out of memory error and at
-		 * worst cause undefined behavior for the many running search
-		 * processes.
+		 * @warning
+		 * **DO NOT MODIFY** the database loaded with load() either in
+		 * memory or on disk. This method will be called after calling
+		 * load() and most likely from a `fork()`ed process, allowing
+		 * the read-only database in memory to be shared using
+		 * `fork()`'s copy-on-write semantics while not requiring this
+		 * method to be threadsafe. Modifying the database will at best
+		 * cause an out of memory error and at worst cause undefined
+		 * behavior for the many running search processes.
 		 *
-		 * @note SearchSubjectResult.candidateList will be sorted by
+		 * @note
+		 * SearchSubjectResult.candidateList will be sorted by
 		 * descending SubjectCandidate.similarity upon return from this
 		 * method using `std::stable_sort()`.
 		 *
-		 * @note This method must return in <= 40 * `number of database
+		 * @note
+		 * This method must return in <= 40 * `number of database
 		 * identifiers` microseconds, on average, as measured on a
 		 * fixed subset of data.
 		 *
-		 * @note This method shall not spawn threads.
+		 * @note
+		 * This method shall not spawn threads.
 		 *
 		 * @see searchSubjectPosition
 		 */
