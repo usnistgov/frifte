@@ -6,7 +6,7 @@ var searchData=
   ['pat_3',['pat',['../struct_f_r_i_f_1_1_e_f_s_1_1_features.html#ad3ffc3e40f8d62003da5534ff4c89fb7',1,'FRIF::EFS::Features']]],
   ['patternclassification_4',['PatternClassification',['../class_f_r_i_f_1_1_e_f_s_1_1_pattern_classification.html',1,'FRIF::EFS::PatternClassification'],['../class_f_r_i_f_1_1_e_f_s_1_1_pattern_classification.html#a6793962ed92b6ebbd03577628e781cf1',1,'FRIF::EFS::PatternClassification::PatternClassification()']]],
   ['patterngeneralclassification_5',['PatternGeneralClassification',['../namespace_f_r_i_f_1_1_e_f_s.html#a26bdf9928794647be7b7b61aef936736',1,'FRIF::EFS']]],
-  ['patternsubclassification_6',['PatternSubclassification',['../namespace_f_r_i_f_1_1_e_f_s.html#a4a421df84ffc77d1585a980510801719',1,'FRIF::EFS']]],
+  ['patternsubclassification_6',['PatternSubclassification',['../namespace_f_r_i_f_1_1_e_f_s.html#a169bad22180406b45fd640e3e938aa20',1,'FRIF::EFS']]],
   ['pixels_7',['pixels',['../struct_f_r_i_f_1_1_image.html#a6741eb048ba153b14e1723ad9798e27c',1,'FRIF::Image']]],
   ['plainarch_8',['PlainArch',['../namespace_f_r_i_f_1_1_e_f_s.html#ab0db3dbb4b065bbded12f97b1734e759ad54ea9be9de74fa66b8eccfd45812c83',1,'FRIF::EFS']]],
   ['plaincontact_9',['PlainContact',['../namespace_f_r_i_f_1_1_e_f_s.html#aaac3a13e08279640e83afe55225ead4ba3107075dc8194de8d258eebc7ded5062',1,'FRIF::EFS']]],

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['sample_0',['Sample',['../namespace_f_r_i_f.html#a33b1b1ea1846fc34744abb99060aaa94',1,'FRIF']]],
+  ['sample_0',['Sample',['../namespace_f_r_i_f.html#a151e3cd032a7e8b1b3aaf4405f9ff878',1,'FRIF']]],
   ['sanitycheck_1',['sanityCheck',['../struct_f_r_i_f_1_1_image.html#a801e0390b02af3ec3284074e5daf460b',1,'FRIF::Image']]],
   ['scannedinkonpaper_2',['ScannedInkOnPaper',['../namespace_f_r_i_f_1_1_e_f_s.html#a7b289ba18facb59150321902de0a79e4afe5042e12f27ab485b9c66972fe33d0f',1,'FRIF::EFS']]],
   ['scar_3',['Scar',['../namespace_f_r_i_f_1_1_e_f_s.html#a26bdf9928794647be7b7b61aef936736a6030995011cc1cbaf9bb50d0c78da0d9',1,'FRIF::EFS']]],
@@ -25,10 +25,10 @@ var searchData=
   ['sub_22',['SUB',['../namespace_f_r_i_f_1_1_e_f_s.html#a501dedd92404bd555416005f2fe1cc85',1,'FRIF::EFS']]],
   ['subjectcandidate_23',['SubjectCandidate',['../namespace_f_r_i_f.html#ac773cbccb4a62fc94983f4188fff4fa0',1,'FRIF']]],
   ['subjectcandidatelist_24',['SubjectCandidateList',['../namespace_f_r_i_f.html#af51e01c0b04a205107f7882edb8a4d44',1,'FRIF']]],
-  ['subjectcandidatelistcorrespondence_25',['SubjectCandidateListCorrespondence',['../namespace_f_r_i_f.html#af0db5e4ca5ee2f7fe0b3b6336951bb85',1,'FRIF']]],
+  ['subjectcandidatelistcorrespondence_25',['SubjectCandidateListCorrespondence',['../namespace_f_r_i_f.html#af58ac3fbf15a3033b01451a8098fdd0c',1,'FRIF']]],
   ['subjectpositioncandidate_26',['SubjectPositionCandidate',['../struct_f_r_i_f_1_1_subject_position_candidate.html',1,'FRIF::SubjectPositionCandidate'],['../struct_f_r_i_f_1_1_subject_position_candidate.html#a414a492c0f0deaefdf526ce48d14df04',1,'FRIF::SubjectPositionCandidate::SubjectPositionCandidate()']]],
-  ['subjectpositioncandidatelist_27',['SubjectPositionCandidateList',['../namespace_f_r_i_f.html#a5e2e2ea926ccb529e5ef1d7f29f6dc60',1,'FRIF']]],
-  ['subjectpositioncandidatelistcorrespondence_28',['SubjectPositionCandidateListCorrespondence',['../namespace_f_r_i_f.html#ad7f603b044e7dbd07adf9938c5b21ef5',1,'FRIF']]],
+  ['subjectpositioncandidatelist_27',['SubjectPositionCandidateList',['../namespace_f_r_i_f.html#ac00b8089cf5df9ca14ea7590dc3a0bc1',1,'FRIF']]],
+  ['subjectpositioncandidatelistcorrespondence_28',['SubjectPositionCandidateListCorrespondence',['../namespace_f_r_i_f.html#ae5fd7e8cec61b3df749fa2ddf875c4af',1,'FRIF']]],
   ['subjectpositioncandidatelistkeyhash_29',['SubjectPositionCandidateListKeyHash',['../struct_f_r_i_f_1_1_subject_position_candidate_list_key_hash.html',1,'FRIF']]],
   ['substrate_30',['Substrate',['../namespace_f_r_i_f_1_1_e_f_s.html#af53ec4ae5791b0efd1706850bf650d50',1,'FRIF::EFS']]],
   ['success_31',['Success',['../struct_f_r_i_f_1_1_return_status.html#afbc41e9fd908a3e2ae6085f6a49f1615a505a83f220c02df2f85c3810cd9ceb38',1,'FRIF::ReturnStatus::Success'],['../class_f_r_i_f_1_1_e_f_s_1_1_quality_measure.html#a1b4f1e51c72c725a1f4cfdd272029b92a505a83f220c02df2f85c3810cd9ceb38',1,'FRIF::EFS::QualityMeasure::Success']]],

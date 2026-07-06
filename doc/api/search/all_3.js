@@ -24,7 +24,7 @@ var searchData=
   ['correspondencetype_21',['CorrespondenceType',['../namespace_f_r_i_f_1_1_e_f_s.html#acc975acb790010847a4de6dfd6ef3c3f',1,'FRIF::EFS']]],
   ['crack_22',['Crack',['../namespace_f_r_i_f_1_1_e_f_s.html#a6c0a04a14b88c75007297b90e62eca76a6cbffac928650245da33369dedceb579',1,'FRIF::EFS']]],
   ['crease_23',['Crease',['../class_f_r_i_f_1_1_e_f_s_1_1_crease.html',1,'FRIF::EFS::Crease'],['../class_f_r_i_f_1_1_e_f_s_1_1_crease.html#a2f4f76bda5f1801ac4196f9d88f4566e',1,'FRIF::EFS::Crease::Crease()']]],
-  ['creaseclassification_24',['CreaseClassification',['../namespace_f_r_i_f_1_1_e_f_s.html#a15d1c4505f7f4e6b80e282fa53dc290a',1,'FRIF::EFS']]],
+  ['creaseclassification_24',['CreaseClassification',['../namespace_f_r_i_f_1_1_e_f_s.html#af8a569f2f36dae2fce05bcfb47882776',1,'FRIF::EFS']]],
   ['creases_25',['creases',['../struct_f_r_i_f_1_1_e_f_s_1_1_features.html#adb07dc78b111e486f638cc8789d075f4',1,'FRIF::EFS::Features']]],
   ['createreferencedatabase_26',['createReferenceDatabase',['../class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface.html#aaf4fb5e99a621b5d0db6b86a1bedef5e',1,'FRIF::Evaluations::Exemplar1N::ExtractionInterface']]],
   ['createtemplate_27',['createTemplate',['../class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface.html#a142adcb5e8cb38f03a5238c98350bb66',1,'FRIF::Evaluations::Exemplar1N::ExtractionInterface']]],
