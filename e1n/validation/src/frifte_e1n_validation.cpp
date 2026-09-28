@@ -1837,10 +1837,10 @@ main(
     char *argv[])
 {
 	/*
-	 * Check FRIF API version.
+	 * Check FRIF TE API version.
 	 */
 	static const uint16_t expectedFRIFMajor{1};
-	static const uint16_t expectedFRIFMinor{2};
+	static const uint16_t expectedFRIFMinor{3};
 	static const uint16_t expectedFRIFPatch{0};
 	if (!((FRIF::API_MAJOR_VERSION == expectedFRIFMajor) &&
 	    (FRIF::API_MINOR_VERSION == expectedFRIFMinor) &&
@@ -1852,7 +1852,7 @@ main(
 		    FRIF::API_MINOR_VERSION << '.' <<
 		    FRIF::API_PATCH_VERSION << '\n';
 		std::cerr << "Rebuild your core library with the latest FRIF "
-		    "header files\n";
+		    "TE header files\n";
 		return (EXIT_FAILURE);
 	}
 

@@ -1,8 +1,8 @@
-FRIF E1N Validation
-===================
+FRIF TE E1N Validation
+======================
 
-We require exercising FRIF E1N [API] implementations with the FRIF E1N
-validation package. Validation is mutually-beneficial to NIST and FRIF E1N
+We require exercising FRIF TE E1N [API] implementations with the FRIF TE E1N
+validation package. Validation is mutually-beneficial to NIST and FRIF TE E1N
 participants. The hope is that successful execution of validation ensures your
 algorithm:
 
@@ -22,12 +22,12 @@ Contents
      configurations is optional.
    - **[lib/]:** Directory in which all required libraries reside. There must
      be at least library, the **core** library, and that library **must** follow
-     the FRIF E1N naming convention.
+     the FRIF TE E1N naming convention.
    - **[../libfrifte_e1n/]:** Code for the shared library implementing methods
      declared in [../../include/frifte/e1n.h].
    - **[../../libfrifte/]:** Code for the shared library implementing methods
-     shared by all FRIF evaluations, declared in [../../include/frif].
-   - **[../../include/e1n.h]:** The FRIF E1N [API].
+     shared by all FRIF TE, declared in [../../include/frifte].
+   - **[../../include/e1n.h]:** The FRIF TE E1N [API].
    - **[validate]:** Script that automates running the validation and performing
      checks on the output.
  * Supporting Files
@@ -75,9 +75,10 @@ How to Run
  4. Execute [validate] (`./validate`).
  5. **If successful**, sign *and* encrypt the resulting output archive in a
     single step, and upload it, along with the encrypting identity's public key,
-    and your original signed evaluation agreement via [the FRIF upload form].
-    For an example of how to use GnuPG to encrypt, run `validate encrypt`. If
-    unsuccessful, correct any errors described and try again.
+    and your original signed evaluation agreement via
+    [the FRIF TE E1N upload form]. For an example of how to use GnuPG to
+    encrypt, run `validate encrypt`. If unsuccessful, correct any errors
+    described and try again.
 
 <details>
   <summary><em>Expand to view an example run.</em></summary>
@@ -89,7 +90,7 @@ $ cp /path/to/config.txt config/
 $ cp /path/to/frif_e1n_validation_images-*.tar.xz .
 $ ./validate
 ================================================================================
-|   FRIF E1N Validation | Version 202508071643 | 30 Sep 2024 | 15:48:27 EDT    |
+|  FRIF TE E1N Validation | Version 202508071643 | 30 Sep 2024 | 15:48:27 EDT  |
 ================================================================================
 Checking for required packages... [OKAY]
 Checking for previous validation attempts... [OKAY]
@@ -293,7 +294,7 @@ Submission Contents
 
  * **canary.log:** MD5 checksums of randomly-generated images we provide as part
    of the validation fingerprint imagery. This helps us make sure that you are
-   using the most recent version of FRIF E1N validation fingerprint imagery.
+   using the most recent version of FRIF TE E1N validation fingerprint imagery.
  * **compile.log:** Output from compiling the validation executable and other
    information like MD5 checksums, versions, and library dependencies that may
    help us debug your submission if an error occurs.
@@ -338,7 +339,7 @@ Checks Performed
  * Validation package and imagery is at most recent revision level.
  * Appropriate operating system version installed.
  * Libraries and configurations can be placed randomly on disk.
- * Appropriately-named FRIF E1N core software library is present.
+ * Appropriately-named FRIF TE E1N core software library is present.
  * Software library links properly against the validation driver.
  * Crashes do not occur when handling various types of imagery, including
    - atypical resolutions;
@@ -347,7 +348,7 @@ Checks Performed
    - non-contact imagery;
    - blank or gradient patterns.
 
-While the validation package tries to eliminate errors from the FRIF E1N
+While the validation package tries to eliminate errors from the FRIF TE E1N
 submission, it is not perfect, and there are still several ways in which the
 package might approve you for submission that NIST may later reject.
 
@@ -357,7 +358,7 @@ If you found a bug and can provide steps to reliably reproduce it, or if you
 have a feature request, please [open an issue]. Other questions may be addressed
 to the [NIST FRIF TE team].
 
-The FRIF TE team sends updates about the FRIF tests to their mailing list. Enter
+The FRIF TE team sends updates about the FRIF TEs to their mailing list. Enter
 your e-mail address on the [mailing list site], or send a blank e-mail to
 FRIFTE+subscribe@list.nist.gov to be automatically subscribed.
 
@@ -388,6 +389,6 @@ The items in this repository are released in the public domain. See the
 [LICENSE]: https://github.com/usnistgov/frifte/blob/main/LICENSE.md
 [test plan]: https://pages.nist.gov/frifte/doc/testplan/e1n_testplan.pdf
 [requests website]: https://nigos.nist.gov/datasets/frifte_e1n_validation/request
-[the FRIF upload form]: https://pages.nist.gov/frifte/e1n/upload
+[the FRIF TE E1N upload form]: https://pages.nist.gov/frifte/e1n/upload
 [../../include/frifte]: https://github.com/usnistgov/frifte/tree/main/include/frifte
 [../../include/frifte/e1n.h]: https://github.com/usnistgov/frifte/blob/main/include/frifte/e1n.h

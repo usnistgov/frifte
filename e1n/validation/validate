@@ -458,7 +458,7 @@ print_instructions()
 	echo " 1. Copy required files:"
 	echo -n "    a. Place all needed libraries in 'lib/', including your "
 	echo "properly named "
-	echo "       ELFT core library."
+	echo "       FRIF TE E1N core library."
 	echo "    b. Place any needed runtime configuration files in 'config/'."
 	echo " 2. Run './validate'."
 	echo "    a. Successful? Sign and encrypt the generated archive."
@@ -997,7 +997,7 @@ compile()
 		fail "${msg}"
 	fi
 
-	# Check for pre-built libelft.so
+	# Check for pre-built libfrifte.so
 	if [ -e "${local_lib_dir}/libfrifte.so" ]; then
 		local msg="The library 'libfrifte.so' is in the directory "
 		msg+="$(rp "${local_lib_dir}"). This script will build its own "
@@ -1015,7 +1015,7 @@ compile()
 		fi
 	fi
 
-	# Check for pre-built libelft_e1n.so
+	# Check for pre-built libfrifte_e1n.so
 	if [ -e "${local_lib_dir}/libfrifte_e1n.so" ]; then
 		local msg="The library 'libfrifte_e1n.so' is in the directory "
 		msg+="$(rp "${local_lib_dir}"). This script will build its own "
@@ -1598,8 +1598,8 @@ make_tarball()
 	fi
 
 	# Remove unnecessary files
-	if ! find "${final_output_path}" \( -type f -name 'libelft.so' -o \
-	    -name 'README' \) -exec rm -f {} \;; then
+	if ! find "${final_output_path}" \( -type f -name 'libfrifte.so' -o \
+	    -name 'libfrifte_e1n.so' -o -name 'README' \) -delete; then
 		fail "Could not remove unnecessary validation files"
 	fi
 
