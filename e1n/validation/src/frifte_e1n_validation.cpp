@@ -654,26 +654,30 @@ std::string
 FRIF::Evaluations::Exemplar1N::Validation::makeExtractCorrespondenceLogLine(
     const std::string &identifier,
     const std::string &duration,
-    const std::variant<SearchSubjectResult, SearchSubjectPositionResult>
-        &searchResult,
+    const ReturnStatus &rs,
+    const std::variant<std::optional<SubjectCandidateListCorrespondence>,
+        std::optional<SubjectPositionCandidateListCorrespondence>>
+        &varCorrespondences,
     const Arguments &args)
 {
 	std::string logLine{};
 
 	if (args.operation == Operation::SearchSubject) {
-		const auto &correspondences = std::get<SearchSubjectResult>(
-		    searchResult).correspondence;
+		const auto &correspondences = std::get<std::optional<
+		    SubjectCandidateListCorrespondence>>(varCorrespondences);
 		if (!correspondences.has_value())
 			return {'"' + identifier + "\"," +
-			   duration + ',' + Util::splice({14, Util::NA}, ",")};
-		if (std::get<SearchSubjectResult>(searchResult).candidateList.
-		    size() != correspondences->size())
-			throw std::runtime_error{"There is not a "
-			    "correspondence entry for each candidate in the "
-			    "candidate list"};
+			    duration + ',' +
+			    Util::e2i2s(rs.result) + ',' +
+			    Util::sanitizeMessage(rs.message ?
+			    *rs.message : "") + ',' +
+			    Util::splice({14, Util::NA}, ",")};
 
 		const std::string logLinePrefix{'"' + identifier + "\"," +
-		   duration + ',' + Util::ts(correspondences->size()) + ','};
+		    duration + ',' +
+		    Util::e2i2s(rs.result) + ',' +
+		    Util::sanitizeMessage(rs.message ? *rs.message : "") + ',' +
+		    Util::ts(correspondences->size()) + ','};
 
 		std::unordered_map<std::string,FRIF::Correspondence>::size_type
 		    correspondenceIdx{};
@@ -714,20 +718,22 @@ FRIF::Evaluations::Exemplar1N::Validation::makeExtractCorrespondenceLogLine(
 			}
 		}
 	} else if (args.operation == Operation::SearchSubjectPosition) {
-		const auto &correspondences =
-		    std::get<SearchSubjectPositionResult>(searchResult).
-		    correspondence;
+		const auto &correspondences = std::get<std::optional<
+		    SubjectPositionCandidateListCorrespondence>>(
+		    varCorrespondences);
 		if (!correspondences.has_value())
 			return {'"' + identifier + "\"," +
-			   duration + ',' + Util::splice({14, Util::NA}, ",")};
-		if (std::get<SearchSubjectPositionResult>(searchResult).
-		    candidateList.size() != correspondences->size())
-			throw std::runtime_error{"There is not a "
-			    "correspondence entry for each candidate in the "
-			    "candidate list"};
+			    duration + ',' +
+			    Util::e2i2s(rs.result) + ',' +
+			    Util::sanitizeMessage(rs.message ?
+			    *rs.message : "") + ',' +
+			    Util::splice({14, Util::NA}, ",")};
 
 		const std::string logLinePrefix{'"' + identifier + "\"," +
-		   duration + ',' + Util::ts(correspondences->size()) + ','};
+		    duration + ',' +
+		    Util::e2i2s(rs.result) + ',' +
+		    Util::sanitizeMessage(rs.message ? *rs.message : "") + ',' +
+		    Util::ts(correspondences->size()) + ','};
 
 		std::unordered_map<std::string,FRIF::Correspondence>::size_type
 		    correspondenceIdx{};
@@ -1653,8 +1659,8 @@ FRIF::Evaluations::Exemplar1N::Validation::singleSearch(
 		/* Log or call correspondence */
 		if (optRes->correspondence.has_value())
 			return {logLine, makeExtractCorrespondenceLogLine(
-			    identifier, Util::duration(start, stop), *optRes,
-			    args)};
+			    identifier, Util::duration(start, stop), rs,
+			    optRes->correspondence, args)};
 		else if (doCorrespondence)
 			return {logLine, singleExtractCorrespondence(
 			    impl, dataset, datasetIndex, *optRes, args)};
@@ -1705,8 +1711,8 @@ FRIF::Evaluations::Exemplar1N::Validation::singleSearch(
 		/* Log or call correspondence */
 		if (optRes->correspondence.has_value())
 			return {logLine, makeExtractCorrespondenceLogLine(
-			    identifier, Util::duration(start, stop), *optRes,
-			    args)};
+			    identifier, Util::duration(start, stop), rs,
+			    optRes->correspondence, args)};
 		else if (doCorrespondence)
 			return {logLine, singleExtractCorrespondence(
 			    impl, dataset, datasetIndex, *optRes, args)};
@@ -1754,10 +1760,10 @@ FRIF::Evaluations::Exemplar1N::Validation::singleExtractCorrespondence(
 //	}
 
 	std::chrono::steady_clock::time_point start{}, stop{};
-	std::variant<std::optional<SubjectCandidateListCorrespondence>,
-	    std::optional<SubjectPositionCandidateListCorrespondence>> corr{};
 	if (args.operation == Operation::SearchSubject) {
 		auto ssr = std::get<SearchSubjectResult>(result);
+		std::optional<std::tuple<ReturnStatus,
+		    SubjectCandidateListCorrespondence>> corr{};
 		try {
 			start = std::chrono::steady_clock::now();
 			corr = impl->extractCorrespondenceSubject(
@@ -1771,8 +1777,23 @@ FRIF::Evaluations::Exemplar1N::Validation::singleExtractCorrespondence(
 			throw std::runtime_error{"Unknown exception from "
 			    "extractCorrespondenceSubject()"};
 		}
+
+		if (!corr)
+			throw std::runtime_error{"Implementation supports "
+			    "correspondence but did not return any"};
+
+		auto &rs = std::get<ReturnStatus>(*corr);
+		auto &corrRes =
+		    std::get<SubjectCandidateListCorrespondence>(*corr);
+
+		return (makeExtractCorrespondenceLogLine(identifier,
+		    Util::duration(start, stop), rs,
+		    std::optional<SubjectCandidateListCorrespondence>(corrRes),
+		    args));
 	} else if (args.operation == Operation::SearchSubjectPosition) {
 		auto ssr = std::get<SearchSubjectPositionResult>(result);
+		std::optional<std::tuple<ReturnStatus,
+		    SubjectPositionCandidateListCorrespondence>> corr{};
 		try {
 			start = std::chrono::steady_clock::now();
 			corr = impl->extractCorrespondenceSubjectPosition(
@@ -1786,12 +1807,21 @@ FRIF::Evaluations::Exemplar1N::Validation::singleExtractCorrespondence(
 			throw std::runtime_error{"Unknown exception from "
 			    "extractCorrespondenceSubjectPosition()"};
 		}
+
+		if (!corr)
+			throw std::runtime_error{"Implementation supports "
+			    "correspondence but did not return any"};
+
+		auto &rs = std::get<ReturnStatus>(*corr);
+		auto &corrRes =
+		    std::get<SubjectPositionCandidateListCorrespondence>(*corr);
+		return (makeExtractCorrespondenceLogLine(identifier,
+		    Util::duration(start, stop), rs,
+		    std::optional<SubjectPositionCandidateListCorrespondence>(
+		    corrRes), args));
 	} else
 		throw std::runtime_error{"Unsupported operation sent to "
 		    "singleExtractCorrespondence()"};
-
-	return (makeExtractCorrespondenceLogLine(identifier,
-	    Util::duration(start, stop), result, args));
 }
 
 void
@@ -1860,7 +1890,7 @@ main(
 	 * Check E1N API version.
 	 */
 	static const uint16_t expectedE1NMajor{1};
-	static const uint16_t expectedE1NMinor{2};
+	static const uint16_t expectedE1NMinor{3};
 	static const uint16_t expectedE1NPatch{0};
 	if (!((FRIF::Evaluations::Exemplar1N::API_MAJOR_VERSION ==
 	    expectedE1NMajor) &&

@@ -377,8 +377,9 @@ namespace FRIF::Evaluations::Exemplar1N::Validation
 	makeExtractCorrespondenceLogLine(
 	    const std::string &identifier,
 	    const std::string &duration,
-	    const std::variant<SearchSubjectResult,
-	        SearchSubjectPositionResult> &searchResult,
+	    const ReturnStatus &rs,
+	    const std::variant<std::optional<SubjectCandidateListCorrespondence>,
+	        std::optional<SubjectPositionCandidateListCorrespondence>> &searchResult,
 	    const Arguments &args);
 
 	/**

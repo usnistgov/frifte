@@ -88,14 +88,16 @@ namespace FRIF::Evaluations::Exemplar1N
 		    const
 		    override;
 
-		std::optional<SubjectPositionCandidateListCorrespondence>
+		std::optional<std::tuple<ReturnStatus,
+		    SubjectPositionCandidateListCorrespondence>>
 		extractCorrespondenceSubjectPosition(
 		    const std::vector<std::byte> &probeTemplate,
 		    const SearchSubjectPositionResult &searchResult)
 		    const
 		    override;
 
-		std::optional<SubjectCandidateListCorrespondence>
+		std::optional<std::tuple<ReturnStatus,
+		    SubjectCandidateListCorrespondence>>
 		extractCorrespondenceSubject(
 		    const std::vector<std::byte> &probeTemplate,
 		    const SearchSubjectResult &searchResult)

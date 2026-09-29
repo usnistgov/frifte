@@ -234,7 +234,8 @@ FRIF::Evaluations::Exemplar1N::NullSearchImplementation::searchSubject(
 	return {ReturnStatus{}, result};
 }
 
-std::optional<FRIF::SubjectPositionCandidateListCorrespondence>
+std::optional<std::tuple<FRIF::ReturnStatus,
+    FRIF::SubjectPositionCandidateListCorrespondence>>
 FRIF::Evaluations::Exemplar1N::NullSearchImplementation::
     extractCorrespondenceSubjectPosition(
     const std::vector<std::byte> &probeTemplate,
@@ -245,7 +246,8 @@ FRIF::Evaluations::Exemplar1N::NullSearchImplementation::
 	return {};
 }
 
-std::optional<FRIF::SubjectCandidateListCorrespondence>
+std::optional<std::tuple<FRIF::ReturnStatus,
+    FRIF::SubjectCandidateListCorrespondence>>
 FRIF::Evaluations::Exemplar1N::NullSearchImplementation::
     extractCorrespondenceSubject(
     const std::vector<std::byte> &probeTemplate,

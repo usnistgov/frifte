@@ -678,7 +678,8 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * This method shall not spawn threads.
 		 */
 		virtual
-		std::optional<SubjectPositionCandidateListCorrespondence>
+		std::optional<std::tuple<ReturnStatus,
+		    SubjectPositionCandidateListCorrespondence>>
 		extractCorrespondenceSubjectPosition(
 		    const std::vector<std::byte> &probeTemplate,
 		    const SearchSubjectPositionResult &searchResult)
@@ -695,8 +696,9 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * Object returned from searchReferences().
 		 *
 		 * @return
-		 * An optional with no value if not implemented, or a collection
-		 * of information containing corresponding features otherwise.
+		 * An optional with no value if not implemented, or a
+		 * ReturnStatus collection and a collection of information
+		 * containing corresponding features otherwise.
 		 *
 		 * @attention
 		 * Be sure to note if this method is supported (i.e., if this
@@ -731,7 +733,8 @@ namespace FRIF::Evaluations::Exemplar1N
 		 * This method shall not spawn threads.
 		 */
 		virtual
-		std::optional<SubjectCandidateListCorrespondence>
+		std::optional<std::tuple<ReturnStatus,
+		    SubjectCandidateListCorrespondence>>
 		extractCorrespondenceSubject(
 		    const std::vector<std::byte> &probeTemplate,
 		    const SearchSubjectResult &searchResult)
@@ -851,7 +854,7 @@ namespace FRIF::Evaluations::Exemplar1N
 	/** API major version number. */
 	uint16_t API_MAJOR_VERSION{1};
 	/** API minor version number. */
-	uint16_t API_MINOR_VERSION{2};
+	uint16_t API_MINOR_VERSION{3};
 	/** API patch version number. */
 	uint16_t API_PATCH_VERSION{0};
 	#endif /* NIST_EXTERN_FRIFTE_E1N_API_VERSION */
