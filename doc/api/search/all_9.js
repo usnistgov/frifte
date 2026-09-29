@@ -9,5 +9,7 @@ var searchData=
   ['indanedione_6',['Indanedione',['../namespace_f_r_i_f_1_1_e_f_s.html#a84d409195776b926d7a72a5de326a89ba54f1c68277eae7776f35b64f700ac82e',1,'FRIF::EFS']]],
   ['inner_7',['Inner',['../namespace_f_r_i_f_1_1_e_f_s.html#af744aac6be216e7fd06ce24c8dc84aa0aa1684698ac3d8ffda353d0458c30b1e7',1,'FRIF::EFS']]],
   ['inputidentifier_8',['inputIdentifier',['../struct_f_r_i_f_1_1_template_data.html#ae7d86809aa4712489b41237578965717',1,'FRIF::TemplateData']]],
-  ['io_2eh_9',['io.h',['../io_8h.html',1,'']]]
+  ['interface_9',['Interface',['../class_f_r_i_f_1_1_evaluations_1_1_quality_1_1_interface.html',1,'FRIF::Evaluations::Quality::Interface'],['../class_f_r_i_f_1_1_evaluations_1_1_quality_1_1_interface.html#a52cd4ca453abee9365b6c803f88bf9ef',1,'FRIF::Evaluations::Quality::Interface::Interface()']]],
+  ['io_2eh_10',['io.h',['../io_8h.html',1,'']]],
+  ['isolatedridgeclusters_11',['IsolatedRidgeClusters',['../namespace_f_r_i_f_1_1_evaluations_1_1_quality.html#a6f68a7c52dae1813e62433ffbfeef449a1328ac3f00cb395b1730459584f8610d',1,'FRIF::Evaluations::Quality']]]
 ];

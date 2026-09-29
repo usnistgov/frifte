@@ -7,5 +7,6 @@ var searchData=
   ['unknown_4',['Unknown',['../namespace_f_r_i_f_1_1_e_f_s.html#aaac3a13e08279640e83afe55225ead4ba88183b946cc5f0e8c96b2e66e1c74a7e',1,'FRIF::EFS::Unknown'],['../namespace_f_r_i_f_1_1_e_f_s.html#a7b289ba18facb59150321902de0a79e4a88183b946cc5f0e8c96b2e66e1c74a7e',1,'FRIF::EFS::Unknown'],['../namespace_f_r_i_f_1_1_e_f_s.html#af53ec4ae5791b0efd1706850bf650d50a88183b946cc5f0e8c96b2e66e1c74a7e',1,'FRIF::EFS::Unknown'],['../namespace_f_r_i_f_1_1_e_f_s.html#acbe143012892faae1c2cbd357736d31ea88183b946cc5f0e8c96b2e66e1c74a7e',1,'FRIF::EFS::Unknown']]],
   ['unknownfinger_5',['UnknownFinger',['../namespace_f_r_i_f_1_1_e_f_s.html#a6b8511135644dbea61442b54b3985088ad29423a8879a2f272ac9bc73c8462588',1,'FRIF::EFS']]],
   ['unknownfrictionridge_6',['UnknownFrictionRidge',['../namespace_f_r_i_f_1_1_e_f_s.html#a6b8511135644dbea61442b54b3985088a4efd0ee13709c55f53153b74093cb9c7',1,'FRIF::EFS']]],
-  ['unknownpalm_7',['UnknownPalm',['../namespace_f_r_i_f_1_1_e_f_s.html#a6b8511135644dbea61442b54b3985088a141844975d27795261c72edd6a7295de',1,'FRIF::EFS']]]
+  ['unknownlatent_7',['unknownLatent',['../struct_f_r_i_f_1_1_evaluations_1_1_quality_1_1_interface_1_1_compatibility.html#a48759dccdc99255f4fec98ae2da83115',1,'FRIF::Evaluations::Quality::Interface::Compatibility']]],
+  ['unknownpalm_8',['UnknownPalm',['../namespace_f_r_i_f_1_1_e_f_s.html#a6b8511135644dbea61442b54b3985088a141844975d27795261c72edd6a7295de',1,'FRIF::EFS']]]
 ];

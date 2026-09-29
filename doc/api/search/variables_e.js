@@ -7,8 +7,10 @@ var searchData=
   ['referenceminutia_4',['referenceMinutia',['../struct_f_r_i_f_1_1_e_f_s_1_1_correspondence_relationship.html#ace768e2290faba42631cf104b42dc071',1,'FRIF::EFS::CorrespondenceRelationship']]],
   ['referencetemplateversions_5',['referenceTemplateVersions',['../struct_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface_1_1_compatibility.html#a6e82ab0900eeef40df112bcfa2e0a8b6',1,'FRIF::Evaluations::Exemplar1N::ExtractionInterface::Compatibility']]],
   ['region_6',['region',['../struct_f_r_i_f_1_1_e_f_s_1_1_ridge_quality_region.html#a121cb30ead69d53dabb86b068e47f894',1,'FRIF::EFS::RidgeQualityRegion']]],
-  ['relationships_7',['relationships',['../struct_f_r_i_f_1_1_correspondence.html#ae895ced597449d3a7c7b20a852f22417',1,'FRIF::Correspondence']]],
-  ['result_8',['result',['../struct_f_r_i_f_1_1_return_status.html#a5b29d0ace460a94021fb61a575134259',1,'FRIF::ReturnStatus']]],
-  ['roi_9',['roi',['../struct_f_r_i_f_1_1_e_f_s_1_1_features.html#a0b6257fc41ac5ed28544cee1c594652d',1,'FRIF::EFS::Features']]],
-  ['rqm_10',['rqm',['../struct_f_r_i_f_1_1_e_f_s_1_1_features.html#a49af99bf337438098b4b303f968bd5aa',1,'FRIF::EFS::Features']]]
+  ['regionofinterest_7',['regionOfInterest',['../struct_f_r_i_f_1_1_evaluations_1_1_quality_1_1_interface_1_1_compatibility.html#aa9bb63ab8af0827608ef61d469b30b14',1,'FRIF::Evaluations::Quality::Interface::Compatibility']]],
+  ['relationships_8',['relationships',['../struct_f_r_i_f_1_1_correspondence.html#ae895ced597449d3a7c7b20a852f22417',1,'FRIF::Correspondence']]],
+  ['result_9',['result',['../struct_f_r_i_f_1_1_return_status.html#a5b29d0ace460a94021fb61a575134259',1,'FRIF::ReturnStatus']]],
+  ['ridgequalitymap_10',['ridgeQualityMap',['../struct_f_r_i_f_1_1_evaluations_1_1_quality_1_1_interface_1_1_compatibility.html#ac876744ec98b33cdd6267b9cf3570daa',1,'FRIF::Evaluations::Quality::Interface::Compatibility']]],
+  ['roi_11',['roi',['../struct_f_r_i_f_1_1_e_f_s_1_1_features.html#a0b6257fc41ac5ed28544cee1c594652d',1,'FRIF::EFS::Features']]],
+  ['rqm_12',['rqm',['../struct_f_r_i_f_1_1_e_f_s_1_1_features.html#a49af99bf337438098b4b303f968bd5aa',1,'FRIF::EFS::Features']]]
 ];

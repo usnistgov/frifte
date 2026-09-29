@@ -24,6 +24,7 @@ var searchData=
   ['leftupperpalm_21',['LeftUpperPalm',['../namespace_f_r_i_f_1_1_e_f_s.html#a6b8511135644dbea61442b54b3985088ac7b3f1f7ea4b33dabfa93db5efc2b4fb',1,'FRIF::EFS']]],
   ['leftwristbracelet_22',['LeftWristBracelet',['../namespace_f_r_i_f_1_1_e_f_s.html#a6b8511135644dbea61442b54b3985088a7628be523609135046475e10f686144f',1,'FRIF::EFS']]],
   ['leftwriterspalm_23',['LeftWritersPalm',['../namespace_f_r_i_f_1_1_e_f_s.html#a6b8511135644dbea61442b54b3985088a370be5b172bdf76508125567a7d7e395',1,'FRIF::EFS']]],
-  ['limited_24',['Limited',['../namespace_f_r_i_f_1_1_e_f_s.html#ac7500aee9623b454f04e2fba7a3b59b4a7c2131ec78876ce749c2dadd24d47065',1,'FRIF::EFS']]],
-  ['livescanswipe_25',['LiveScanSwipe',['../namespace_f_r_i_f_1_1_e_f_s.html#aaac3a13e08279640e83afe55225ead4ba0566aba0eb9b2768059e4b2bcbed3686',1,'FRIF::EFS']]]
+  ['level3present_24',['Level3Present',['../namespace_f_r_i_f_1_1_evaluations_1_1_quality.html#a6f68a7c52dae1813e62433ffbfeef449a81cfa0ff126bf9dd5c1ac7d88de6a931',1,'FRIF::Evaluations::Quality']]],
+  ['limited_25',['Limited',['../namespace_f_r_i_f_1_1_e_f_s.html#ac7500aee9623b454f04e2fba7a3b59b4a7c2131ec78876ce749c2dadd24d47065',1,'FRIF::EFS']]],
+  ['livescanswipe_26',['LiveScanSwipe',['../namespace_f_r_i_f_1_1_e_f_s.html#aaac3a13e08279640e83afe55225ead4ba0566aba0eb9b2768059e4b2bcbed3686',1,'FRIF::EFS']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['hasvalue_0',['hasValue',['../class_f_r_i_f_1_1_e_f_s_1_1_quality_measure.html#a2e62f7f38e7ed76d510b40388eede0ae',1,'FRIF::EFS::QualityMeasure']]]
+  ['hascomponent_0',['hasComponent',['../class_f_r_i_f_1_1_evaluations_1_1_quality_1_1_verbose_quality.html#a3dffb97bd397a5336aea8d2e4312e2d6',1,'FRIF::Evaluations::Quality::VerboseQuality']]],
+  ['hasvalue_1',['hasValue',['../class_f_r_i_f_1_1_e_f_s_1_1_quality_measure.html#a2e62f7f38e7ed76d510b40388eede0ae',1,'FRIF::EFS::QualityMeasure']]]
 ];

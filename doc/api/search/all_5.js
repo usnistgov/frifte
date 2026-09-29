@@ -9,10 +9,14 @@ var searchData=
   ['error_6',['Error',['../class_f_r_i_f_1_1_e_f_s_1_1_quality_measure.html#a1b4f1e51c72c725a1f4cfdd272029b92a902b0d55fddef6f8d651fe1035b7d4bd',1,'FRIF::EFS::QualityMeasure']]],
   ['evaluations_7',['Evaluations',['../index.html#Technology',1,'Evaluations'],['../index.html',1,'Friction Ridge Image and Features Technology Evaluations']]],
   ['evaluations_2eh_8',['evaluations.h',['../evaluations_8h.html',1,'']]],
-  ['exemplar_201_3an_9',['Exemplar 1:N',['../e1n.html',1,'']]],
-  ['extractcorrespondencesubject_10',['extractCorrespondenceSubject',['../class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_search_interface.html#a4c2c6cac3fb71c271b7652a28d54b31c',1,'FRIF::Evaluations::Exemplar1N::SearchInterface']]],
-  ['extractcorrespondencesubjectposition_11',['extractCorrespondenceSubjectPosition',['../class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_search_interface.html#a4722fac9c8c317fb99250b6d289558ca',1,'FRIF::Evaluations::Exemplar1N::SearchInterface']]],
-  ['extracteddata_12',['extractedData',['../struct_f_r_i_f_1_1_create_template_result.html#ab3c94736cbdb3766ccc5f206e56d478f',1,'FRIF::CreateTemplateResult']]],
-  ['extractioninterface_13',['ExtractionInterface',['../class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface.html',1,'FRIF::Evaluations::Exemplar1N::ExtractionInterface'],['../class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface.html#a6985521ca68482169400d351dfeaa5a3',1,'FRIF::Evaluations::Exemplar1N::ExtractionInterface::ExtractionInterface()']]],
-  ['extracttemplatedata_14',['extractTemplateData',['../class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface.html#a4299e2f91f5f090c0610b3a5dd472ad6',1,'FRIF::Evaluations::Exemplar1N::ExtractionInterface']]]
+  ['evenpressure_9',['EvenPressure',['../namespace_f_r_i_f_1_1_evaluations_1_1_quality.html#a6f68a7c52dae1813e62433ffbfeef449a397f12619d71f68dc855c79cd1980a33',1,'FRIF::Evaluations::Quality']]],
+  ['evidenceoffraud_10',['EvidenceOfFraud',['../namespace_f_r_i_f_1_1_evaluations_1_1_quality.html#a6f68a7c52dae1813e62433ffbfeef449a03c27697ed1aa2288752c8afabd67618',1,'FRIF::Evaluations::Quality']]],
+  ['excessivedistortion_11',['ExcessiveDistortion',['../namespace_f_r_i_f_1_1_evaluations_1_1_quality.html#a6f68a7c52dae1813e62433ffbfeef449aadc1a91d18429d1a6d6b45dcdd21cd6b',1,'FRIF::Evaluations::Quality']]],
+  ['exemplar_201_3an_12',['Exemplar 1:N',['../e1n.html',1,'']]],
+  ['extractcorrespondencesubject_13',['extractCorrespondenceSubject',['../class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_search_interface.html#aada8d1e345a208626601291d0cf3ba13',1,'FRIF::Evaluations::Exemplar1N::SearchInterface']]],
+  ['extractcorrespondencesubjectposition_14',['extractCorrespondenceSubjectPosition',['../class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_search_interface.html#a032e36e20539206e2139b836af35e589',1,'FRIF::Evaluations::Exemplar1N::SearchInterface']]],
+  ['extracteddata_15',['extractedData',['../struct_f_r_i_f_1_1_create_template_result.html#ab3c94736cbdb3766ccc5f206e56d478f',1,'FRIF::CreateTemplateResult']]],
+  ['extractioninterface_16',['ExtractionInterface',['../class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface.html',1,'FRIF::Evaluations::Exemplar1N::ExtractionInterface'],['../class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface.html#a6985521ca68482169400d351dfeaa5a3',1,'FRIF::Evaluations::Exemplar1N::ExtractionInterface::ExtractionInterface()']]],
+  ['extracttemplatedata_17',['extractTemplateData',['../class_f_r_i_f_1_1_evaluations_1_1_exemplar1_n_1_1_extraction_interface.html#a4299e2f91f5f090c0610b3a5dd472ad6',1,'FRIF::Evaluations::Exemplar1N::ExtractionInterface']]],
+  ['extremetip_18',['ExtremeTip',['../namespace_f_r_i_f_1_1_evaluations_1_1_quality.html#a6f68a7c52dae1813e62433ffbfeef449a2e87678fd9b716b6473e44eb48d96062',1,'FRIF::Evaluations::Quality']]]
 ];
