@@ -19,7 +19,7 @@ FRIF::SubjectPositionCandidate::SubjectPositionCandidate(
 
 }
 
-auto
+std::strong_ordering
 FRIF::SubjectPositionCandidate::operator<=>(const FRIF::SubjectPositionCandidate&)
     const = default;
 

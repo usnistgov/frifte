@@ -128,7 +128,10 @@ namespace FRIF
 		    const std::string &identifier = {},
 		    const EFS::FrictionRidgeGeneralizedPosition fgp = {});
 
-		auto operator<=>(const SubjectPositionCandidate&) const;
+		std::strong_ordering
+		operator<=>(
+		    const SubjectPositionCandidate&)
+		    const;
 		bool operator==(const SubjectPositionCandidate&) const;
 	};
 

@@ -102,6 +102,10 @@ namespace FRIF::EFS
 		LeftMiddle = 8,
 		LeftRing = 9,
 		LeftLittle = 10,
+
+		PlainRightThumb = 11,
+		PlainLeftThumb = 12,
+
 		RightExtraDigit = 16,
 		LeftExtraDigit = 17,
 
@@ -1139,7 +1143,10 @@ namespace FRIF::EFS
 			/** Model SHA-256 checksum (QCK) */
 			std::optional<std::string> modelSHA256{};
 
-			auto operator<=>(const Description&) const;
+			std::strong_ordering
+			operator<=>(
+			    const Description&)
+			    const;
 			bool operator==(const Description&) const;
 		};
 
@@ -1163,6 +1170,17 @@ namespace FRIF::EFS
 		 */
 		QualityMeasure(
 		    const double value);
+
+		/**
+		 * @brief
+		 * Construct an object indicating an error in computation.
+		 *
+		 * @param errorMessage
+		 * Message about quality measure computation. Must match the
+		 * regular expression `[[:graph:] ]*`.
+		 */
+		QualityMeasure(
+		    const std::string &errorMessage);
 
 		/**
 		 * @return
@@ -1214,6 +1232,18 @@ namespace FRIF::EFS
 		getStatus()
 		    const;
 
+		/**
+		 * @brief
+		 * Communiate error in computation.
+		 *
+		 * @param errorMessage
+		 * Message about quality measure computation. Must match the
+		 * regular expression `[[:graph:] ]*`.
+		 */
+		void
+		setError(
+		    const std::string &errorMessage);
+
 		std::optional<std::string>
 		getMessage()
 		    const;
@@ -1223,8 +1253,7 @@ namespace FRIF::EFS
 		 * Message about quality measure computation. Must match the
 		 * regular expression `[[:graph:] ]*`.
 		 *
-		 * @note
-		 * Most useful when status is Status::Error.
+		 * @see setError
 		 */
 		void
 		setMessage(

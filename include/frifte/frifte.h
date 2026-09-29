@@ -15,6 +15,7 @@
  *  - 1:1 Comparison --- _Coming Soon!_
  *  - PIV 1:1 Comparison --- _Coming Soon!_
  *  - Slap Fingerprint Segmentation --- _Coming Soon!_
+ *  - @ref quality "Quality"
  *
  * @section Contact
  * Additional information regarding %FRIF %TEs can be received by emailing
@@ -29,8 +30,8 @@
  * about its quality, reliability, or any other characteristic.
  */
 
-#ifndef FRIF_H_
-#define FRIF_H_
+#ifndef FRIFTE_H_
+#define FRIFTE_H_
 
 #include <frifte/common.h>
 #include <frifte/efs.h>
@@ -38,4 +39,4 @@
 #include <frifte/io.h>
 #include <frifte/util.h>
 
-#endif /* FRIF_H_ */
+#endif /* FRIFTE_H_ */

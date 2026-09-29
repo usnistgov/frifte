@@ -147,6 +147,10 @@ FRIF::EFS::Crease::setCreaseClassification(
 			[[ fallthrough ]];
 		case FrictionRidgeGeneralizedPosition::RightAndLeftThumbs:
 			[[ fallthrough ]];
+		case FrictionRidgeGeneralizedPosition::PlainRightThumb:
+			[[ fallthrough ]];
+		case FrictionRidgeGeneralizedPosition::PlainLeftThumb:
+			[[ fallthrough ]];
 
 		case FrictionRidgeGeneralizedPosition::EJIOrTip:
 			[[ fallthrough ]];
@@ -770,7 +774,7 @@ FRIF::EFS::toLinearDiscontinuity(
 	}
 }
 
-auto
+std::strong_ordering
 FRIF::EFS::QualityMeasure::Description::operator<=>(
     const FRIF::EFS::QualityMeasure::Description&)
     const = default;
@@ -825,7 +829,16 @@ FRIF::EFS::QualityMeasure::QualityMeasure() = default;
 
 FRIF::EFS::QualityMeasure::QualityMeasure(
     const double value_) :
+    status{EFS::QualityMeasure::Status::Success},
     value{value_}
+{
+
+}
+
+FRIF::EFS::QualityMeasure::QualityMeasure(
+    const std::string &errorMessage) :
+    status{EFS::QualityMeasure::Status::Error},
+    message{errorMessage}
 {
 
 }
@@ -879,4 +892,12 @@ FRIF::EFS::QualityMeasure::setMessage(
     const std::string &message_)
 {
 	this->message = message_;
+}
+
+void
+FRIF::EFS::QualityMeasure::setError(
+    const std::string &errorMessage)
+{
+	this->status = EFS::QualityMeasure::Status::Error;
+	this->message = errorMessage;
 }

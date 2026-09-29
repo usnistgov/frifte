@@ -25,6 +25,9 @@ The various types of algorithms currently under test by NIST include:
 Search one or more exemplar fingerprint image against a participant-defined
 database of millions of other subjects.
 
+### Quality
+Compute several aspects of image quality from a friction ridge image.
+
 ### Mark 1:N Search
 _Note: This TE was previously called both "[Evaluation of Latent Fingerprint
 Technologies (ELFT)]" and "[Evaluation of Latent Friction Ridge Technology],"

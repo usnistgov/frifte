@@ -242,7 +242,10 @@ namespace FRIF
 		    const uint32_t x = {},
 		    const uint32_t y = {});
 
-		auto operator<=>(const Coordinate&) const;
+		std::strong_ordering
+		operator<=>(
+		    const Coordinate&)
+		    const;
 		bool operator==(const Coordinate&) const;
 	};
 
@@ -260,7 +263,10 @@ namespace FRIF
 			/** CBEFF Algorithm Identifier of the product. */
 			std::optional<uint16_t> algorithm{};
 
-			auto operator<=>(const CBEFFIdentifier&) const;
+			std::strong_ordering
+			operator<=>(
+			    const CBEFFIdentifier&)
+			    const;
 			bool operator==(const CBEFFIdentifier&) const;
 		};
 
@@ -278,7 +284,10 @@ namespace FRIF
 		 */
 		std::optional<CBEFFIdentifier> cbeff{};
 
-		auto operator<=>(const ProductIdentifier&) const;
+		std::strong_ordering
+		operator<=>(
+		    const ProductIdentifier&)
+		    const;
 		bool operator==(const ProductIdentifier&) const;
 	};
 
@@ -299,7 +308,7 @@ namespace FRIF
 	/** API major version number. */
 	uint16_t API_MAJOR_VERSION{1};
 	/** API minor version number. */
-	uint16_t API_MINOR_VERSION{2};
+	uint16_t API_MINOR_VERSION{3};
 	/** API patch version number. */
 	uint16_t API_PATCH_VERSION{0};
 	#endif /* NIST_EXTERN_FRIFTE_API_VERSION */

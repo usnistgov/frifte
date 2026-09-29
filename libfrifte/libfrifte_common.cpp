@@ -21,7 +21,7 @@ FRIF::Coordinate::Coordinate(
 
 }
 
-auto
+std::strong_ordering
 FRIF::Coordinate::operator<=>(
     const FRIF::Coordinate&)
     const = default;
@@ -31,7 +31,7 @@ FRIF::Coordinate::operator==(
     const FRIF::Coordinate&)
     const = default;
 
-auto
+std::strong_ordering
 FRIF::ProductIdentifier::CBEFFIdentifier::operator<=>(
     const FRIF::ProductIdentifier::CBEFFIdentifier&)
     const = default;
@@ -41,7 +41,7 @@ FRIF::ProductIdentifier::CBEFFIdentifier::operator==(
     const FRIF::ProductIdentifier::CBEFFIdentifier&)
     const = default;
 
-auto
+std::strong_ordering
 FRIF::ProductIdentifier::operator<=>(
     const FRIF::ProductIdentifier&)
     const = default;
