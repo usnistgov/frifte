@@ -8,8 +8,8 @@
  * about its quality, reliability, or any other characteristic.
  */
 
-#ifndef FRIF_E1N_NULLIMPL_H_
-#define FRIF_E1N_NULLIMPL_H_
+#ifndef FRIF_EVALUATIONS_QUALITY_NULLIMPL_H_
+#define FRIF_EVALUATIONS_QUALITY_NULLIMPL_H_
 
 #include <frifte/quality.h>
 
@@ -55,4 +55,4 @@ namespace FRIF::Evaluations::Quality
 	};
 }
 
-#endif /* FRIF_E1N_NULLIMPL_H_ */
+#endif /* FRIF_EVALUATIONS_QUALITY_NULLIMPL_H_ */

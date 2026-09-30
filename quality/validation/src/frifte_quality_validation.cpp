@@ -672,7 +672,7 @@ validAPIVersion()
 	}
 
 	/*
-	 * Check E1N API version.
+	 * Check evaluation API version.
 	 */
 	static const uint16_t expectedQualityMajor{0};
 	static const uint16_t expectedQualityMinor{0};

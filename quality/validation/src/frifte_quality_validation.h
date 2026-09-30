@@ -157,7 +157,7 @@ namespace FRIF::Evaluations::Quality::Validation
 
 	/**
 	 * @brief
-	 * Format identification information about a FRIF TE E1N
+	 * Format identification information about a FRIF TE Quality
 	 * implementation's LibraryIdentifier.
 	 *
 	 * @return
@@ -169,7 +169,7 @@ namespace FRIF::Evaluations::Quality::Validation
 
 	/**
 	 * @brief
-	 * Format identification information about a FRIF TE E1N
+	 * Format identification information about a FRIF TE Quality
 	 * implementation's LibraryIdentifier.
 	 *
 	 * @return

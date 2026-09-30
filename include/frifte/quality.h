@@ -36,7 +36,7 @@
  *
  * ## Required Static Methods
  * The following methods are defined static in the API and must be implemented
- * by E1N participants:
+ * by participants:
  *  - FRIF::Evaluations::Quality::Interface::getImplementation
  *  - FRIF::Evaluations::Quality::Interface::getCompatibility
  *     - Pay special attention to this function, as it determines what will be
