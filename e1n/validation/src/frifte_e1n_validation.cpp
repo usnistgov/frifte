@@ -1742,8 +1742,8 @@ FRIF::Evaluations::Exemplar1N::Validation::singleExtractCorrespondence(
 
 	std::vector<std::byte> probe{};
 	try {
-		probe = Util::readFile(args.outputDir / Data::TemplateDir /
-		    datasetName / identifier);
+		probe = Util::readFile(args.outputDir / Data::ProbeTemplateDir /
+		    datasetName / (identifier + Data::TemplateSuffix));
 	} catch (const std::exception &e) {
 		throw std::runtime_error{"Could not read probe template for "
 		    "id = " + identifier + " in dataset = " + datasetName +
