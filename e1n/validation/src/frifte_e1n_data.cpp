@@ -143,6 +143,7 @@ FRIF::Evaluations::Exemplar1N::Validation::Data::readCSV(
 		    !((multiVals.size() == 1) &&
 		    (multiVals.front() == Util::NA))) {
 			for (const auto &mv : multiVals) {
+				coordSS.clear();
 				coordSS.str(mv);
 				while (std::getline(coordSS, coord, coordSep))
 					coords.push_back(coord);
@@ -188,6 +189,7 @@ FRIF::Evaluations::Exemplar1N::Validation::Data::readCSV(
 		/*
 		 * Deltas (don't load uncertainty)
 		 */
+		multiValSS.clear();
 		multiValSS.str(cols[13]);
 		coords.clear();
 		multiVals.clear();
@@ -198,6 +200,7 @@ FRIF::Evaluations::Exemplar1N::Validation::Data::readCSV(
 		    !((multiVals.size() == 1) &&
 		    (multiVals.front() == Util::NA))) {
 			for (const auto &mv : multiVals) {
+				coordSS.clear();
 				coordSS.str(mv);
 				while (std::getline(coordSS, coord, coordSep))
 					coords.push_back(coord);
@@ -260,6 +263,7 @@ FRIF::Evaluations::Exemplar1N::Validation::Data::readCSV(
 		/*
 		 * Minutia
 		 */
+		multiValSS.clear();
 		multiValSS.str(cols[14]);
 		coords.clear();
 		multiVals.clear();
@@ -270,6 +274,7 @@ FRIF::Evaluations::Exemplar1N::Validation::Data::readCSV(
 		    !((multiVals.size() == 1) &&
 		    (multiVals.front() == Util::NA))) {
 			for (const auto &mv : multiVals) {
+				coordSS.clear();
 				coordSS.str(mv);
 				while (std::getline(coordSS, coord, coordSep))
 					coords.push_back(coord);
