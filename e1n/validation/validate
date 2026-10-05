@@ -80,6 +80,11 @@ compile_log="compile.log"
 
 # Prefix for downloaded validation imagery tarballs
 validation_image_download_prefix=frifte_e1n_validation_images
+# Expected version of imagery
+expected_image_version="202409301442"
+# Checksum of expected imagery version tarball
+expected_image_version_sha256="64a481fe76f84eee5bcc31e02f966026fd14f5b475b08875"
+expected_image_version_sha256+="9d5b61a67d250321"
 
 # Regular expression that must match core library name
 lib_regex="libfrifte_e1n_[A-Za-z0-9]+_[0-9A-F]{4}.so"
@@ -625,9 +630,6 @@ check_validation_version()
 
 check_image_versions()
 {
-	# Version of image dataset compatible with this script
-	local expected_image_version="202409301442"
-
 	echo -n "Checking validation image versions... "
 
 	if ! [ -e "${wd}/${validation_image_dir}/VERSION" ]; then
@@ -720,6 +722,15 @@ check_for_images()
 			while read -r i; do
 				echo -n " -> Expanding \""
 				echo -n "$(basename "${i}")\"... "
+
+				local computed_cksum
+				computed_cksum=$(sha256sum "${image_archive}" |\
+				    cut -f 1 -d ' ')
+				if ! [ "${computed_cksum}" != \
+				    "${expected_image_version_sha256}" ]; then
+					fail "Invalid checksum on image tarball"
+				fi
+
 				if tar xf "${i}" > /dev/null 2>&1; then
 					okay
 				else
