@@ -1555,7 +1555,7 @@ FRIF::Evaluations::Exemplar1N::Validation::singleSearch(
 
 	std::vector<std::byte> probe{};
 	try {
-		const std::string tmplName{identifier + ".tmpl"};
+		const std::string tmplName{identifier + Data::TemplateSuffix};
 		probe = Util::readFile(args.outputDir / Data::ProbeTemplateDir /
 		    datasetName / tmplName);
 	} catch (const std::exception &e) {
