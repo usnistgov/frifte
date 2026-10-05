@@ -551,6 +551,16 @@ check_required_packages()
 	okay
 }
 
+# Checksums
+check_checksums()
+{
+	if ! cksum --quiet --strict --check "${wd}/CHECKSUMS"; then
+		local msg="One or more validation source files appears to have "
+		msg+="been modified. Refer to \"${wd}/CHECKSUMS\"."
+		fail "${msg}"
+	fi
+}
+
 # If the user has Internet access, check that this script is the latest version.
 # @return 1 if version could be checked, 0 if not.
 check_validation_version()
@@ -2154,6 +2164,7 @@ fi
 
 # Pre-check
 check_required_packages
+check_checksums
 check_for_previous_attempts
 check_validation_version; validation_version_checked="${?}"
 check_os
