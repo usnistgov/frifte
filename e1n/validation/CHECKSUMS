@@ -1,7 +1,7 @@
 SHA256 (src/CMakeLists.txt) = f41226c40dd15f8ef8da58e89fce3dfc9fd1ae4cd20b1566a5710418f621ef56
-SHA256 (src/frifte_e1n_data.cpp) = e4a2cb39f322cbd101732623400398331a6cac93da9a9b105036cbabf72d5a98
+SHA256 (src/frifte_e1n_data.cpp) = e9b246a464d67f3a4253b8745978c016b9f05e9209f2b2475a09b7305da73559
 SHA256 (src/frifte_e1n_data.h) = c74832458eed144cb7e525ed5d8090027d166f948ba8439c4a1985e18176d5ae
-SHA256 (src/frifte_e1n_validation.cpp) = 906a9362105606931d8e6ef897e355bc680f1cf9732766914ab429aa179a766a
+SHA256 (src/frifte_e1n_validation.cpp) = c91397ff6230872743001aa01b7e020dacf7c017b0de4954254b6eb1ae738988
 SHA256 (src/frifte_e1n_validation.h) = b88df8b990e3415cb8b84cfb3a700ad16653e384f6ffa4cd1be11b4b8e91e206
 SHA256 (src/../../libfrifte_e1n/CMakeLists.txt) = a3566ca04eb3a45fec44c0773a10ec74025ebbabea2954369842616b7da881d3
 SHA256 (src/../../libfrifte_e1n/libfrifte_e1n.cpp) = b74e12dda10b1ed0ff6be91978ed1f6089a718f10c5a1f771d5a6e224b3bd69c
@@ -17,4 +17,4 @@ SHA256 (src/../../../include/frifte/evaluations.h) = 807feb57eb68906bd60e1877dfc
 SHA256 (src/../../../include/frifte/frifte.h) = 9ae5158bc6d4513b202784f063060767131aaeced9c94ab3de03d145b4857875
 SHA256 (src/../../../include/frifte/io.h) = de44cbc14aa357734a208d6b7ca656b273453b13846f874399557c2485a0686e
 SHA256 (src/../../../include/frifte/util.h) = b7c0efb97725c74af3ed5cfd3f627464be798973c671f6c3ddea63f877aa8ed8
-SHA256 (src/../validate) = 2696179f9c3d9ed998a5f2c20b38b4fc0a7b3313a77ec43f7549166610e0ff49
+SHA256 (src/../validate) = 312f36c7d3383d6b8939c54dafcc455807657d6b37e30d3ff93ff492f5a80394
