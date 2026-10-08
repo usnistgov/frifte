@@ -394,6 +394,8 @@ FRIF::EFS::toFrictionRidgeGeneralizedPosition(
 		[[fallthrough]];
 	case EFS::FrictionRidgeGeneralizedPosition::RightThumb:
 		[[fallthrough]];
+	case EFS::FrictionRidgeGeneralizedPosition::PlainRightThumb:
+		[[fallthrough]];
 	case EFS::FrictionRidgeGeneralizedPosition::RightIndex:
 		[[fallthrough]];
 	case EFS::FrictionRidgeGeneralizedPosition::RightMiddle:
@@ -403,6 +405,8 @@ FRIF::EFS::toFrictionRidgeGeneralizedPosition(
 	case EFS::FrictionRidgeGeneralizedPosition::RightLittle:
 		[[fallthrough]];
 	case EFS::FrictionRidgeGeneralizedPosition::LeftThumb:
+		[[fallthrough]];
+	case EFS::FrictionRidgeGeneralizedPosition::PlainLeftThumb:
 		[[fallthrough]];
 	case EFS::FrictionRidgeGeneralizedPosition::LeftIndex:
 		[[fallthrough]];
